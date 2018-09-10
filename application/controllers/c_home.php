@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_home extends CI_Controller {
+class C_Home extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
