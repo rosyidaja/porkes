@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class c_faskes extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('v_homepage');
+		$data['content'] = 'v_faskes';
+        $this->load->view('v_navbar',$data);
 	}
 }
