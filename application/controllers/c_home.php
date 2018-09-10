@@ -20,12 +20,14 @@ class c_home extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data['head_top_resource'] = 'v_head_top_resource';
 		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';
 		$data['artikel'] = 'v_artikel';
 		$data['layanan'] = 'v_layanan';
 		$data['faskes'] = 'v_faskes';
 		$data['footer'] = 'v_footer';
+		$data['bottom_resource'] = 'v_bottom_resource';
         $this->load->view('v_home',$data);
 	}
 }
