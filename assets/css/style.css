@@ -38,7 +38,7 @@ a, a:hover, a:focus, a:active{
 }
 
 .section-padding{
-	padding: 100px 0px;
+	padding: 20px 0px;
 
 }
 h2 {
@@ -143,12 +143,12 @@ banner
 #banner{
 	background: url('../img/bg-banner.jpg') no-repeat fixed;
 	background-size: cover;
-	min-height: 650px;
+	min-height: 80px;
 	position: relative;
 }
 .bg-color{
 	background-color: RGBA(13, 70, 83, 0.78);
-	min-height: 650px;
+	min-height: 80px;
 }
 .banner-info{
 	padding-top: 0px;

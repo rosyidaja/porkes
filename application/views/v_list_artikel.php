@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <section id="doctor-team" class="section-padding">
     <div class="container">
       <div class="row">

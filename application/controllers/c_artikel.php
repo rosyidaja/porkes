@@ -24,6 +24,12 @@ class c_artikel extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('v_list_artikel');
+		$data['head_top_resource'] = 'v_head_top_resource';
+		$data['maps'] = 'v_maps';
+		$data['navbar'] = 'v_navbar';
+		$data['content'] = 'v_list_artikel';
+		$data['footer'] = 'v_footer';
+		$data['bottom_resource'] = 'v_bottom_resource';
+        $this->load->view('v_page',$data);
 	}
 }
