@@ -26,12 +26,6 @@ class c_navbar extends CI_Controller {
 
 	public function index()
 	{
-		$data['maps'] = 'v_maps';
-		$data['navbar'] = 'v_navbar';
-		$data['artikel'] = 'v_artikel';
-		$data['layanan'] = 'v_layanan';
-		$data['faskes'] = 'v_faskes';
-		$data['footer'] = 'v_footer';
-        $this->load->view('v_home',$data);
+		
 	}
 }
