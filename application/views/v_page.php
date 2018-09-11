@@ -12,13 +12,12 @@
       <!-- navbar -->
         <?php $this->load->view($navbar); ?>
         <!-- /navbar -->
-          <!--service-->
-  <?php $this->load->view($list_artikel); ?>
-  <!--/ service-->
   </section>
   <!--/ banner-->
 
-
+          <!--service-->
+          <?php $this->load->view($content); ?>
+          <!--/ service-->
 
   <!--footer-->
   <?php $this->load->view($footer); ?>
