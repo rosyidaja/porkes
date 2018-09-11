@@ -12,24 +12,13 @@
       <!-- navbar -->
         <?php $this->load->view($navbar); ?>
         <!-- /navbar -->
-
-      <!-- maps -->
-        <?php $this->load->view($maps); ?>
-        <!-- /maps -->
+          <!--service-->
+  <?php $this->load->view($list_artikel); ?>
+  <!--/ service-->
   </section>
   <!--/ banner-->
 
-  <!--service-->
-  <?php $this->load->view($artikel); ?>
-  <!--/ service-->
-  
-  <!--about-->
-  <?php $this->load->view($layanan); ?>
-  <!--/ about-->
 
-  <!--testimonial-->
-  <?php $this->load->view($faskes); ?>
-  <!--/ testimonial-->
 
   <!--footer-->
   <?php $this->load->view($footer); ?>
