@@ -151,7 +151,7 @@ banner
 	min-height: 650px;
 }
 .banner-info{
-	padding-top: 90px;
+	padding-top: 0px;
 }
 .banner-logo img{
 	display: inline-block;
@@ -189,7 +189,7 @@ banner
 .iframe-container{
     position: relative;
     width: 100%;
-    padding-bottom: 45%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+    padding-bottom: 47%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
 }
 .iframe-container > *{
     display: block;
@@ -200,7 +200,7 @@ banner
     left: 0;
     margin: 0;
     padding: 0;
-    height: 80%;
+    height: 90%;
     width: 100%;
 }
 .iframe-container{
