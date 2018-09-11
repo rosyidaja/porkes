@@ -44,7 +44,7 @@
             <div class="caption">
               <h4>6 Akibat Fatal Bila Dehidrasi Diabaikan</h4>
               <p>Seseorang dikatakan mengalami dehidrasi jika kehilangan cairan yang banyak.</p>
-        <a href="#">Lihat Artikel...</a>
+              <a href="#">Lihat Artikel...</a>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
 
         </div>
         <div >
-          <span style="float:right;"><a href="<?php echo base_url()."index.php/c_artikel"; ?>">Liat Semua</a></span>
+          <span style="float:right;"><a href="<?php echo base_url()."index.php/c_artikel"; ?>">Liat Semua >></a></span>
         </div>
       </div>
     </div>

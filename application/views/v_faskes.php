@@ -41,6 +41,9 @@
             <h3>Alex<span>Texas</span></h3>
           </div>
         </div>
+        <div >
+          <span style="float:right;"><a href="<?php echo base_url()."index.php/c_artikel"; ?>">Liat Semua >></a></span>
+        </div>
       </div>
     </div>
   </section>
