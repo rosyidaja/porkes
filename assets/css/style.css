@@ -38,7 +38,12 @@ a, a:hover, a:focus, a:active{
 }
 
 .section-padding{
-	padding: 20px 0px;
+	padding: 70px 0px;
+
+}
+
+.section-padding-page{
+    padding: 20px 0px;
 
 }
 h2 {

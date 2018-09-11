@@ -53,7 +53,7 @@
 
         </div>
         <div >
-          <span style="float:right;"><a href="<?php echo base_url()."index.php/c_page"; ?>">Liat Semua</a></span>
+          <span style="float:right;"><a href="<?php echo base_url()."index.php/c_artikel"; ?>">Liat Semua</a></span>
         </div>
       </div>
     </div>

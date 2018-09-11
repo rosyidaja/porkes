@@ -1,4 +1,4 @@
-<section id="doctor-team" class="section-padding">
+<section id="doctor-team" class="section-padding-page">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
