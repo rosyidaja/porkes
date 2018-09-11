@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_faskes extends CI_Controller {
+class c_list_faskes extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,9 +21,8 @@ class C_faskes extends CI_Controller {
 	public function index()
 	{
 		$data['head_top_resource'] = 'v_head_top_resource';
-		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';
-		$data['content'] = 'v_list_faskes';
+		$data['list_faskes'] = 'v_list_faskes';
 		$data['footer'] = 'v_footer';
 		$data['bottom_resource'] = 'v_bottom_resource';
         $this->load->view('v_page',$data);
