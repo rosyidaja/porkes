@@ -13,7 +13,7 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#banner">Home</a></li>
                 <li class=""><a href="#artikel">Artikel</a></li>
-                <li class=""><a href="#service">Layanan</a></li>
+                <!-- <li class=""><a href="#service">Layanan</a></li> -->
                 <li class=""><a href="#testimonial">Faskes</a></li>
                 <!-- <li class=""><a href="#contact">Contact</a></li> -->
               </ul>

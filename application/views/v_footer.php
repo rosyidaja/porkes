@@ -7,7 +7,7 @@
               <h4 class="white no-padding">About Us</h4>
             </div>
             <div class="info-sec">
-              <p>Praesent convallis tortor et enim laoreet, vel consectetur purus latoque penatibus et dis parturient.</p>
+              <p>Program website ini masih dalam Prototype masih butuh waktu untuk pengembangan lebih lanjut.</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-4 marb20">

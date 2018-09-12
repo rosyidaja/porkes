@@ -119,7 +119,7 @@
                     </tr>
                   </table>
                   <div class="pull-right">
-                    <a href="#">Lihat Detail</a>
+                    <a href="<?php echo base_url().'index.php/c_detail_faskes';?>">Lihat Detail</a>
                   </div>
                 </div>
               </div>

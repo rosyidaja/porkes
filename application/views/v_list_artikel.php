@@ -14,7 +14,7 @@
             <div class="caption">
               <h4>Larangan Penjualan Kopi di Sekolah dan Plus Minus Kafein</h4>
               <p>Melihat dua sisi efek yang ditimbulkan kafein</p>
-              <a href="#">Lihat Artikel...</a>
+              <a href="<?php echo base_url().'index.php/c_detail_artikel' ?>">Lihat Artikel...</a>
             </div>
           </div>
         </div>
