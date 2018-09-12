@@ -1,7 +1,7 @@
 <section id="service" class="section-padding">
     <div class="container">
       <div class="row">
-      <div class="col-md-12 col-sm-12" center>
+      <div class="col-md-12 col-sm-12" style="margin-bottom:90px;" center>
          <div class="col-md-10 col-sm-2">
                 <input type="text" name="name" class="form-control br-radius-zero" id="norm_text" placeholder="No. Rekam Medis" data-rule="minlen:4" data-msg="Masukan Nomor Rekam Medis Anda" />
                 <div class="validation"></div>
@@ -64,7 +64,7 @@
 
   <script>
       function cekNorm(norm){
-          alert("Hallo World "+norm );
+          //alert("Hallo World "+norm );
       }
       var norm_text = document.getElementById("norm_text");
       var norm;
@@ -73,7 +73,8 @@
             event.preventDefault();
             if (event.keyCode === 13) {
                 cekNorm(norm);
-                $("#norm_text").removeAttr("display");
+                document.getElementById("box-poli").style.display="block";
+                //$("#norm_text").removeAttr("display");
             }
         });
   </script>
