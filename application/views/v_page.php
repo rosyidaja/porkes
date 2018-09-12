@@ -26,7 +26,7 @@
                 <li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
                 <li class=""><a href="<?php echo base_url().'index.php/c_artikel'; ?>">Artikel</a></li>
                 <li class=""><a href="<?php echo base_url().'index.php/c_artikel'; ?>">Layanan</a></li>
-                <li class=""><a href="#">Faskes</a></li>
+                <li class=""><a href="<?php echo base_url().'index.php/c_faskes'; ?>">Faskes</a></li>
                 <!-- <li class=""><a href="#contact">Contact</a></li> -->
               </ul>
             </div>
