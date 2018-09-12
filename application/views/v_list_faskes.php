@@ -93,37 +93,103 @@
 
             <div class="panel panel-default">
               <div class="panel-heading">
-                RS. Enak Enak
+                <strong>RUMAH SAKIT JIWA ENAK ENAK</strong>
               </div>
               <div class="panel-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="col-md-3">
+                  <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
+                </div>
+                <div class="col-md-9">
+                  <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Karangpoh, Kecamatan Gresik, Ngipik, Karangpoh, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
+                  <table>
+                    <tr>
+                      <td> <strong>Layanan</strong> </td>
+                      <td> : </td>
+                      <td>Ambulance, Kamar Operasi, Booking Online</td>
+                    </tr>
+                    <tr>
+                      <td> <strong>Asuransi</strong> </td>
+                      <td> : </td>
+                      <td>AXA</td>
+                    </tr>
+                    <tr>
+                      <td> <strong>Poli</strong> </td>
+                      <td> : </td>
+                      <td>Poli Endas, Poli Gami, Poli si</td>
+                    </tr>
+                  </table>
+                  <div class="pull-right">
+                    <a href="#">Lihat Detail</a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="panel panel-default">
               <div class="panel-heading">
-                RS. Tomi Mendem
+                <strong>RUMAH SAKIT SUSUMU</strong>
               </div>
               <div class="panel-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="col-md-3">
+                  <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
+                </div>
+                <div class="col-md-9">
+                  <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Karangpoh, Kecamatan Gresik, Ngipik, Karangpoh, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
+                  <table>
+                    <tr>
+                      <td> <strong>Layanan</strong> </td>
+                      <td> : </td>
+                      <td>Ambulance, Kamar Operasi, Booking Online</td>
+                    </tr>
+                    <tr>
+                      <td> <strong>Asuransi</strong> </td>
+                      <td> : </td>
+                      <td>AXA</td>
+                    </tr>
+                    <tr>
+                      <td> <strong>Poli</strong> </td>
+                      <td> : </td>
+                      <td>Poli Endas, Poli Gami, Poli si</td>
+                    </tr>
+                  </table>
+                  <div class="pull-right">
+                    <a href="#">Lihat Detail</a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="panel panel-default">
               <div class="panel-heading">
-                RS. Susumu
+                <strong>RUMAH SAKIT TOMI MENDEM</strong>
               </div>
               <div class="panel-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </div>
-            </div>
-
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                RS. Iqbal guk guk
-              </div>
-              <div class="panel-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="col-md-3">
+                  <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
+                </div>
+                <div class="col-md-9">
+                  <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Karangpoh, Kecamatan Gresik, Ngipik, Karangpoh, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
+                  <table>
+                    <tr>
+                      <td> <strong>Layanan</strong> </td>
+                      <td> : </td>
+                      <td>Ambulance, Kamar Operasi, Booking Online</td>
+                    </tr>
+                    <tr>
+                      <td> <strong>Asuransi</strong> </td>
+                      <td> : </td>
+                      <td>AXA</td>
+                    </tr>
+                    <tr>
+                      <td> <strong>Poli</strong> </td>
+                      <td> : </td>
+                      <td>Poli Endas, Poli Gami, Poli si</td>
+                    </tr>
+                  </table>
+                  <div class="pull-right">
+                    <a href="#">Lihat Detail</a>
+                  </div>
+                </div>
               </div>
             </div>
 

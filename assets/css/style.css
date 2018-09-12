@@ -600,3 +600,11 @@ input:checked + .slider:before {
 input:checked + .slider {
     box-shadow:0 0 0 2px limeGreen,0 0 2px Green;
 }
+
+/***************************************
+Detail faskes
+***************************************/
+div.page-header {
+	margin-top: 0px;
+	color: black;
+}
