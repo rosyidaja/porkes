@@ -5,29 +5,38 @@
           <div class="col-md-10 col-sm-2">
             <input type="text" name="name" class="form-control br-radius-zero" id="norm_text" placeholder="No. Rekam Medis" data-rule="minlen:4" data-msg="Masukan Nomor Rekam Medis Anda" />
             <div class="validation">
-              
+
             </div>
           </div>
           <div class="col-md-2 col-sm-2">
-            <button type="submit" class="btn btn-form">Pencarian</button>                    
-          </div>  
-        </div>  
+            <button type="submit" class="btn btn-form">Pencarian</button>
+          </div>
+        </div>
       </div>
-      <div class="row" id="box-poli" style="display:">
+
+      <div class="row" id="box-poli" style="display:none">
+
+        <div class="col-md-12 text-center" style="margin-bottom:15px;">
+          <label> <h2>Pilih poli tujuan</h2> </label>
+        </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <div class="panel-body">
-                <div class="col-md-3" style="padding-left: 30px;">
-                  <img alt="logo RS" style="height: 40px;" src="<?php echo base_url('assets/icons/gigi.png');?>">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-3" style="padding-left: 30px;">
+                    <img alt="logo RS" style="height: 40px;" src="<?php echo base_url('assets/icons/gigi.png');?>">
+                  </div>
+                  <div class="col-md-9" style="padding-top: 5px; padding-left: 40px;">
+                    <h3 style="color: black; display: inline;">Poli Gigi</h3>
+                  </div>
                 </div>
-                <div class="col-md-9" style="padding-top: 5px; padding-left: 40px;">
-                  <h3 style="color: black; display: inline;">Poli Gigi</h3>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -42,6 +51,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -56,6 +66,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -70,6 +81,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -84,6 +96,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -98,6 +111,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -112,6 +126,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -126,6 +141,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -140,6 +156,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -154,6 +171,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -168,6 +186,7 @@
             </div>
           </div>
         </div>
+
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
@@ -182,6 +201,15 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-primary btn-lg" name="button">Reset</button>
+        </div>
+
+      </div>
+
+      
+
       </section>
 
   <script>

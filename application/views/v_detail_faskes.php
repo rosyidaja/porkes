@@ -9,10 +9,10 @@
           <br>
           <br>
           <br>
-          <div class="col-md-2">
-            <img src="<?php echo base_url('assets/img/artikel1.jpg');?>" width="150" height="150">
+          <div class="col-md-2" style="right: 50px;">
+            <img src="<?php echo base_url('assets/img/logoRS.png');?>" width="150" height="150">
           </div>
-          <div class="col-md-10">
+          <div class="col-md-10" style="right: 20px;bottom: 10px;">
             <h3>RS. Iqbal GUK GUK</h3>
           </div>
         </div>
@@ -103,7 +103,7 @@
                   <td>Sibuk</td>
                 </tr>
                 <tr class="small">
-                  <td>2.</td>
+                  <td>3.</td>
                   <td>Iqbal Guk</td>
                   <td>912312123</td>
                   <td>10:00 - 11:00</td>

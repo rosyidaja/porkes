@@ -608,3 +608,10 @@ div.page-header {
 	margin-top: 0px;
 	color: black;
 }
+
+/***************************************
+Booking
+***************************************/
+div.panel-body:hover {
+	background-color: #337ab7;
+}
