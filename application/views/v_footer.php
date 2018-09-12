@@ -16,9 +16,9 @@
             </div>
             <div class="info-sec">
               <ul class="quick-info">
-                <li><a href="<?php echo base_url()."index.php/c_home"; ?>"><i class="fa fa-circle"></i>Home</a></li>
-                <li><a href="#service"><i class="fa fa-circle"></i>Artikel</a></li>
-                <li><a href="#contact"><i class="fa fa-circle"></i>Fasilitas Kesehatan</a></li>
+                <li><a href="<?php echo base_url().'index.php/c_home' ?>"><i class="fa fa-circle"></i>Home</a></li>
+                <li><a href="<?php echo base_url().'index.php/c_artikel'?>"><i class="fa fa-circle"></i>Artikel</a></li>
+                <li><a href="<?php echo base_url().'index.php/c_faskes' ?>"><i class="fa fa-circle"></i>Fasilitas Kesehatan</a></li>
               </ul>
             </div>
           </div>
