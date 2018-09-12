@@ -3,13 +3,22 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div class="jumbotron" style="margin-bottom:0; border-radius:0;">
-          <h1>Gambar Preview Rumah Sakit</h1>
-          <p>Gambar prevew</p>
+        <div class="jumbotron" style="margin-bottom:0; border-radius:0; background-image:url('<?php echo base_url('assets/img/levina_bg.jpg');?>'); background-size: cover;">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="col-md-2">
+            <img src="<?php echo base_url('assets/img/artikel1.jpg');?>" width="150" height="150">
+          </div>
+          <div class="col-md-10">
+            <h3>RS. Iqbal GUK GUK</h3>
+          </div>
         </div>
         <div class="panel" style="border-radius:0; border:0;">
           <div class="panel-body">
-            <p>Keterangan Rumah Sakit</p>
+            <p><i class="fa fa-map-marker small"></i> Jalan Jendral Ahmad Yani No. 69, Karangpoh, Kecamatan Gresik, Ngipik, Karangpoh, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
           </div>
         </div>
       </div>
@@ -52,6 +61,60 @@
       </div>
 
       <div class="col-md-9">
+
+        <div class="panel">
+          <div class="panel-body">
+
+            <div class="page-header col-md-12">
+              <div class="col-md-3">
+                <label style="padding-top: 10px;">List Antrian</label>
+              </div>
+              <div class="col-md-6">
+                <select class="form-control" name="">
+                  <option value="">Pilih Poli</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <button type="button" class="btn btn-primary" name="button">Booking</button>
+              </div>
+            </div>
+
+            <div class="table-responsive col-md-12">
+              <table class="table table-striped table-hover table-condensed table-bordered" style="color:black;">
+                <tr>
+                  <th>No.</th>
+                  <th>Nama Pasien</th>
+                  <th>Nomor RM</th>
+                  <th>Jadwal</th>
+                  <th>Status</th>
+                </tr>
+                <tr class="small">
+                  <td>1.</td>
+                  <td>Iqbal Guk</td>
+                  <td>912312123</td>
+                  <td>10:00 - 11:00</td>
+                  <td>Sibuk</td>
+                </tr>
+                <tr class="small">
+                  <td>2.</td>
+                  <td>Iqbal Guk</td>
+                  <td>912312123</td>
+                  <td>10:00 - 11:00</td>
+                  <td>Sibuk</td>
+                </tr>
+                <tr class="small">
+                  <td>2.</td>
+                  <td>Iqbal Guk</td>
+                  <td>912312123</td>
+                  <td>10:00 - 11:00</td>
+                  <td>Sibuk</td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
         <div class="panel">
           <div class="panel-body">
 
