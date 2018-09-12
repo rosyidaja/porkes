@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class c_list_faskes extends CI_Controller {
+class C_list_faskes extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.

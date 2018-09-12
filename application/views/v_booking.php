@@ -208,10 +208,190 @@
 
       </div>
 
-      
+      <div class="row" id="box-jadwal">
+
+        <div class="col-md-12 text-center" style="margin-bottom:15px;">
+          <label> <h2>Pilih Jadwal</h2> </label>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-artikel col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-default" style="background-color: #0cb8b6;">
+              <a href="#">
+                <div class="panel-body">
+                  <div class="col-md-12 text-center">
+                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-primary btn-lg" name="button">Kembali</button>
+        </div>
+
+      </div>
+
+
+    </div>
 
       </section>
-
   <script>
       function cekNorm(norm){
           //alert("Hallo World "+norm );
