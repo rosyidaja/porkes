@@ -24,9 +24,9 @@
             <div class="collapse navbar-collapse navbar-right" id="myNavbar">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
-                <li class=""><a href="<?php echo base_url().'index.php/c_artikel'; ?>">Artikel</a></li>
-                <li class=""><a href="<?php echo base_url().'index.php/c_layanan'; ?>">Layanan</a></li>
-                <li class=""><a href="<?php echo base_url().'index.php/c_faskes'; ?>">Faskes</a></li>
+                <li class=""><a href="<?php echo base_url().'c_artikel'; ?>">Artikel</a></li>
+                <li class=""><a href="<?php echo base_url().'c_layanan'; ?>">Layanan</a></li>
+                <li class=""><a href="<?php echo base_url().'c_faskes'; ?>">Faskes</a></li>
                 <!-- <li class=""><a href="#contact">Contact</a></li> -->
               </ul>
             </div>

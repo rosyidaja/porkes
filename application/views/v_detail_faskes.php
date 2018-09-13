@@ -75,7 +75,7 @@
                 </select>
               </div>
               <div class="col-md-3">
-                <button type="button" class="btn btn-primary" name="button">Booking</button>
+                <button type="button" class="btn btn-primary" name="button"><a href="<?php echo base_url().'c_booking';?>">Booking</a></button>
               </div>
             </div>
 

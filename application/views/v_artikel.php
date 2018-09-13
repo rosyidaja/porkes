@@ -52,8 +52,8 @@
         </div>
 
         </div>
-        <div >
-          <span style="float:right;"><a href="<?php echo base_url(); ?>">Liat Semua</a></span>
+        <div class="pull-right">
+          <a href="<?php echo base_url().'c_artikel';?>">Lihat Semua</a>
         </div>
       </div>
     </div>

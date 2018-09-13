@@ -43,7 +43,7 @@
                     </tr>
                   </table>
                   <div class="pull-right">
-                    <a href="<?php echo base_url().'index.php/c_detail_faskes';?>">Lihat Detail</a>
+                    <a href="<?php echo base_url().'c_detail_faskes';?>">Lihat Detail</a>
                   </div>
                 </div>
               </div>
@@ -90,7 +90,7 @@
                   </tr>
                 </table>
                 <div class="pull-right">
-                  <a href="<?php echo base_url().'index.php/c_detail_faskes';?>">Lihat Detail</a>
+                  <a href="<?php echo base_url().'c_detail_faskes';?>">Lihat Detail</a>
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@
                   </tr>
                 </table>
                 <div class="pull-right">
-                  <a href="<?php echo base_url().'index.php/c_detail_faskes';?>">Lihat Detail</a>
+                  <a href="<?php echo base_url().'c_detail_faskes';?>">Lihat Detail</a>
                 </div>
               </div>
             </div>
@@ -145,5 +145,7 @@
       </div>
     </div>
   </div>
-  <span style="float:right; padding-top: 20px;"><a href="<?php echo base_url()."index.php/c_faskes"; ?>">Liat Semua >></a></span>
+  <div class="pull-right">
+    <a href="<?php echo base_url().'c_faskes';?>">Lihat Semua</a>
+  </div>
 </section>
