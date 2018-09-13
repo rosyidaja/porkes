@@ -13,12 +13,12 @@
             <img src="<?php echo base_url('assets/img/logoRS.png');?>" width="150" height="150">
           </div>
           <div class="col-md-10" style="right: 20px;bottom: 10px;">
-            <h3>RS. Iqbal GUK GUK</h3>
+            <h3>Rumah Sakit Seger Waras</h3>
           </div>
         </div>
         <div class="panel" style="border-radius:0; border:0;">
           <div class="panel-body">
-            <p><i class="fa fa-map-marker small"></i> Jalan Jendral Ahmad Yani No. 69, Karangpoh, Kecamatan Gresik, Ngipik, Karangpoh, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
+            <p><i class="fa fa-map-marker small"></i> Jl. Kelapapati Tengah No.90, Riau , Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
           </div>
         </div>
       </div>
@@ -71,11 +71,11 @@
               </div>
               <div class="col-md-6">
                 <select class="form-control" name="">
-                  <option value="">Pilih Poli</option>
+                  <option value="">Poli Umum</option>
                 </select>
               </div>
               <div class="col-md-3">
-                <button type="button" class="btn btn-primary" name="button"><a href="<?php echo base_url().'c_booking';?>">Booking</a></button>
+                <button type="button" class="btn btn-primary" name="button"><a style="color:white;text-decoration:none;" href="<?php echo base_url().'c_booking';?>">Booking</a></button>
               </div>
             </div>
 
@@ -90,24 +90,24 @@
                 </tr>
                 <tr class="small">
                   <td>1.</td>
-                  <td>Iqbal Guk</td>
-                  <td>912312123</td>
-                  <td>10:00 - 11:00</td>
-                  <td>Sibuk</td>
+                  <td>Tomi Mishbahul</td>
+                  <td>000231</td>
+                  <td>08:00 - 08:10</td>
+                  <td>Dilayani</td>
                 </tr>
                 <tr class="small">
                   <td>2.</td>
-                  <td>Iqbal Guk</td>
-                  <td>912312123</td>
-                  <td>10:00 - 11:00</td>
-                  <td>Sibuk</td>
+                  <td>Archie Cakra</td>
+                  <td>000091</td>
+                  <td>08:10 - 08:20</td>
+                  <td>Dilayani</td>
                 </tr>
                 <tr class="small">
                   <td>3.</td>
-                  <td>Iqbal Guk</td>
-                  <td>912312123</td>
-                  <td>10:00 - 11:00</td>
-                  <td>Sibuk</td>
+                  <td>Irma Y</td>
+                  <td>000199</td>
+                  <td>08:20 - 08:30</td>
+                  <td>Daftar</td>
                 </tr>
               </table>
             </div>

@@ -26,10 +26,10 @@
               <a href="#" onClick="nextJadwal('gigi')">
                 <div class="panel-body">
                   <div class="col-md-3" style="padding-left: 30px;">
-                    <img alt="logo RS" style="height: 40px;" src="<?php echo base_url('assets/icons/gigi.png');?>">
+                    <img alt="logo RS" style="height: 40px;" src="<?php echo base_url('assets/icons/umum.png');?>">
                   </div>
-                  <div class="col-md-9" style="padding-top: 5px; padding-left: 40px;">
-                    <h3 style="color: black; display: inline;">Poli Gigi</h3>
+                  <div class="col-md-9" style="padding-top: 5px; padding-left: 20px;">
+                    <h3 style="color: black; display: inline;">Poli Umum</h3>
                   </div>
                 </div>
               </a>
@@ -222,7 +222,7 @@
               <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">08:00 - 08:10</h3>
                   </div>
                 </div>
               </a>
@@ -233,10 +233,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">08:10 - 08:20</h3>
                   </div>
                 </div>
               </a>
@@ -247,10 +247,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">08:30 - 08:40</h3>
                   </div>
                 </div>
               </a>
@@ -261,10 +261,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">08:40 - 08:50</h3>
                   </div>
                 </div>
               </a>
@@ -275,10 +275,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">08:50 - 09:00</h3>
                   </div>
                 </div>
               </a>
@@ -289,10 +289,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">09:00 - 09:10</h3>
                   </div>
                 </div>
               </a>
@@ -303,10 +303,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">09:10 - 09:20</h3>
                   </div>
                 </div>
               </a>
@@ -317,10 +317,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">09:20 - 09:30</h3>
                   </div>
                 </div>
               </a>
@@ -331,10 +331,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">09:30 - 09:40</h3>
                   </div>
                 </div>
               </a>
@@ -345,10 +345,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">09:40 - 09:50</h3>
                   </div>
                 </div>
               </a>
@@ -359,10 +359,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">09:50 - 10:00</h3>
                   </div>
                 </div>
               </a>
@@ -373,10 +373,10 @@
         <div class="list-artikel col-md-3">
           <div class="panel-group">
             <div class="panel panel-default" style="background-color: #0cb8b6;">
-              <a href="#">
+              <a href="#" onClick="finishBook('sesi1')">
                 <div class="panel-body">
                   <div class="col-md-12 text-center">
-                    <h3 style="color: black; display: inline;">08:30 - 10:30</h3>
+                    <h3 style="color: black; display: inline;">10:00 - 10:10</h3>
                   </div>
                 </div>
               </a>
@@ -401,7 +401,7 @@
               <h4 class="modal-title">Konfirmasi</h4>
             </div>
             <div class="modal-body">
-              <p>Apakah Anda Yakin akan melakukan pemesanan <br/> pada Poli Gigi Pukul 08:00 - 08:30 ?</p>
+              <p>Apakah Anda Yakin akan melakukan pemesanan Ke Poli Umum pada Pukul 08:30 - 08:40 ?</p>
             </div>
             <div class="modal-footer">
               <button type="button" id="btn-booking" class="btn btn-ok" onClick="booking()">Booking</button>  

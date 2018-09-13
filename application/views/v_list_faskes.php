@@ -93,14 +93,14 @@
 
             <div class="panel panel-default">
               <div class="panel-heading">
-                <strong>RUMAH SAKIT JIWA ENAK ENAK</strong>
+                <strong>RUMAH SAKIT Seger Waras</strong>
               </div>
               <div class="panel-body">
                 <div class="col-md-3">
                   <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
                 </div>
                 <div class="col-md-9">
-                  <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Karangpoh, Kecamatan Gresik, Ngipik, Karangpoh, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
+                  <p><i class="fa fa-map-marker"></i> Jl. Kelapapati Tengah No.90, Riau</p>
                   <table>
                     <tr>
                       <td> <strong>Layanan</strong> </td>
@@ -127,7 +127,7 @@
 
             <div class="panel panel-default">
               <div class="panel-heading">
-                <strong>RUMAH SAKIT SUSUMU</strong>
+                <strong>Klinik Ibu dan Anak</strong>
               </div>
               <div class="panel-body">
                 <div class="col-md-3">
@@ -161,7 +161,7 @@
 
             <div class="panel panel-default">
               <div class="panel-heading">
-                <strong>RUMAH SAKIT TOMI MENDEM</strong>
+                <strong>Puskesmas Blega</strong>
               </div>
               <div class="panel-body">
                 <div class="col-md-3">
