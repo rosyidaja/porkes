@@ -2,48 +2,148 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="ser-title">see what patients are saying?</h2>
+          <h2 class="ser-title">Apa Liat - Liat ???</h2>
           <hr class="botm-line">
         </div>
-        <div class="col-md-4 col-sm-4">
-          <div class="testi-details">
-            <!-- Paragraph -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="testi-info">
-            <!-- User Image -->
-            <a href="#"><img src="<?php echo base_url('assets/img/thumb.png');?>" alt="" class="img-responsive"></a>
-            <!-- User Name -->
-            <h3>Alex<span>Texas</span></h3>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4">
-          <div class="testi-details">
-            <!-- Paragraph -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="testi-info">
-            <!-- User Image -->
-            <a href="#"><img src="<?php echo base_url('assets/img/thumb.png');?>" alt="" class="img-responsive"></a>
-            <!-- User Name -->
-            <h3>Alex<span>Texas</span></h3>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4">
-          <div class="testi-details">
-            <!-- Paragraph -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="testi-info">
-            <!-- User Image -->
-            <a href="#"><img src="<?php echo base_url('assets/img/thumb.png');?>" alt="" class="img-responsive"></a>
-            <!-- User Name -->
-            <h3>Alex<span>Texas</span></h3>
-          </div>
-        </div>
-        <div >
-          <span style="float:right;"><a href="<?php echo base_url()."index.php/c_faskes"; ?>">Liat Semua >></a></span>
+
+        <div class="list-artikel col-md-4">
+          <div class="panel-group">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>RUMAH SAKIT JIWA ENAK ENAK</strong>
+              </div>
+              <div class="panel-body">
+                <div class="col-md-4" style="margin-left: 100px">
+                  <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="col-md-12">
+                  <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Solo</p>
+                  <table>
+                    <tr>
+                      <td> <strong>Layanan</strong> </td>
+                      <td> : </td>
+                      <td>Ambulance, Kamar Operasi, Booking Online</td>
+                    </tr>
+                    <tr>
+                      <td> <strong>Asuransi</strong> </td>
+                      <td> : </td>
+                      <td>AXA</td>
+                    </tr>
+                    <tr>
+                      <td> <strong>Poli</strong> </td>
+                      <td> : </td>
+                      <td>Poli Endas, Poli Gami</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <div class="pull-right">
+                    <a href="<?php echo base_url().'index.php/c_detail_faskes';?>">Lihat Detail</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div>
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="list-artikel col-md-4">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>RUMAH SAKIT MASUK PAK EKO</strong>
+          </div>
+            <div class="panel-body">
+              <div class="col-md-4" style="margin-left: 100px">
+                <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-12">
+                <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Solo</p>
+                <table>
+                  <tr>
+                    <td> <strong>Layanan</strong> </td>
+                    <td> : </td>
+                    <td>Ambulance, Kamar Operasi, Booking Online</td>
+                  </tr>
+                  <tr>
+                    <td> <strong>Asuransi</strong> </td>
+                    <td> : </td>
+                    <td>AXA</td>
+                  </tr>
+                  <tr>
+                    <td> <strong>Poli</strong> </td>
+                    <td> : </td>
+                    <td>Poli Endas, Poli Gami</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+                <div class="pull-right">
+                  <a href="<?php echo base_url().'index.php/c_detail_faskes';?>">Lihat Detail</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div>
+      </div>
+    </div>
+  </div>
+  <div class="list-artikel col-md-4">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>RUMAH SAKIT MASUK PAK EKO</strong>
+          </div>
+            <div class="panel-body">
+              <div class="col-md-4" style="margin-left: 100px">
+                <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-12">
+                <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Solo</p>
+                <table>
+                  <tr>
+                    <td> <strong>Layanan</strong> </td>
+                    <td> : </td>
+                    <td>Ambulance, Kamar Operasi, Booking Online</td>
+                  </tr>
+                  <tr>
+                    <td> <strong>Asuransi</strong> </td>
+                    <td> : </td>
+                    <td>AXA</td>
+                  </tr>
+                  <tr>
+                    <td> <strong>Poli</strong> </td>
+                    <td> : </td>
+                    <td>Poli Endas, Poli Gami</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+                <div class="pull-right">
+                  <a href="<?php echo base_url().'index.php/c_detail_faskes';?>">Lihat Detail</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div>
+      </div>
+    </div>
+  </div>
+  <span style="float:right; padding-top: 20px;"><a href="<?php echo base_url()."index.php/c_faskes"; ?>">Liat Semua >></a></span>
+</section>
