@@ -53,7 +53,7 @@
 
         </div>
         <div class="pull-right">
-          <a href="<?php echo base_url().'c_artikel';?>">Lihat Semua</a>
+          <a href="<?php echo base_url().'C_artikel';?>">Lihat Semua</a>
         </div>
       </div>
     </div>

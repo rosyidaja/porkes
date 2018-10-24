@@ -42,7 +42,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            © Copyright Porkes. All Rights Reserved
+            © Copyright <a href="<?php echo base_url('C_login/index') ?>">Porkes</a>. All Rights Reserved
           </div>
         </div>
       </div>
