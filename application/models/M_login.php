@@ -27,6 +27,25 @@ class M_login extends CI_Model{
 		return $result->result();
 	}
 
+	public function insert($data=''){
+		// $this->db->join('tbl_karyawan k','u.id.karyawan = k.id.karyawan');
+		$result = $this->db->insert('s_user',$data);
+		return $result;
+	}
+
+	public function delete($id='',$data=''){
+		$this->db->where('user_id',$id);
+		$result = $this->db->delete('s_user',$data);
+		return $result;
+	}
+
+	// public function tampildatauser(){
+	// 	// $this->db->where('user_id',$id);
+	// 	// $this->db->join('tbl_karyawan k','u.id_user = k.id_user');
+	// 	$result = $this->db->get('s_user');
+	// 	return $result->row();
+	// }
+
 // 	public function get_user($id_user){
 // 		$this->db->where('u.id_user',$id_user);
 // 		// $this->db->where('password',$password);

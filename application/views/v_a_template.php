@@ -42,9 +42,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>M</b>LB</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Porkes</b></span>
+      <span class="logo-lg"><b><img src="<?php echo base_url('assets/img/logo.png');?>" class="img-responsive" style="padding-left: 30px; width: 140px;"></b></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -150,7 +150,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_a_tambah_artikel/index'); ?>"><i class="fa fa-edit"></i>Tambah Artikel</a></li>
+            <li><a href="<?php echo base_url('C_a_tambah_artikel/add'); ?>"><i class="fa fa-edit"></i>Tambah Artikel</a></li>
             <li><a href="<?php echo base_url('C_a_artikel_detail/index'); ?>"><i class="fa fa-list"></i>Daftar Artikel</a></li>
           </ul>
         </li>
@@ -178,6 +178,19 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('C_a_tambah_faskes/index'); ?>"><i class="fa fa-edit"></i>Tambah Faskes</a></li>
             <li><a href="<?php echo base_url('C_a_faskes_detail/index'); ?>"><i class="fa fa-list"></i>Daftar Faskes</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>Master User</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('C_master_user/add'); ?>"><i class="fa fa-edit"></i>Tambah User</a></li>
+            <li><a href="<?php echo base_url('C_master_user/detail'); ?>"><i class="fa fa-list"></i>Daftar User</a></li>
           </ul>
         </li>
       </ul>

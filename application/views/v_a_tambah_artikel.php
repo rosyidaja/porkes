@@ -14,13 +14,17 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
               <h3 class="box-title">Tambah Artikel</h3>
             </div>
             
             <!-- form start -->
-            <form role="form" action="<?php echo base_url('C_a_tambah_artikel/create');?>" method="post">
+            
+            <form role="form" action="<?php echo base_url()."index.php/C_a_tambah_artikel/create";?>" method="post">
               <div class="box-body">
-                <input type="hidden" name="artikel_id" value="">
+                <div class="form-group" style="width: 400px">
+                <input type="hidden" name="artikel_id">
+                </div>
                 <div class="form-group" style="width: 400px">
                   <label for="exampleInputEmail1">Judul Artikel</label>
                   <input type="text" class="form-control" name="artikel_judul" placeholder=" Judul Artikel ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
@@ -31,7 +35,7 @@
                 </div>
             <!-- /.box-header -->
                 <div class="form-group" style="padding-top: 20px">
-                  <label for="exampleInputFile">Unggah Gambar (Artikel)</label>
+                  <label for="artikel_foto">Unggah Gambar (Artikel)</label>
                   <input type="file" name="artikel_foto" size="20">
                 </div>
                 <div class="form-group">
@@ -48,14 +52,10 @@
               </div>
             </form>
           </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
         </div>
-        <!-- /.col -->
+            <!-- /.box-body -->
       </div>
-      <!-- /.row -->
+          <!-- /.box -->
     </section>
     <!-- /.content -->
   </div>

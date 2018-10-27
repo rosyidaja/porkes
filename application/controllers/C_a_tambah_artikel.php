@@ -18,16 +18,23 @@ class C_a_tambah_artikel extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_Artikel','a');
+	}
+
 	public function index()
 	{
+		$data['tabel'] = $this->a->tampildata();
 		$data['content'] = 'v_a_tambah_artikel';
         $this->load->view('v_a_template',$data);
 	}
 
 	public function add(){
-		// $data['tabel'] = $this->a->tampildata();
+		// $data['tabel'] = $this->M_Artikel->tampildata();
 		$data['aksi'] = 'create';
-		$data['ke'] = 'Tambah Data';
+		// $data['ke'] = 'Tambah Data';
 		// $this->load->view('v-tambah', $data);
 
 		$data['content'] = 'v_a_tambah_artikel';
@@ -38,32 +45,56 @@ class C_a_tambah_artikel extends CI_Controller {
 		$post = $this->input->post();
 
 		// $this->form_validation->set_rules('email','Email','required');
-
+		$artikel_id = $post['artikel_id'];
 		$artikel_judul = $post['artikel_judul'];
 		$artikel_isi = $post['artikel_isi'];
-		$artikel_foto = $_FILES['artikel_foto']['name'];
+		$artikel_foto = $post['artikel_foto'];
 		$artikel_status = $post['artikel_status'];
-		$artikel_created_date = $post['artikel_created_date'];
+		// $artikel_created_date = $post['artikel_created_date'];
 
-		if ($artikel_foto=''){}else{
-			$config['upload_path']='./assets/img';
-			$config['allowed_types']='jpg|gif|png|jpeg';
+		$config['upload_path']          = './assets/img/';
+		$config['allowed_types']        = 'gif|jpg|png';
+ 
+		$this->load->library('upload', $config);
+ 
+		if ($this->upload->do_upload('artikel_foto')){
+			$error = array('error' => $this->upload->display_errors());
+			$this->load->view('v_upload', $error);
+		}else{
+			$data = array('artikel_foto' => $this->upload->data('file_name'));
+			$this->load->view('v_upload_sukses', $data);
+		}
 
-			$this->load->library('upload',$config);
-			if (!$this->upload->do_upload('artikel_foto')) {
-				echo "Upload Gagal"; die();
-			}
+		// if ($artikel_foto=''){}else{
+		// 	$config['upload_path']='./assets/img/';
+		// 	$config['allowed_types']='jpg|gif|png|jpeg';
+
+		// 	$this->load->library('upload',$config);
+
+		// 	if (!$this->upload->do_upload('artikel_foto')) {
+		// 		$this->session->set_flashdata('pesan','Upload Gagal Tersimpan !!');
+		// 		redirect(base_url('C_a_tambah_artikel/index'));
+		// 	}else{
+		// 		$artikel_foto = $this->upload->data('file_name');
+		// 	}
 
 			$data = array(
+			'artikel_id' => $artikel_id,
 			'artikel_judul' => $artikel_judul,
 			'artikel_isi' => $artikel_isi,
 			'artikel_foto' => $artikel_foto,
+			'artikel_status' => $artikel_status,
 			'artikel_created_date' => date('Y-m-d H:i:s'),
 			'artikel_created_by' => 'Super Admin'
 			);
 
-		$this->M_artikel->insert($data);		
-		redirect(base_url('C_a_artikel_detail/index'));
+		$hasil = $this->a->insert($data);
+		if ($hasil) {
+				$this->session->set_flashdata('pesan','Data Berhasil Tersimpan !');
+			}else{
+				$this->session->set_flashdata('pesan','Data Gagal Tersimpan !');
+			}
+			redirect(base_url('C_a_tambah_artikel/add'));
 		}
 
 		// if($this->form_validation->run() != false){
@@ -120,4 +151,4 @@ class C_a_tambah_artikel extends CI_Controller {
  
 //     return $config;
 // }
-}
+// }
