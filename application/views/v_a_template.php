@@ -257,7 +257,7 @@
 <!-- ChartJS -->
 <script src="<?php echo base_url('bower_components/chart.js/Chart.js');?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url('dist/js/pages/dashboard2.js');?>"></script>
+<!-- <script src="<?php echo base_url('dist/js/pages/dashboard2.js');?>"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('dist/js/demo.js');?>"></script>
 
@@ -291,9 +291,9 @@
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace('editor1')
-    //bootstrap WYSIHTML5 - text editor
-    $('.textarea').wysihtml5()
+    // CKEDITOR.replace('editor1')
+    // //bootstrap WYSIHTML5 - text editor
+    // $('.textarea').wysihtml5()
   })
 </script>
 </body>

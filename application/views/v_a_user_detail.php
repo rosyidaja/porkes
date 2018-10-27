@@ -27,17 +27,17 @@
                   <th width="100px" style="text-align: center;" class="sorting">Aksi</th>
                 </tr>
                 </thead>
-                <?php foreach ($tabel as $key => $value) {?>
                 <tbody>
+                <?php foreach ($tabel as $key => $value) {?>
                   <tr>
                     <td><?php echo $value->user_name ?></td>
                     <td><?php echo $value->user_level ?></td>
                     <td align="center"><span class="label label-success">Aktif</span></td>
                     <td align="center"><a href="<?php echo base_url('C_master_user/update_pwd/'.$value->user_id)?>"><button type="button" class="btn btn-primary btn-sm">Ubah</button></a> 
-                    <a href="<?php echo base_url('C_master_user/delete/'.$value->user_id)?>"><button type="button" class="btn btn-danger btn-sm">Hapus</button></td></a>
+                    <a href="<?php echo base_url('C_master_user/delete/'.$value->user_id)?>"><button type="button" class="btn btn-danger btn-sm">Hapus</button></a></td>
                   </tr>
-                </tbody>
                 <?php }?>
+                </tbody>
               </table>
             </div>
             <!-- /.box-body -->

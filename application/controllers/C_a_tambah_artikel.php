@@ -57,11 +57,11 @@ class C_a_tambah_artikel extends CI_Controller {
  
 		$this->load->library('upload', $config);
  
-		if ($this->upload->do_upload('artikel_foto')){
+		if ( ! $this->upload->do_upload('artikel_foto')){
 			$error = array('error' => $this->upload->display_errors());
 			$this->load->view('v_upload', $error);
 		}else{
-			$data = array('artikel_foto' => $this->upload->data('file_name'));
+			$data = array('upload_data' => $this->upload->data());
 			$this->load->view('v_upload_sukses', $data);
 		}
 

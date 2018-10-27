@@ -20,7 +20,7 @@
             
             <!-- form start -->
             
-            <form role="form" action="<?php echo base_url()."index.php/C_a_tambah_artikel/create";?>" method="post">
+            <form role="form" action="<?php echo base_url()."index.php/C_a_tambah_artikel/create";?>" method="POST" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group" style="width: 400px">
                 <input type="hidden" name="artikel_id">
