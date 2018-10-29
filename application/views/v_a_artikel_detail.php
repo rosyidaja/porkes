@@ -31,12 +31,13 @@
                 <tbody>
                 <?php foreach ($tabel as $key => $value) {?>
                 <tr>
-                  <td><?php echo $value->artikel_foto ?></td>
+                  <td>
+                   <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $value->artikel_foto;?>" width="100px" style="border:1px solid #c8c7c7;"></td>
                   <!-- <img src="<?php// echo $value->artikel_foto ?>" class="img-responsive"> -->
                   <td><?php echo $value->artikel_judul ?></td>
                   <td><?php echo $value->artikel_isi ?></td>
-                  <td align="center"><span class="label label-success">Publish</span></td>
-                  <td align="center">
+                  <td align="center" style="vertical-align: middle;"><span class="label label-success">Publish</span></td>
+                  <td align="center" style="vertical-align: middle;">
                     <a href="<?php echo base_url('C_a_artikel_detail/update/'.$value->artikel_id)?>">
                       <button type="button" class="btn btn-primary btn-sm" name="edit">Ubah</button>
                     </a>

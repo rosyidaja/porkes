@@ -48,11 +48,11 @@ class C_a_tambah_artikel extends CI_Controller {
 		$artikel_id = $post['artikel_id'];
 		$artikel_judul = $post['artikel_judul'];
 		$artikel_isi = $post['artikel_isi'];
-		//$artikel_foto = $post['artikel_foto'];
+		// $artikel_foto = $post['artikel_foto'];
 		$artikel_status = $post['artikel_status'];
 		// $artikel_created_date = $post['artikel_created_date'];
 
-		$config['upload_path']          = './upload/artikel/';
+		$config['upload_path']          = './assets/upload/artikel/';
 		$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
  
 		$this->upload->initialize($config);
