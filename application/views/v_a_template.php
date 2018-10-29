@@ -291,9 +291,11 @@
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    // CKEDITOR.replace('editor1')
+    if($('textarea#editor1').html() != undefined) {
+      CKEDITOR.replace('editor1')
+    }
     // //bootstrap WYSIHTML5 - text editor
-    // $('.textarea').wysihtml5()
+    $('.textarea').wysihtml5()
   })
 </script>
 </body>
