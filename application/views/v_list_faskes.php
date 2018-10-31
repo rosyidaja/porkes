@@ -119,7 +119,7 @@
                     </tr>
                   </table>
                   <div class="pull-right">
-                    <a href="<?php echo base_url().'c_detail_faskes';?>">Lihat Detail</a>
+                    <a href="<?php echo base_url().'C_faskes/detail_faskes';?>">Lihat Detail</a>
                   </div>
                 </div>
               </div>
@@ -153,7 +153,7 @@
                     </tr>
                   </table>
                   <div class="pull-right">
-                    <a href="#">Lihat Detail</a>
+                    <a href="C_faskes/detail_faskes">Lihat Detail</a>
                   </div>
                 </div>
               </div>
@@ -187,7 +187,7 @@
                     </tr>
                   </table>
                   <div class="pull-right">
-                    <a href="#">Lihat Detail</a>
+                    <a href="C_faskes/detail_faskes">Lihat Detail</a>
                   </div>
                 </div>
               </div>

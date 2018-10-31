@@ -22,16 +22,29 @@
                 <thead>
                 <tr>
                   <th width="100" style="text-align: center;">Gambar</th>
+                  <th style="text-align: center;">Judul</th>
                   <th style="text-align: center;">Isi</th>
                   <th width="100px" style="text-align: center;">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($tabel as $key => $value) {?>
                 <tr>
-                  <td>Trident</td>
-                  <td>Win 95+</td>
-                  <td align="center"><button type="button" class="btn btn-primary btn-sm">Ubah</button> <button type="button" class="btn btn-danger btn-sm">Hapus</button></td>
+                  <td>
+                   <img src="<?php echo base_url();?>assets/upload/layanan/<?php echo $value->layanan_foto;?>" width="100px" height="100px" style="border:1px solid #c8c7c7;"></td>
+                  <!-- <img src="<?php// echo $value->artikel_foto ?>" class="img-responsive"> -->
+                  <td style="vertical-align: middle;"><?php echo $value->layanan_judul ?></td>
+                  <td><?php echo $value->layanan_deskripsi ?></td>
+                  <td align="center" style="vertical-align: middle;">
+                    <a href="<?php echo base_url('C_a_layanan/update/'.$value->layanan_id)?>">
+                      <button type="button" class="btn btn-primary btn-sm" name="edit">Ubah</button>
+                    </a>
+                    <a href="<?php echo base_url('C_a_layanan/delete/'.$value->layanan_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->layanan_judul; ?> ? ')"> 
+                      <button type="button" class="btn btn-danger btn-sm" name="hapus">Hapus</button>
+                    </a>
+                  </td>
                 </tr>
+              <?php }?>
               </table>
             </div>
             <!-- /.box-body -->

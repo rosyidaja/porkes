@@ -36,6 +36,10 @@
                   <label for="exampleInputEmail1">Asuransi</label>
                   <input type="text" class="form-control" placeholder=" Asuransi ...">
                 </div>
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Layanan</label>
+                  <input type="text" class="form-control" placeholder=" Layanan ...">
+                </div>
                 <div class="form-group" name="provinsi">
                   <label>Provinsi</label>
                     <select class="form-control" style="width: 200px;">
@@ -68,13 +72,12 @@
                   <label for="exampleInputEmail1">Latitude</label>
                   <input type="text" class="form-control" placeholder=" Latitude ...">
                 </div>
-                 <div class="form-group" style="width: 400px">
+                <div class="form-group" style="width: 400px">
                   <label for="exampleInputEmail1">Longtitude</label>
                   <input type="text" class="form-control" placeholder=" Longtitude ...">
                 </div>
-            <!-- /.box-header -->
                 <div class="form-group" style="padding-top: 20px">
-                  <label for="exampleInputFile">Unggah Header (Faskes)</label>
+                  <label for="exampleInputFile">Unggah Background (Faskes)</label>
                   <input type="file" id="exampleInputFile">
                 </div>
                 <div class="form-group" style="padding-top: 20px">
@@ -88,24 +91,12 @@
                       <option>Tidak aktif</option>
                     </select>
                 </div>
-                
               </div>
-              <!-- /.box-body -->
-
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
           </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
         </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->

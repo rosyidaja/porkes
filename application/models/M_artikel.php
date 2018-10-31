@@ -18,9 +18,28 @@ class M_artikel extends CI_Model{
 		return $result->result();
 	}
 
+	function tampildata_h_artikel(){
+		$this->db->limit(4);
+		$result = $this->db->get('m_artikel');
+		return $result->result();
+	}
+
+	function tampildataDetail($id=''){
+		$this->db->where('artikel_id',$id);
+		$result = $this->db->get('m_artikel');
+		return $result->row();
+	}
+
 	public function delete($id='',$data=''){
 		$this->db->where('artikel_id',$id);
 		$result = $this->db->delete('m_artikel',$data);
+		return $result;
+	}
+
+	public function update($id='',$data=''){
+		$this->db->where('artikel_id',$id);
+		// $this->db->join('tbl_karyawan_detail kd','k.id_karyawan = kd.id_karyawan');
+		$result = $this->db->update('m_artikel',$data);
 		return $result;
 	}
  }

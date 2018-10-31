@@ -14,26 +14,32 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
               <h3 class="box-title">Tambah Layanan</h3>
             </div>
             
             <!-- form start -->
-            <form role="form">
+            <form role="form" enctype="multipart/form-data" action="<?php echo base_url()."index.php/C_a_layanan/$aksi";?>" method="POST">
               <div class="box-body">
+                <div class="form-group" style="width: 400px">
+                <input type="hidden" name="layanan_id" value="<?php if(!empty($detail->layanan_id)){ echo $detail->layanan_id;} ?>">
+                </div>
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Judul Layanan</label>
+                  <input type="text" class="form-control" name="layanan_judul" value="<?php if(!empty($detail->layanan_judul)){ echo $detail->layanan_judul;} ?>" placeholder=" Judul Layanan ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                </div>
                 <div class="box-body" style="padding: 0px">
                   <label for="exampleInputEmail1">Isi Layanan</label>
-                  <textarea id="editor1" name="editor1" rows="10" cols="80"></textarea>
+                  <textarea id="editor1" name="layanan_deskripsi" rows="10" cols="80"><?php if(!empty($detail->layanan_deskripsi)){ echo $detail->layanan_deskripsi;} ?></textarea>
                 </div>
-            <!-- /.box-header -->
                 <div class="form-group" style="padding-top: 20px">
-                  <label for="exampleInputFile">Unggah Gambar (Layanan)</label>
-                  <input type="file" id="exampleInputFile">
+                  <label for="layanan_foto">Unggah Gambar (Layanan)</label>
+                  <br><?php if(!empty($detail->layanan_foto)){ echo $detail->layanan_foto;} ?>
+                  <input type="file" name="layanan_foto" size="20" value="<?php if(!empty($detail->layanan_foto)){ echo $detail->layanan_foto;} ?>">
                 </div>                
               </div>
-              <!-- /.box-body -->
-
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"><?php echo $ke; ?></button>
               </div>
             </form>
           </div>

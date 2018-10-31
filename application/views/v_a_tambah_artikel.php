@@ -19,24 +19,24 @@
             </div>
             
             <!-- form start -->
-            <form role="form" action="<?php echo base_url()."index.php/C_a_tambah_artikel/create";?>" method="POST" enctype="multipart/form-data">
-            <form role="form" enctype="multipart/form-data" action="<?php echo base_url()."index.php/C_a_tambah_artikel/create";?>" method="POST">
+            <form role="form" enctype="multipart/form-data" action="<?php echo base_url()."index.php/C_a_artikel/$aksi";?>" method="POST">
               <div class="box-body">
                 <div class="form-group" style="width: 400px">
-                <input type="hidden" name="artikel_id">
+                <input type="hidden" name="artikel_id" value="<?php if(!empty($detail->artikel_id)){ echo $detail->artikel_id;} ?>">
                 </div>
                 <div class="form-group" style="width: 400px">
                   <label for="exampleInputEmail1">Judul Artikel</label>
-                  <input type="text" class="form-control" name="artikel_judul" placeholder=" Judul Artikel ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                  <input type="text" class="form-control" name="artikel_judul" value="<?php if(!empty($detail->artikel_judul)){ echo $detail->artikel_judul;} ?>" placeholder=" Judul Artikel ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
                 </div>
                 <div class="box-body" style="padding: 0px">
                   <label for="exampleInputEmail1">Isi Artikel</label>
-                  <textarea id="editor1" name="artikel_isi" rows="10" cols="80"></textarea>
+                  <textarea id="editor1" name="artikel_isi" rows="10" cols="80"><?php if(!empty($detail->artikel_isi)){ echo $detail->artikel_isi;} ?></textarea>
                 </div>
             <!-- /.box-header -->
                 <div class="form-group" style="padding-top: 20px">
                   <label for="artikel_foto">Unggah Gambar (Artikel)</label>
-                  <input type="file" name="artikel_foto" size="20">
+                  <br><?php if(!empty($detail->artikel_foto)){ echo $detail->artikel_foto;} ?>
+                  <input type="file" name="artikel_foto" size="20" value="<?php if(!empty($detail->artikel_foto)){ echo $detail->artikel_foto;} ?>">
                 </div>
                 <div class="form-group">
                   <label>Status</label>
@@ -48,7 +48,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-primary"><?php echo $ke; ?></button>
               </div>
             </form>
           </div>

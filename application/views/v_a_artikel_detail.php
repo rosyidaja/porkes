@@ -32,16 +32,16 @@
                 <?php foreach ($tabel as $key => $value) {?>
                 <tr>
                   <td>
-                   <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $value->artikel_foto;?>" width="100px" style="border:1px solid #c8c7c7;"></td>
+                   <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $value->artikel_foto;?>" width="100px" height="100px" style="border:1px solid #c8c7c7;"></td>
                   <!-- <img src="<?php// echo $value->artikel_foto ?>" class="img-responsive"> -->
-                  <td><?php echo $value->artikel_judul ?></td>
+                  <td style="vertical-align: middle;"><?php echo $value->artikel_judul ?></td>
                   <td><?php echo $value->artikel_isi ?></td>
                   <td align="center" style="vertical-align: middle;"><span class="label label-success">Publish</span></td>
                   <td align="center" style="vertical-align: middle;">
-                    <a href="<?php echo base_url('C_a_artikel_detail/update/'.$value->artikel_id)?>">
+                    <a href="<?php echo base_url('C_a_artikel/update/'.$value->artikel_id)?>">
                       <button type="button" class="btn btn-primary btn-sm" name="edit">Ubah</button>
                     </a>
-                    <a href="<?php echo base_url('C_a_artikel_detail/delete/'.$value->artikel_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->artikel_judul; ?> ? ')"> 
+                    <a href="<?php echo base_url('C_a_artikel/delete/'.$value->artikel_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->artikel_judul; ?> ? ')"> 
                       <button type="button" class="btn btn-danger btn-sm" name="hapus">Hapus</button>
                     </a>
                   </td>

@@ -150,8 +150,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_a_tambah_artikel/add'); ?>"><i class="fa fa-edit"></i>Tambah Artikel</a></li>
-            <li><a href="<?php echo base_url('C_a_artikel_detail/index'); ?>"><i class="fa fa-list"></i>Daftar Artikel</a></li>
+            <li><a href="<?php echo base_url('C_a_artikel/add'); ?>"><i class="fa fa-edit"></i>Tambah Artikel</a></li>
+            <li><a href="<?php echo base_url('C_a_artikel/detail'); ?>"><i class="fa fa-list"></i>Daftar Artikel</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -163,8 +163,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_a_tambah_layanan/index'); ?>"><i class="fa fa-edit"></i>Tambah Layanan</a></li>
-            <li><a href="<?php echo base_url('C_a_layanan_detail/index'); ?>"><i class="fa fa-list"></i>Daftar Layanan</a></li>
+            <li><a href="<?php echo base_url('C_a_layanan/add'); ?>"><i class="fa fa-edit"></i>Tambah Layanan</a></li>
+            <li><a href="<?php echo base_url('C_a_layanan/detail'); ?>"><i class="fa fa-list"></i>Daftar Layanan</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -176,8 +176,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_a_tambah_faskes/index'); ?>"><i class="fa fa-edit"></i>Tambah Faskes</a></li>
-            <li><a href="<?php echo base_url('C_a_faskes_detail/index'); ?>"><i class="fa fa-list"></i>Daftar Faskes</a></li>
+            <li><a href="<?php echo base_url('C_a_faskes/add'); ?>"><i class="fa fa-edit"></i>Tambah Faskes</a></li>
+            <li><a href="<?php echo base_url('C_a_faskes/detail'); ?>"><i class="fa fa-list"></i>Daftar Faskes</a></li>
           </ul>
         </li>
         <li class="treeview">
