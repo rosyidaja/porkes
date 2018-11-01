@@ -7,60 +7,17 @@
       </div>
     </div>
     <div class="row">
+      <?php foreach ($tabel1 as $key => $value) {?>
       <div class="col-md-4 col-sm-4">
         <div class="service-info" align="center">
-            <img width="100px;" class="img-responsive" src="<?php echo base_url('assets/icons/umum.png');?>">
+            <img src="<?php echo base_url();?>assets/upload/layanan/<?php echo $value->layanan_foto;?>" class="img-responsive" style="height: 150px; width: 150px;">
           <div class="icon-info">
-            <h4>Dokter</h4>
-            <p>Layanan Direktori dokter berisi informasi dokter yang meliputi lokasi, biografi, jadwal praktek, dan biaya pelayanan.</p>
+            <h4><?php echo $value->layanan_judul ?></h4>
+            <p><?php echo $value->layanan_deskripsi ?></p>
           </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="service-info" align="center">
-            <img width="100px;" class="img-responsive" src="https://medismap.com/theme/global/images/service/b.png">
-          <div class="icon-info">
-            <h4>Fasilitas Kesehatan</h4>
-            <p>Layanan direktori fasilitas kesehatan yang berisi info dari pusat kesehatan mulai dari jumlah poli, jumlah dokter, asuransi, dsb.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="service-info" align="center">
-            <img width="100px;" class="img-responsive" src="<?php echo base_url('assets/icons/umum.png');?>">
-          <div class="icon-info">
-            <h4>24 Hour Support</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="service-info" align="center">
-            <img width="100px;" class="img-responsive" src="<?php echo base_url('assets/icons/umum.png');?>">
-          <div class="icon-info">
-            <h4>24 Hour Support</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="service-info" align="center">
-            <img width="100px;" class="img-responsive" src="<?php echo base_url('assets/icons/umum.png');?>">
-          <div class="icon-info">
-            <h4>24 Hour Support</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="service-info" align="center">
-            <img width="100px;" class="img-responsive" src="<?php echo base_url('assets/icons/umum.png');?>">
-          <div class="icon-info">
-            <h4>24 Hour Support</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
+      <?php }?>
     </div>
   </div>
 </section>

@@ -18,8 +18,15 @@ class C_layanan extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_layanan','a');
+	}
+
 	public function index()
 	{
+		$data['tabel'] = $this->a->tampildata();
 		$data['head_top_resource'] = 'v_head_top_resource';
 		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';
