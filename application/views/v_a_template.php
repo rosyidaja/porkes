@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css');?>">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url('bower_components/Ionicons/css/ionicons.min.css');?>">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo base_url('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css');?>">
   <!-- jvectormap -->
@@ -23,6 +25,7 @@
   <link rel="stylesheet" href="<?php echo base_url('dist/css/skins/_all-skins.min.css');?>">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css');?>">
+  
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -243,6 +246,7 @@
 <script src="<?php echo base_url('bower_components/jquery/dist/jquery.min.js');?>"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url('bower_components/bootstrap/dist/js/bootstrap.min.js');?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url('bower_components/fastclick/lib/fastclick.js');?>"></script>
 <!-- AdminLTE App -->
@@ -272,6 +276,8 @@
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js');?>"></script>
 
+
+
 <!-- page script -->
 <script>
   $(function () {
@@ -298,5 +304,107 @@
     $('.textarea').wysihtml5()
   })
 </script>
+<?php 
+if($this->uri->segment(1) == 'C_a_faskes' && ($this->uri->segment(2) == 'add' || $this->uri->segment(2) == 'update')){
+?>
+<script>
+  $(document).ready(function(){
+    <?php echo "var baseUrl = '". base_url() . "';"; ?>
+    <?php echo "var aksi = '". $aksi . "';"; ?>
+    var select2 = {
+        ajax : {
+            data : function (params) {
+                return {
+                    search: params.term // search term
+                }
+            },
+            processResults: function (data, params) {
+                return { results: data };
+            }
+        }
+    }
+
+    var kota_select = {  
+        ajax: {
+            url: baseUrl + "C_public_function/getKota" ,
+            dataType: 'json',
+            delay: 0,
+            data: select2.ajax.data,
+            processResults: select2.ajax.processResults,
+            cache: true
+        }
+    };
+    
+    var provinsi_select = {  
+        ajax: {
+            url: baseUrl + "C_public_function/getProvinsi" ,
+            dataType: 'json',
+            delay: 0,
+            data: select2.ajax.data,
+            processResults: select2.ajax.processResults,
+            cache: true
+        }
+    };   
+    
+    var kecamatan_select = {  
+        ajax: {
+            url: baseUrl + "C_public_function/getKecamatan" ,
+            dataType: 'json',
+            delay: 0,
+            data: select2.ajax.data,
+            processResults: select2.ajax.processResults,
+            cache: true
+        }
+    };
+    
+    var kelurahan_select = {  
+        ajax: {
+            url: baseUrl + "C_public_function/getKelurahan" ,
+            dataType: 'json',
+            delay: 0,
+            data: select2.ajax.data,
+            processResults: select2.ajax.processResults,
+            cache: true
+        }
+    };
+    
+
+    if(aksi == 'aksi_update'){
+      <?php echo "var propinsi_id = '". $detail->faskes_provinsi_id . "';"; ?>
+      <?php echo "var propinsi_nama = '". $detail->propinsi_nama . "';"; ?>
+      <?php echo "var kota_id = '". $detail->faskes_kota_id . "';"; ?>
+      <?php echo "var kota_nama = '". $detail->kota_nama . "';"; ?>
+      <?php echo "var kelurahan_id = '". $detail->faskes_kelurahan_id . "';"; ?>
+      <?php echo "var kelurahan_nama = '". $detail->kelurahan_nama . "';"; ?>
+      <?php echo "var kecamatan_id = '". $detail->faskes_kecamatan_id . "';"; ?>
+      <?php echo "var kecamatan_nama = '". $detail->kecamatan_nama . "';"; ?>
+      
+      $("select[name=provinsi]").html('<option value="'+propinsi_id+'">'+propinsi_nama+'</option>');
+      $("select[name=provinsi]").select2(provinsi_select);
+
+      $("select[name=kelurahan]").html('<option value="'+kelurahan_id+'">'+kelurahan_nama+'</option>');
+      $("select[name=kelurahan]").select2(kelurahan_select);
+
+       $("select[name=kecamatan]").html('<option value="'+kecamatan_id+'">'+kecamatan_nama+'</option>');
+       $("select[name=kecamatan]").select2(kecamatan_select);
+
+        $("select[name=kota]").html('<option value="'+kota_id+'">'+kota_nama+'</option>');
+        $("select[name=kota]").select2(kota_select);
+    }else{
+      $("select[name=provinsi]").html('<option value="">Pilih Provinsi</option>');
+      $("select[name=provinsi]").select2(provinsi_select);
+
+      $("select[name=kelurahan]").html('<option value="">Pilih Kelurahan</option>');
+      $("select[name=kelurahan]").select2(kelurahan_select);
+
+       $("select[name=kecamatan]").html('<option value="">Pilih Kecamatan</option>');
+       $("select[name=kecamatan]").select2(kecamatan_select);
+
+        $("select[name=kota]").html('<option value="">Pilih Kota</option>');
+        $("select[name=kota]").select2(kota_select);
+    }
+});
+</script>
+<?php } ?>
 </body>
 </html>

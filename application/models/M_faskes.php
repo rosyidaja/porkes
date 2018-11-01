@@ -14,13 +14,75 @@ class M_faskes extends CI_Model{
 	}
 
 	function tampildata(){
-		$result = $this->db->get('m_faskes');
+		$sql = " SELECT
+				faskes_id,
+				faskes_nama,
+				faskes_alamat,
+				faskes_provinsi_id,
+				propinsi_nama,
+				faskes_kota_id,
+				kota_nama,
+				faskes_kelurahan_id,
+				kelurahan_nama,
+				faskes_kecamatan_id,
+				kecamatan_nama,
+				faskes_lokasi,
+				faskes_longitude,
+				faskes_latitude,
+				faskes_foto,
+				faskes_background,
+				faskes_status,
+				faskes_aktif
+			FROM
+				m_faskes
+				LEFT JOIN m_propinsi ON ( faskes_provinsi_id = propinsi_id )
+				LEFT JOIN m_kota ON ( faskes_kota_id = kota_id )
+				LEFT JOIN m_kelurahan ON ( faskes_kelurahan_id = kelurahan_id )
+				LEFT JOIN m_kecamatan ON ( faskes_kecamatan_id = kecamatan_id )
+				where faskes_aktif = 'y' ";
+		$result = $this->db->query($sql);
 		return $result->result();
+	}
+
+	function tampildataDetail($id=''){
+		$sql = " SELECT
+				faskes_id,
+				faskes_nama,
+				faskes_alamat,
+				faskes_provinsi_id,
+				propinsi_nama,
+				faskes_kota_id,
+				kota_nama,
+				faskes_kelurahan_id,
+				kelurahan_nama,
+				faskes_kecamatan_id,
+				kecamatan_nama,
+				faskes_lokasi,
+				faskes_longitude,
+				faskes_latitude,
+				faskes_foto,
+				faskes_background
+			FROM
+				m_faskes
+				LEFT JOIN m_propinsi ON ( faskes_provinsi_id = propinsi_id )
+				LEFT JOIN m_kota ON ( faskes_kota_id = kota_id )
+				LEFT JOIN m_kelurahan ON ( faskes_kelurahan_id = kelurahan_id )
+				LEFT JOIN m_kecamatan ON ( faskes_kecamatan_id = kecamatan_id )
+				where faskes_id = ".$id;
+		$result = $this->db->query($sql);
+		return $result->row();
 	}
 
 	public function delete($id='',$data=''){
 		$this->db->where('faskes_id',$id);
 		$result = $this->db->delete('m_faskes',$data);
+		return $result;
+	}
+
+	public function update($id='',$data=''){
+		$this->db->where('faskes_id',$id);
+		// $this->db->join('tbl_karyawan_detail kd','k.id_karyawan = kd.id_karyawan');
+		$result = $this->db->update('m_faskes',$data);
 		return $result;
 	}
  }
