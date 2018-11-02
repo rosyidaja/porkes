@@ -22,6 +22,14 @@ class C_a_faskes extends CI_Controller {
         $this->load->view('v_a_template',$data);
 	}
 
+	public function content($id=""){
+		if($id!= ""){
+			$data['content'] = 'v_a_content_faskes';
+			$this->load->view('v_a_template',$data);
+		}else{
+			redirect(base_url('C_a_faskes/detail'));
+		}
+	}
 	public function add(){
 		$data['aksi'] = 'create';
 		 $data['ke'] = 'Tambah Data';
