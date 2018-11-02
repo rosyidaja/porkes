@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Login Admin Porkes</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -37,9 +37,10 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: <?php echo base_url('assets/img/bg-01.jpg');?>">
+				<div class="login100-form-title" style="background-image: url(<?php echo base_url('assets/img/om.jpeg');?>);">
+					<!-- <img src="<?php echo base_url('assets/img/om.jpeg');?>" height="150" > -->
 					<span class="login100-form-title-1">
-						Sign In
+						Masuk
 					</span>
 				</div>
 

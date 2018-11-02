@@ -6,6 +6,8 @@
   <title>Admin Porkes | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/icons/favicon.ico');?>"/>
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?php echo base_url('bower_components/bootstrap/dist/css/bootstrap.min.css');?>">
   <!-- Font Awesome -->
@@ -65,26 +67,10 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="<?php echo base_url('assets/img/om.jpeg');?>" class="img-circle" alt="User Image">
-
                 <p>
                   Tomi Mishbahul
                   <small>Administrator</small>
                 </p>
-              </li>
-              <!-- Menu Body -->
-              <!-- <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div> -->
-                <!-- /.row -->
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -92,7 +78,7 @@
                   <a href="#" class="btn btn-default btn-flat" disabled>Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url('C_login/logout');?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('C_login/logout');?>" class="btn btn-default btn-flat" onclick="return confirm('Anda yakin akan keluar dari sistem ? ')">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -121,16 +107,16 @@
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
+            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
