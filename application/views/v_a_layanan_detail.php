@@ -31,7 +31,7 @@
                 <?php foreach ($tabel as $key => $value) {?>
                 <tr>
                   <td>
-                   <img src="<?php echo base_url();?>assets/upload/layanan/<?php echo $value->faskes_foto;?>" width="100px" height="100px" style="border:1px solid #c8c7c7;"></td>
+                   <img src="<?php echo base_url();?>assets/upload/layanan/<?php echo $value->layanan_foto;?>" width="100px" height="100px" style="border:1px solid #c8c7c7;"></td>
                   <td style="vertical-align: middle;"><?php echo $value->layanan_judul ?></td>
                   <td><?php echo $value->layanan_deskripsi ?></td>
                   <td align="center" style="vertical-align: middle;">
