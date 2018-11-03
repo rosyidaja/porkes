@@ -72,10 +72,15 @@
                     </td>
                     <td align="center" style="vertical-align: middle;"><span class="label label-success"><?php echo $value->faskes_status;?></span></td>
                     <td align="center" style="vertical-align: middle;">
-                    <a href="<?php echo base_url('C_a_faskes/update/'.$value->faskes_id)?>">
-                      <button type="button" class="btn btn-primary btn-sm" name="edit">Ubah</button>
+                    <a href="<?php echo base_url('C_a_faskes/content/'.$value->faskes_id)?>">
+                      <i class="glyphicon glyphicon-search text-success cursor btn-edit"></i>
                     </a>
-                    <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                    <a href="<?php echo base_url('C_a_faskes/update/'.$value->faskes_id)?>">
+                      <i class="fa fa-pencil text-success cursor btn-edit"></i>
+                    </a>
+                    <a href="<?php echo base_url('C_a_faskes/delete/'.$value->faskes_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->faskes_nama; ?> ? ')"> 
+                        <i class="fa fa-trash text-danger cursor btn-delete"></i>
+                    </a>
                     </td>
                   </tr>
                 <?php }?>
