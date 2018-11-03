@@ -25,6 +25,7 @@ class C_a_faskes extends CI_Controller {
 	public function content($id=""){
 		if($id!= ""){
 			$data['content'] = 'v_a_content_faskes';
+			$data['config_page'] = 'config/faskes_content';
 			$this->load->view('v_a_template',$data);
 		}else{
 			redirect(base_url('C_a_faskes/detail'));
@@ -174,5 +175,15 @@ class C_a_faskes extends CI_Controller {
 					$this->session->set_flashdata('pesan','Data Gagal Diperbarui !');
 				}
 				redirect(base_url('C_a_faskes/detail'));
+			}
+
+			public function task(){
+				if($_FILES['foto_modal']['tmp_name']!=""){
+					echo "foto";
+					echo $this->input->post('nama');
+					
+				}else{
+					echo "no foto";
+				}
 			}
 }
