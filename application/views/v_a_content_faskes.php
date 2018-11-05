@@ -15,7 +15,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Detail Dokter</h3>
-              <button style="float:right;"> Tambah </button>
+              <button style="float:right;" class="btn-show" data-value="dokter"> Tambah </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -41,11 +41,11 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Detail Poli</h3>
-              <button style="float:right;"> Tambah </button>
+              <button style="float:right;" class="btn-show" data-value="poli"> Tambah </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="tbl_" class="table table-bordered table-striped">
+              <table id="tbl_poli" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th width="100" style="text-align: center;">Kode</th>
@@ -67,6 +67,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Detail Layanan</h3>
+              <button style="float:right;" class="btn-show" data-value="layanan"> Tambah </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -90,19 +91,10 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Galeri</h3>
+              <button style="float:right;" class="btn-show" data-value="galeri"> Tambah </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="tbl_galeri" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th width="100" style="text-align: center;">Kode</th>
-                  <th style="text-align: center;">Nama</th>
-                  <th width="100px" style="text-align: center;">Aksi</th>
-                </tr>
-                </thead>
-                <tbody>
-              </table>
             </div>
             <!-- /.box-body -->
           </div>
@@ -113,6 +105,37 @@
 
       </div>
       <!-- /.row -->
+
+        <!-- Modal -->
+        <div id="modal-contentFaskes" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h3> Form Tambah </h3>
+                    </div>
+                    <div class="modal-body">
+                          <!-- form start -->
+                        <form role="form" id="form-modal" method="POST" >
+                        <div class="box-body">
+                            <div class="form-group" style="width: 95%">
+                              <input type="hidden" name="param" >
+                              <input type="hidden" name="id" >
+                            </div>
+                            <div id="content-isi"></div>    
+                        </div>
+                          <div class="box-footer" style="float:right;">
+                            <button id="btn-cancel" class="btn btn-default">Tutup</button>
+                            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- /.content -->
   </div>

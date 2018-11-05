@@ -265,6 +265,7 @@
 
 
 <!-- page script -->
+
 <script>
   $(function () {
     $('#example1').DataTable()
@@ -284,7 +285,7 @@
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     if($('textarea#editor1').html() != undefined) {
-      CKEDITOR.replace('editor1')
+      CKEDITOR.replace('editor1');
     }
     // //bootstrap WYSIHTML5 - text editor
     $('.textarea').wysihtml5();
@@ -452,6 +453,8 @@ if($this->uri->segment(1) == 'C_a_faskes' &&  $this->uri->segment(2) == 'update'
   });
   </script>
 <?php 
+  }else if($this->uri->segment(1) == 'C_a_faskes' &&  $this->uri->segment(2) == 'content'){
+    $this->load->view($config_page);
   } 
 ?>
 </body>
