@@ -1,4 +1,4 @@
-<section id="service" class="section-padding">
+<section id="layanan" class="section-padding">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-4">

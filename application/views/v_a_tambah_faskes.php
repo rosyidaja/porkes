@@ -21,19 +21,19 @@
             <!-- form start -->
             <form role="form" enctype="multipart/form-data" action="<?php echo base_url()."index.php/C_a_faskes/$aksi";?>" method="POST">
               <div class="box-body">
-                <div class="form-group" style="width: 400px">
-                  <input type="hidden" name="faskes_id" value="<?php if(!empty($detail->faskes_id)){ echo $detail->faskes_id;} ?>">
-                </div>
-                <div class="form-group" style="width: 400px">
-                  <label for="exampleInputEmail1">Nama Faskes</label>
-                  <input type="text" class="form-control" required="" name="nama_faskes" value="<?php if(!empty($detail->faskes_nama)){ echo $detail->faskes_nama;} ?>"  placeholder=" Nama Faskes ...">
-                </div>
-                <div class="form-group" style="width: 400px">
-                  <label for="exampleInputEmail1">Alamat Faskes</label>
-                  <input type="text" class="form-control" required="" name="alamat_faskes" value="<?php if(!empty($detail->faskes_alamat)){ echo $detail->faskes_alamat;} ?>" placeholder=" Alamat Faskes ...">
+                <div class="form-group">
+                  <input type="hidden" name="faskes_id" value="<?php if(!empty($detail->faskes_id)){ echo $detail->faskes_id;} ?>"  style="width: 400px">
                 </div>
                 <div class="form-group">
-                  <label>Provinsi</label>
+                  <label for="exampleInputEmail1">Nama Faskes</label>
+                  <input type="text" class="form-control" required="" name="nama_faskes" value="<?php if(!empty($detail->faskes_nama)){ echo $detail->faskes_nama;} ?>"  placeholder=" Nama Faskes ..."  style="width: 400px">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Alamat Faskes</label>
+                  <input type="text" class="form-control" required="" name="alamat_faskes" value="<?php if(!empty($detail->faskes_alamat)){ echo $detail->faskes_alamat;} ?>" placeholder=" Alamat Faskes ..." style="width: 400px">
+                </div>
+                <div class="form-group">
+                  <label style="width: 100px;">Provinsi</label>
                     <select class="form-control" style="width: 200px;" name="provinsi">
                     <?php if(!empty($detail->faskes_provinsi_id)){
                        echo '<option value="'.$detail->faskes_provinsi_id.'">'.$detail->propinsi_nama.'</option>';
@@ -41,17 +41,17 @@
                     </select>
                 </div>
                 <div class="form-group">
-                  <label>Kota</label>
+                  <label style="width: 100px;">Kota</label>
                     <select class="form-control" name="kota" style="width: 200px;">
                     </select>
                 </div>
                 <div class="form-group">
-                  <label>Kecamatan</label>
+                  <label style="width: 100px;">Kecamatan</label>
                     <select class="form-control" name="kecamatan" style="width: 200px;">
                     </select>
                 </div>
                 <div class="form-group">
-                  <label>Kelurahan</label>
+                  <label style="width: 100px;">Kelurahan</label>
                     <select class="form-control" style="width: 200px;" name="kelurahan">
                     </select>
                 </div>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="form-group">
                   <label>Status</label>
-                    <select class="form-control" name="faskes_status" style="width: 110px;">
+                    <select class="form-control" name="faskes_status" style="width: 160px;">
                     <?php 
                     if(!empty($detail->faskes_status)){ 
                         if($detail->faskes_status == 'Belum Terverifikasi'){ ?>
