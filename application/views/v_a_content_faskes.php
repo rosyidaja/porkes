@@ -36,7 +36,7 @@
                     <td style="padding-left: 10px"> <?php echo $value->faskesdetdokter_nama;?></td>
                     <td style="padding-left: 10px"> <?php echo $value->faskesdetdokter_telfon;?></td>
                     <td align="center" style="vertical-align: middle;">
-                    <i class="fa fa-pencil text-success cursor btn-edit" data-id="<?php echo $value->faskesdetdokter_id; ?>" id="btn_edit"></i>
+                    <i class="fa fa-pencil text-success cursor btn-edit" data-param="dokter" data-id="<?php echo $value->faskesdetdokter_id; ?>"></i>
                     
                     <a href="<?php echo base_url('C_a_faskes/delete/'.$value->faskesdetdokter_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->faskesdetdokter_nama; ?> ? ')"> 
                         <i class="fa fa-trash text-danger cursor btn-delete"></i>

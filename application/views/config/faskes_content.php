@@ -1,6 +1,35 @@
 <script>
   $(function () {
     <?php echo "var baseUrl = '". base_url() . "';"; ?>
+    var form_kode = '';
+    form_kode += '<div class="form-group" style="width: 95%">';
+    form_kode += '     <label for="kode">Kode</label>';
+    form_kode += '     <input type="text" class="form-control" name="kode"  placeholder=" Kode .." required >';
+    form_kode += '</div>';
+
+    var form_nama = '';
+    form_nama += '<div class="form-group" style="width: 95%">';
+    form_nama += '  <label for="nama">Nama</label>';
+    form_nama += '  <input type="text" class="form-control" id="nama" name="nama"  placeholder=" Nama .." required >';
+    form_nama += '</div>';
+
+    var form_telfon = '';
+    form_telfon += '<div class="form-group" style="width: 95%">';
+    form_telfon += '    <label for="telfon">Telfon</label>';
+    form_telfon += '    <input type="text" class="form-control" name="telfon"  placeholder=" Telfon .." required >';
+    form_telfon += '</div>';
+
+    var form_layanan = '';
+    form_layanan += '<div class="form-group" style="width: 95%">';
+    form_layanan += '   <label for="layanan">Layanan</label>';
+    form_layanan += '   <input type="text" class="form-control" name="layanan"  placeholder=" Layanan .." required >';
+    form_layanan += '</div>';
+
+    var form_foto = '';
+    form_foto += '<div class="form-group" style="padding-top: 20px">';
+    form_foto += '  <label for="foto">Unggah Gambar (Layanan)</label>';
+    form_foto += '  <input type="file" name="foto_modal"  size="20" >';
+    form_foto += '</div>';
     $('#tbl_dokter').DataTable();
     $('#tbl_poli').DataTable();
     $('#tbl_layanan').DataTable({
@@ -16,40 +45,60 @@
         $("#modal-contentFaskes").modal("hide");
     });
 
+    $(".btn-edit").click(function(){
+        $("#content-isi").html('');
+        var content_isi = '';
+        var param = $(this).attr('data-param');
+        var id = $(this).attr('data-id');
+        $("input[name=param]").val(param);
+        $("input[name=id]").val(id);
+       
+
+
+        if(param == 'dokter'){
+            content_isi += form_nama;
+            content_isi += form_telfon;
+            content_isi += form_foto;
+        }else if(param == 'poli'){
+            content_isi += form_kode;
+            content_isi += form_nama;
+
+        }else if(param == 'layanan'){
+            content_isi += form_layanan;
+        }else if(param == 'galeri'){
+            content_isi += form_foto;
+        }
+        $("#content-isi").append(content_isi);
+        $.ajax({
+            url : baseUrl + "C_a_faskes/getDetail",
+            method:'POST',  // what to expect back from the PHP script, if anything
+            data:  { id: id, param: param },
+            success : function(response){
+                var res = JSON.parse(response);
+                console.log(res.faskesdetdokter_id);
+                if(param == 'dokter'){
+                    $("input[name=nama]").val(res.faskesdetdokter_nama);
+                    $("input[name=telfon]").val(res.faskesdetdokter_telfon);
+                }else if(param == 'poli'){
+                    content_isi += form_kode;
+                    content_isi += form_nama;
+
+                }else if(param == 'layanan'){
+                    content_isi += form_layanan;
+                }else if(param == 'galeri'){
+                    content_isi += form_foto;
+                }
+            }
+        });
+        $("#modal-contentFaskes").modal("show");
+    });
     $(".btn-show").click(function(){
         $("#content-isi").html('');
+        var content_isi = '';
         var param = $(this).attr('data-value');
         $("input[name=param]").val(param);
-        var content_isi = '';
-        var form_kode = '';
-        form_kode += '<div class="form-group" style="width: 95%">';
-        form_kode += '     <label for="kode">Kode</label>';
-        form_kode += '     <input type="text" class="form-control" name="kode"  placeholder=" Kode .." required >';
-        form_kode += '</div>';
-
-        var form_nama = '';
-        form_nama += '<div class="form-group" style="width: 95%">';
-        form_nama += '  <label for="nama">Nama</label>';
-        form_nama += '  <input type="text" class="form-control" name="nama"  placeholder=" Nama .." required >';
-        form_nama += '</div>';
-
-        var form_telfon = '';
-        form_telfon += '<div class="form-group" style="width: 95%">';
-        form_telfon += '    <label for="telfon">Telfon</label>';
-        form_telfon += '    <input type="text" class="form-control" name="telfon"  placeholder=" Telfon .." required >';
-        form_telfon += '</div>';
-
-        var form_layanan = '';
-        form_layanan += '<div class="form-group" style="width: 95%">';
-        form_layanan += '   <label for="layanan">Layanan</label>';
-        form_layanan += '   <input type="text" class="form-control" name="layanan"  placeholder=" Layanan .." required >';
-        form_layanan += '</div>';
-
-        var form_foto = '';
-        form_foto += '<div class="form-group" style="padding-top: 20px">';
-        form_foto += '  <label for="foto">Unggah Gambar (Layanan)</label>';
-        form_foto += '  <input type="file" name="foto_modal"  size="20" >';
-        form_foto += '</div>';
+        $("input[name=id]").val(0);
+       
 
 
         if(param == 'dokter'){

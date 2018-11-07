@@ -181,6 +181,7 @@ class C_a_faskes extends CI_Controller {
 
 			public function task(){
 				$param = $this->input->post('param');
+				$id = $this->input->post('id');
 				$nama = $this->input->post('nama');
 				$telfon = $this->input->post('telfon');
 				$kode = $this->input->post('kode');
@@ -210,7 +211,12 @@ class C_a_faskes extends CI_Controller {
 							$data['faskesdetdokter_foto'] = $foto_modal;
 						}
 					}
-					$result = $this->a->faskes_det($data,'m_faskesdet_dokter');
+					if($id != 0){
+						$result = $this->a->faskes_det_updt($id,$data,'m_faskesdet_dokter','faskesdetdokter_id');
+					}else{
+						$result = $this->a->faskes_det($data,'m_faskesdet_dokter');
+					}
+					
 				}else if($param == 'poli'){
 					$data = array(
 						"faskesdetpoli_nama" => $nama,
@@ -256,5 +262,13 @@ class C_a_faskes extends CI_Controller {
 					echo $result;
 				}
 			
-			
+			function getDetail(){
+				$id = $this->input->post("id");
+				$param = $this->input->post("param");
+				if($param == 'dokter'){
+					$result = $this->a->getFaskesDet($id,'m_faskesdet_dokter');
+				}
+				
+				echo json_encode($result);
+			}
 }
