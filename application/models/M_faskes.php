@@ -85,4 +85,15 @@ class M_faskes extends CI_Model{
 		$result = $this->db->update('m_faskes',$data);
 		return $result;
 	}
+
+	public function faskes_det($data='',$tabel){
+		$this->db->insert($tabel,$data);
+		return $this->db->insert_id();//mengambil id yng terakhir 
+	}
+
+	function tampilDokter($id){
+		$this->db->where('faskesdetdokter_faskes_id',$id);
+		$result = $this->db->get('m_faskesdet_dokter');
+		return $result->result();
+	}
  }

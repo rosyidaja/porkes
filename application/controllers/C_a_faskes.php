@@ -24,6 +24,8 @@ class C_a_faskes extends CI_Controller {
 
 	public function content($id=""){
 		if($id!= ""){
+			$data['faskes_id'] = $id;
+			$data['tabel_dokter'] = $this->a->tampilDokter($id);
 			$data['content'] = 'v_a_content_faskes';
 			$data['config_page'] = 'config/faskes_content';
 			$this->load->view('v_a_template',$data);
@@ -178,12 +180,81 @@ class C_a_faskes extends CI_Controller {
 			}
 
 			public function task(){
-				if($_FILES['foto_modal']['tmp_name']!=""){
-					echo "foto";
-					echo $this->input->post('nama');
+				$param = $this->input->post('param');
+				$nama = $this->input->post('nama');
+				$telfon = $this->input->post('telfon');
+				$kode = $this->input->post('kode');
+				$layanan = $this->input->post('layanan');
+				$faskes_id = $this->input->post('faskes_id');
+				
+				if($param == 'dokter'){
+					$data = array(
+						"faskesdetdokter_nama" => $nama,
+						"faskesdetdokter_telfon" => $telfon,
+						"faskesdetdokter_faskes_id" => $faskes_id
+					);
+					/*Proses Upload */
+					/*Config file untuk upload */
 					
-				}else{
-					echo "no foto";
+					$config['upload_path']          = './assets/upload/dokter/';
+					$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
+			
+					$this->upload->initialize($config);
+					
+					if($_FILES["foto_modal"]["name"] != ''){
+						if (!$this->upload->do_upload('foto_modal')){
+							$error = array('error' => $this->upload->display_errors());
+						}else{
+							/*Ketika Sukses Upload mengambil nama file*/
+							$foto_modal = $this->upload->data('file_name');
+							$data['faskesdetdokter_foto'] = $foto_modal;
+						}
+					}
+					$result = $this->a->faskes_det($data,'m_faskesdet_dokter');
+				}else if($param == 'poli'){
+					$data = array(
+						"faskesdetpoli_nama" => $nama,
+						"faskesdetpoli_kode" => $kode,
+						"faskesdetpoli_faskes_id" => $faskes_id
+					);
+					$result = $this->a->faskes_det($data,'m_faskesdet_poli');
+				}else if($param == 'layanan'){
+					$data = array(
+						"faskesdetlayanan_nama" => $layanan,
+						"faskesdetlayanan_faskes_id" => $faskes_id
+					);
+					$result = $this->a->faskes_det($data,'m_faskesdet_layanan');
+				}else if($param == 'galeri'){
+					if($_FILES["foto_modal"]["name"] != ''){
+						/*Proses Upload */
+						/*Config file untuk upload */
+						$data = array(
+							"faskesdetgaleri_faskes_id" => $faskes_id
+						);
+						$config['upload_path']          = './assets/upload/galeri/';
+						$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
+				
+						$this->upload->initialize($config);
+						if (!$this->upload->do_upload('foto_modal')){
+							$error = array('error' => $this->upload->display_errors());
+						}else{
+							/*Ketika Sukses Upload mengambil nama file*/
+							$foto_modal = $this->upload->data('file_name');
+							$data['faskesdetgaleri_foto'] = $foto_modal;
+						}
+						$result = $this->a->faskes_det($data,'m_faskesdet_galeri');
+					}else{
+						$result = 0;
+					}
 				}
-			}
+				
+				if ($result > 0) {
+						$this->session->set_flashdata('pesan','Data Berhasil Diperbarui !');
+					}else{
+						$this->session->set_flashdata('pesan','Data Gagal Diperbarui !');
+					}
+					echo $result;
+				}
+			
+			
 }

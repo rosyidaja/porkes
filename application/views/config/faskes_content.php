@@ -19,7 +19,7 @@
     $(".btn-show").click(function(){
         $("#content-isi").html('');
         var param = $(this).attr('data-value');
-        $("select[name=param]").val(param);
+        $("input[name=param]").val(param);
         var content_isi = '';
         var form_kode = '';
         form_kode += '<div class="form-group" style="width: 95%">';
@@ -62,7 +62,7 @@
             content_isi += form_nama;
 
         }else if(param == 'layanan'){
-            content_isi += form_nama;
+            content_isi += form_layanan;
         }else if(param == 'galeri'){
             content_isi += form_foto;
         }
@@ -76,18 +76,22 @@
         //function untuk mengambil value dari ckeditor
         //var data = CKEDITOR.instances.editor1.getData();
         var form = $(this);
-        
         var form_data = new FormData(form[0]);
-        console.log(form_data);
+        var faskes_id = $("input[name=faskes_id]").val();
         $.ajax({
-            url : baseUrl + "/C_a_faskes/task",
-            dataType: 'POST',  // what to expect back from the PHP script, if anything
+            url : baseUrl + "C_a_faskes/task",
+            method:'POST',  // what to expect back from the PHP script, if anything
             cache: false,
             contentType: false,
             processData: false,
             data: form_data,
             success : function(response){
-                
+                var res = response;
+                if(res > 0){
+                 alert("Sukses Menambah Data !");   
+                 $("#modal-contentFaskes").modal("hide");
+                 window.location = baseUrl + "/C_a_faskes/content/"+faskes_id;
+                }
             }
         });
     });

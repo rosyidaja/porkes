@@ -3,6 +3,7 @@
       <h1>
         Detail Faskes [$nama Fakses]
       </h1>
+      <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-pie-chart"></i>Faskes</a></li>
         <li class="active">Detail Faskes</li>
@@ -29,6 +30,21 @@
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($tabel_dokter as $key => $value) {?>
+                  <tr>
+                    <td><img src="<?php echo base_url();?>assets/upload/dokter/<?php echo $value->faskesdetdokter_foto;?>" class="img-responsive"></td>
+                    <td style="padding-left: 10px"> <?php echo $value->faskesdetdokter_nama;?></td>
+                    <td style="padding-left: 10px"> <?php echo $value->faskesdetdokter_telfon;?></td>
+                    <td align="center" style="vertical-align: middle;">
+                    <i class="fa fa-pencil text-success cursor btn-edit" data-id="<?php echo $value->faskesdetdokter_id; ?>" id="btn_edit"></i>
+                    
+                    <a href="<?php echo base_url('C_a_faskes/delete/'.$value->faskesdetdokter_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->faskesdetdokter_nama; ?> ? ')"> 
+                        <i class="fa fa-trash text-danger cursor btn-delete"></i>
+                    </a>
+                    </td>
+                  </tr>
+                <?php } ?>
+                </tbody>
               </table>
             </div>
             <!-- /.box-body -->
@@ -121,6 +137,7 @@
                             <div class="form-group" style="width: 95%">
                               <input type="hidden" name="param" >
                               <input type="hidden" name="id" >
+                              <input type="hidden" name="faskes_id" value="<?php echo $faskes_id; ?>" >
                             </div>
                             <div id="content-isi"></div>    
                         </div>
