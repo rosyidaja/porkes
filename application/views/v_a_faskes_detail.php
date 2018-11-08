@@ -4,8 +4,7 @@
         Daftar Fasilitas Kesehatan
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-pie-chart"></i>Faskes</a></li>
-        <li class="active">Daftar Faskes</li>
+        <li><a href="<?php echo base_url();?>C_a_faskes/detail"><i class="fa fa-pie-chart"></i>Faskes</a></li>
       </ol>
     </section>
     <!-- Main content -->

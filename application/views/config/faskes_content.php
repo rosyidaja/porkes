@@ -41,10 +41,48 @@
       'autoWidth'   : false
     });
 
-    $("#btn-cancel").click(function(){
-        $("#modal-contentFaskes").modal("hide");
+    $(".btn-delete").click(function(){
+        var val = confirm('Anda Yakin Ingin Menghapus ? ');
+        if(val == true){
+            var param = $(this).attr('data-param');
+            var id = $(this).attr('data-id');
+            var faskes_id = $("input[name=faskes_id]").val();
+            $.ajax({
+                url : baseUrl + "C_a_faskes/delete_det",
+                method:'POST',  // what to expect back from the PHP script, if anything
+                data: { id: id, param: param },
+                success : function(response){
+                    var res = response;
+                    if(res > 0){
+                        window.location = baseUrl + "C_a_faskes/content/"+faskes_id;
+                    }else{
+                        window.location = baseUrl + "C_a_faskes/content/"+faskes_id;
+                    }
+                }
+            });
+        }
     });
-
+    $(".del_galeri").click(function(){
+        var val = confirm('Anda Yakin Ingin Menghapus ? ');
+        if(val == true){
+            var param = $(this).attr('data-param');
+            var id = $(this).attr('data-id');
+            var faskes_id = $("input[name=faskes_id]").val();
+            $.ajax({
+                    url : baseUrl + "C_a_faskes/delete_det",
+                    method:'POST',  // what to expect back from the PHP script, if anything
+                    data: { id: id, param: param },
+                    success : function(response){
+                        var res = response;
+                        if(res > 0){
+                            window.location = baseUrl + "C_a_faskes/content/"+faskes_id;
+                        }else{
+                            window.location = baseUrl + "C_a_faskes/content/"+faskes_id;
+                        }
+                    }
+                });
+        }
+    });
     $(".btn-edit").click(function(){
         $("#content-isi").html('');
         var content_isi = '';
@@ -75,18 +113,17 @@
             data:  { id: id, param: param },
             success : function(response){
                 var res = JSON.parse(response);
-                console.log(res.faskesdetdokter_id);
                 if(param == 'dokter'){
                     $("input[name=nama]").val(res.faskesdetdokter_nama);
                     $("input[name=telfon]").val(res.faskesdetdokter_telfon);
                 }else if(param == 'poli'){
                     content_isi += form_kode;
                     content_isi += form_nama;
-
+                    $("input[name=nama]").val(res.faskesdetpoli_nama);
+                    $("input[name=kode]").val(res.faskesdetpoli_kode);
                 }else if(param == 'layanan'){
                     content_isi += form_layanan;
-                }else if(param == 'galeri'){
-                    content_isi += form_foto;
+                    $("input[name=layanan]").val(res.faskesdetlayanan_nama);
                 }
             }
         });
@@ -137,9 +174,8 @@
             success : function(response){
                 var res = response;
                 if(res > 0){
-                 alert("Sukses Menambah Data !");   
                  $("#modal-contentFaskes").modal("hide");
-                 window.location = baseUrl + "/C_a_faskes/content/"+faskes_id;
+                 window.location = baseUrl + "C_a_faskes/content/"+faskes_id;
                 }
             }
         });

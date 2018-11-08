@@ -97,8 +97,24 @@ class M_faskes extends CI_Model{
 		return $result->result();
 	}
 
-	function getFaskesDet($id,$tabel){
-		$this->db->where('faskesdetdokter_id',$id);
+	function tampilPoli($id){
+		$this->db->where('faskesdetpoli_faskes_id',$id);
+		$result = $this->db->get('m_faskesdet_poli');
+		return $result->result();
+	}
+	function tampilLayanan($id){
+		$this->db->where('faskesdetlayanan_faskes_id',$id);
+		$result = $this->db->get('m_faskesdet_layanan');
+		return $result->result();
+	}
+	function tampilGaleri($id){
+		$this->db->where('faskesdetgaleri_faskes_id',$id);
+		$result = $this->db->get('m_faskesdet_galeri');
+		return $result->result();
+	}
+
+	function getFaskesDet($id,$tabel,$kolom){
+		$this->db->where($kolom,$id);
 		$result = $this->db->get($tabel);
 		return $result->row();
 	}
@@ -106,6 +122,16 @@ class M_faskes extends CI_Model{
 	function faskes_det_updt($id,$data,$tabel,$kolom){
 		$this->db->where($kolom,$id);
 		$result = $this->db->update($tabel,$data);
+		if($result){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+
+	function delete_det($id,$tabel,$kolom){
+		$this->db->where($kolom,$id);
+		$result = $this->db->delete($tabel);
 		if($result){
 			return 1;
 		}else{

@@ -25,7 +25,11 @@ class C_a_faskes extends CI_Controller {
 	public function content($id=""){
 		if($id!= ""){
 			$data['faskes_id'] = $id;
+			$data['faskes_nama'] = $this->a->tampildataDetail($id)->faskes_nama;
 			$data['tabel_dokter'] = $this->a->tampilDokter($id);
+			$data['tabel_poli'] = $this->a->tampilPoli($id);
+			$data['tabel_layanan'] = $this->a->tampilLayanan($id);
+			$data['tabel_galeri'] = $this->a->tampilGaleri($id);
 			$data['content'] = 'v_a_content_faskes';
 			$data['config_page'] = 'config/faskes_content';
 			$this->load->view('v_a_template',$data);
@@ -223,13 +227,23 @@ class C_a_faskes extends CI_Controller {
 						"faskesdetpoli_kode" => $kode,
 						"faskesdetpoli_faskes_id" => $faskes_id
 					);
-					$result = $this->a->faskes_det($data,'m_faskesdet_poli');
+					if($id != 0){
+						$result = $this->a->faskes_det_updt($id,$data,'m_faskesdet_poli','faskesdetpoli_id');
+					}else{
+						$result = $this->a->faskes_det($data,'m_faskesdet_poli');
+					}
+					
 				}else if($param == 'layanan'){
 					$data = array(
 						"faskesdetlayanan_nama" => $layanan,
 						"faskesdetlayanan_faskes_id" => $faskes_id
 					);
-					$result = $this->a->faskes_det($data,'m_faskesdet_layanan');
+					if($id != 0){
+						$result = $this->a->faskes_det_updt($id,$data,'m_faskesdet_layanan','faskesdetlayanan_id');
+					}else{
+						$result = $this->a->faskes_det($data,'m_faskesdet_layanan');
+					}
+					
 				}else if($param == 'galeri'){
 					if($_FILES["foto_modal"]["name"] != ''){
 						/*Proses Upload */
@@ -254,7 +268,7 @@ class C_a_faskes extends CI_Controller {
 					}
 				}
 				
-				if ($result > 0) {
+					if ($result > 0) {
 						$this->session->set_flashdata('pesan','Data Berhasil Diperbarui !');
 					}else{
 						$this->session->set_flashdata('pesan','Data Gagal Diperbarui !');
@@ -266,9 +280,34 @@ class C_a_faskes extends CI_Controller {
 				$id = $this->input->post("id");
 				$param = $this->input->post("param");
 				if($param == 'dokter'){
-					$result = $this->a->getFaskesDet($id,'m_faskesdet_dokter');
+					$result = $this->a->getFaskesDet($id,'m_faskesdet_dokter','faskesdetdokter_id');
+				}else if($param == 'poli'){
+					$result = $this->a->getFaskesDet($id,'m_faskesdet_poli','faskesdetpoli_id');
+				}else if($param == 'layanan'){
+					$result = $this->a->getFaskesDet($id,'m_faskesdet_layanan','faskesdetlayanan_id');
 				}
 				
 				echo json_encode($result);
+			}
+
+			function delete_det(){
+				$id = $this->input->post("id");
+				$param = $this->input->post("param");
+				if($param == 'dokter'){
+					$result = $this->a->delete_det($id,'m_faskesdet_dokter','faskesdetdokter_id');
+				}else if($param == 'poli'){
+					$result = $this->a->delete_det($id,'m_faskesdet_poli','faskesdetpoli_id');
+				}else if($param == 'layanan'){
+					$result = $this->a->delete_det($id,'m_faskesdet_layanan','faskesdetlayanan_id');
+				}else if($param == 'galeri'){
+					$result = $this->a->delete_det($id,'m_faskesdet_galeri','faskesdetgaleri_id');
+				}
+
+				if ($result > 0) {
+					$this->session->set_flashdata('pesan','Data Berhasil Dihapus !');
+				}else{
+					$this->session->set_flashdata('pesan','Data Gagal Dihapus !');
+				}
+				echo $result;
 			}
 }
