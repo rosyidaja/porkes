@@ -21,7 +21,7 @@ class C_a_artikel extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('M_Artikel','a');
+		$this->load->model('M_artikel','a');
 	}
 
 	public function index()
