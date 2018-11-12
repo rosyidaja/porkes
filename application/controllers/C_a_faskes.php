@@ -22,6 +22,11 @@ class C_a_faskes extends CI_Controller {
         $this->load->view('v_a_template',$data);
 	}
 
+	function list_faskes(){
+		$result = $this->a->tampildata();
+		echo json_encode($result);
+	}
+
 	public function content($id=""){
 		if($id!= ""){
 			$data['faskes_id'] = $id;

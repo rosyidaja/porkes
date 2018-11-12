@@ -24,12 +24,14 @@ class C_home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_artikel','a');
 		$this->load->model('M_layanan','b');
+		$this->load->model('M_faskes','c');
 	}
 
 	public function index()
 	{
 		$data['tabel'] = $this->a->tampildata_h_artikel();
 		$data['tabel1'] = $this->b->tampildata();
+		$data['list_faskes'] = $this->c->tampildata();
 		$data['head_top_resource'] = 'v_head_top_resource';
 		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';
