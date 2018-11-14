@@ -76,46 +76,35 @@
                 <select class="form-control" id="kota">
                   <option>Pilih Poli</option>
                 </select>
-              </div>
-              <div class="form-group">
-                <label for="email">Asuransi</label>
-                <select class="form-control" id="kota">
-                  <option>Pilih Asuransi</option>
-                </select>
-              </div>
+              </div>             
             </div>
           </div>
 
         </div>
-
+        <?php foreach ($tabel as $key => $value) {?>
         <div class="list-artikel col-md-9">
           <div class="panel-group">
 
-            <div class="panel panel-default">
+            <div class="panel panel-success">
               <div class="panel-heading">
-                <strong>RUMAH SAKIT Seger Waras</strong>
+                <strong><?php echo $value->faskes_nama;?></strong>
               </div>
               <div class="panel-body">
                 <div class="col-md-3">
-                  <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
+                  <img alt="logo RS" class="img-responsive" src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" style="height: 200px; width: 200px;">
                 </div>
                 <div class="col-md-9">
-                  <p><i class="fa fa-map-marker"></i> Jl. Kelapapati Tengah No.90, Riau</p>
+                  <p><i class="fa fa-map-marker"></i> <?php echo $value->faskes_alamat;?></p>
                   <table>
                     <tr>
                       <td> <strong>Layanan</strong> </td>
                       <td> : </td>
-                      <td>Ambulance, Kamar Operasi, Booking Online</td>
-                    </tr>
-                    <tr>
-                      <td> <strong>Asuransi</strong> </td>
-                      <td> : </td>
-                      <td>AXA</td>
+                      <td><?php echo $value->faskesdetlayanan_nama;?></td>
                     </tr>
                     <tr>
                       <td> <strong>Poli</strong> </td>
                       <td> : </td>
-                      <td>Poli Endas, Poli Gami, Poli si</td>
+                      <td><?php foreach ($tabel_poli as $key => $values) {?> <?php echo $values->faskesdetpoli_nama;?>,  <?php }?></td>
                     </tr>
                   </table>
                   <div class="pull-right">
@@ -124,78 +113,10 @@
                 </div>
               </div>
             </div>
-
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <strong>Klinik Ibu dan Anak</strong>
-              </div>
-              <div class="panel-body">
-                <div class="col-md-3">
-                  <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
-                </div>
-                <div class="col-md-9">
-                  <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Karangpoh, Kecamatan Gresik, Ngipik, Karangpoh, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
-                  <table>
-                    <tr>
-                      <td> <strong>Layanan</strong> </td>
-                      <td> : </td>
-                      <td>Ambulance, Kamar Operasi, Booking Online</td>
-                    </tr>
-                    <tr>
-                      <td> <strong>Asuransi</strong> </td>
-                      <td> : </td>
-                      <td>AXA</td>
-                    </tr>
-                    <tr>
-                      <td> <strong>Poli</strong> </td>
-                      <td> : </td>
-                      <td>Poli Endas, Poli Gami, Poli si</td>
-                    </tr>
-                  </table>
-                  <div class="pull-right">
-                    <a href="C_faskes/detail_faskes">Lihat Detail</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <strong>Puskesmas Blega</strong>
-              </div>
-              <div class="panel-body">
-                <div class="col-md-3">
-                  <img alt="logo RS" class="img-responsive" src="<?php echo base_url('assets/img/logoRS.png');?>">
-                </div>
-                <div class="col-md-9">
-                  <p><i class="fa fa-map-marker"></i> Jalan Jendral Ahmad Yani No. 69, Karangpoh, Kecamatan Gresik, Ngipik, Karangpoh, Kec. Gresik, Kabupaten Gresik, Jawa Timur 61119</p>
-                  <table>
-                    <tr>
-                      <td> <strong>Layanan</strong> </td>
-                      <td> : </td>
-                      <td>Ambulance, Kamar Operasi, Booking Online</td>
-                    </tr>
-                    <tr>
-                      <td> <strong>Asuransi</strong> </td>
-                      <td> : </td>
-                      <td>AXA</td>
-                    </tr>
-                    <tr>
-                      <td> <strong>Poli</strong> </td>
-                      <td> : </td>
-                      <td>Poli Endas, Poli Gami, Poli si</td>
-                    </tr>
-                  </table>
-                  <div class="pull-right">
-                    <a href="C_faskes/detail_faskes">Lihat Detail</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            
           </div>
         </div>
-
+       <?php }?>
       </div>
     </div>
   </section>

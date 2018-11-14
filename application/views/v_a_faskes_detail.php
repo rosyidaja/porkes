@@ -29,7 +29,7 @@
                 <tbody>
                 <?php foreach ($tabel as $key => $value) {?>
                   <tr>
-                    <td><img src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" class="img-responsive"></td>
+                    <td style="vertical-align: middle;"><img src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" class="img-responsive"></td>
                     <td>
                       <table>
                       <tr>
@@ -45,17 +45,12 @@
                       <tr>
                         <td style="padding-left: 20px"> <strong>Layanan </strong> </td>
                         <td style="padding-left: 10px"> : </td>
-                        <td style="padding-left: 10px"> Ambulance, Kamar Operasi, Booking Online</td>
-                      </tr>
-                      <tr>
-                        <td style="padding-left: 20px"> <strong>Asuransi </strong> </td>
-                        <td style="padding-left: 10px"> : </td>
-                        <td style="padding-left: 10px"> AXA</td>
+                        <td style="padding-left: 10px"> <?php echo $value->faskesdetlayanan_nama;?></td>
                       </tr>
                       <tr>
                         <td style="padding-left: 20px"> <strong>Poli </strong> </td>
                         <td style="padding-left: 10px"> : </td>
-                        <td style="padding-left: 10px"> Poli Endas, Poli Gami</td>
+                        <td style="padding-left: 10px"> <?php echo $value->faskesdetpoli_nama;?> </td>
                       </tr>
                       <tr>
                         <td style="padding-left: 20px"> <strong>Lokasi </strong> </td>

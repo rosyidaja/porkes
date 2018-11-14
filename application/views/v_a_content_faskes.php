@@ -12,11 +12,17 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-xs-6">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Detail Dokter</h3>
-              <button style="float:right;" class="btn-show" data-value="dokter"> Tambah </button>
+        <div class="col-xs-12">
+          <div class="box box-success">
+            <div class="box-tools" style="background-color: lavender;">
+              <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <div class="box-header" style="width: 200px;">
+              <h3 class="box-title"><strong>Detail Dokter</strong></h3>
+              </div>
+              <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> -->
+            </div>
+            <div class="box-body">
+              <button style="float:right;" class="btn btn-show btn-primary" data-value="dokter"> Tambah </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -36,7 +42,7 @@
                     <td style="padding-left: 10px"> <?php echo $value->faskesdetdokter_nama;?></td>
                     <td style="padding-left: 10px"> <?php echo $value->faskesdetdokter_telfon;?></td>
                     <td align="center" style="vertical-align: middle;">
-                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer;" data-param="dokter" data-id="<?php echo $value->faskesdetdokter_id; ?>"></i>
+                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer; padding-right: 20px;" data-param="dokter" data-id="<?php echo $value->faskesdetdokter_id; ?>"></i>
                     <i class="fa fa-trash text-danger cursor btn-delete" style="cursor:pointer;" data-param="dokter" data-id="<?php echo $value->faskesdetdokter_id; ?>"></i>
                     </td>
                   </tr>
@@ -50,11 +56,17 @@
         </div>
         <!-- /.col -->
 
-         <div class="col-xs-6">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Detail Poli</h3>
-              <button style="float:right;" class="btn-show" data-value="poli"> Tambah </button>
+         <div class="col-xs-12">
+          <div class="box box-success">
+            <div class="box-tools" style="background-color: lavender;">
+              <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <div class="box-header" style="width: 200px;">
+              <h3 class="box-title"><strong>Detail Poli</strong></h3>
+              </div>
+              <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> -->
+            </div>
+            <div class="box-body">
+              <button style="float:right;" class="btn btn-show btn-primary" data-value="poli"> Tambah </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -72,7 +84,7 @@
                     <td style="padding-left: 10px"> <?php echo $val_poli->faskesdetpoli_kode;?></td>
                     <td style="padding-left: 10px"> <?php echo $val_poli->faskesdetpoli_nama;?></td>
                     <td align="center" style="vertical-align: middle;">
-                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer;" data-param="poli" data-id="<?php echo $val_poli->faskesdetpoli_id; ?>"></i>
+                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer; padding-right: 20px;" data-param="poli" data-id="<?php echo $val_poli->faskesdetpoli_id; ?>"></i>
                     <i class="fa fa-trash text-danger cursor btn-delete" style="cursor:pointer;" data-param="poli" data-id="<?php echo $val_poli->faskesdetpoli_id; ?>"></i>
                     </td>
                   </tr>
@@ -88,10 +100,16 @@
     </div>
     <div class="row">
         <div class="col-xs-4">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Detail Layanan</h3>
-              <button style="float:right;" class="btn-show" data-value="layanan"> Tambah </button>
+          <div class="box box-success">
+            <div class="box-tools" style="background-color: lavender;">
+              <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <div class="box-header" style="width: 200px;">
+              <h3 class="box-title"><strong>Detail Layanan</strong></h3>
+              </div>
+              <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> -->
+            </div>
+            <div class="box-body">
+              <button style="float:right;" class="btn btn-show btn-primary" data-value="layanan"> Tambah </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -107,7 +125,7 @@
                   <tr>
                     <td style="padding-left: 10px"> <?php echo $val_poli->faskesdetlayanan_nama;?></td>
                     <td align="center" style="vertical-align: middle;">
-                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer;" data-param="layanan" data-id="<?php echo $val_poli->faskesdetlayanan_id; ?>"></i>
+                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer; padding-right: 20px;" data-param="layanan" data-id="<?php echo $val_poli->faskesdetlayanan_id; ?>"></i>
                     <i class="fa fa-trash text-danger cursor btn-delete" style="cursor:pointer;" data-param="layanan" data-id="<?php echo $val_poli->faskesdetlayanan_id; ?>"></i>
                     </td>
                   </tr>
@@ -122,10 +140,16 @@
         <!-- /.col -->
 
          <div class="col-xs-8">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Galeri</h3>
-              <button style="float:right;" class="btn-show" data-value="galeri"> Tambah </button>
+          <div class="box box-success">
+            <div class="box-tools" style="background-color: lavender;">
+              <button type="button" class="btn btn-box-tool pull-right" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <div class="box-header" style="width: 200px;">
+              <h3 class="box-title"><strong>Galery</strong></h3>
+              </div>
+              <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> -->
+            </div>
+            <div class="box-body">
+              <button style="float:right;" class="btn btn-show btn-primary" data-value="galeri"> Tambah </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -143,7 +167,6 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-
 
       </div>
       <!-- /.row -->
@@ -178,6 +201,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div>
+          <a href="<?php echo base_url('C_a_faskes/detail');?>"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
         </div>
     </section>
     <!-- /.content -->

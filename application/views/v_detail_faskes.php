@@ -13,7 +13,7 @@
             <img src="<?php echo base_url('assets/img/logoRS.png');?>" width="150" height="150">
           </div>
           <div class="col-md-10" style="right: 20px;bottom: 10px;">
-            <h3>Rumah Sakit Seger Waras</h3>
+            <h3><?php echo $detail->faskes_nama ?></h3>
           </div>
         </div>
         <div class="panel" style="border-radius:0; border:0;">

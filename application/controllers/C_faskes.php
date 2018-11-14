@@ -18,8 +18,17 @@ class C_faskes extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_faskes','a');
+	}
+
 	public function index()
 	{
+		$data['tabel'] = $this->a->tampildata();
+		$data['tabel_poli'] = $this->a->tampildata_poli();
 		$data['head_top_resource'] = 'v_head_top_resource';
 		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';
@@ -34,6 +43,7 @@ class C_faskes extends CI_Controller {
 		$data['head_top_resource'] = 'v_head_top_resource';
 		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';
+		$data['detail'] = $this->a->tampildataDetail_faskes($id);
 		$data['content'] = 'v_detail_faskes';
 		$data['footer'] = 'v_footer';
 		$data['bottom_resource'] = 'v_bottom_resource';

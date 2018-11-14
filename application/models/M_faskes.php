@@ -14,6 +14,9 @@ class M_faskes extends CI_Model{
 	}
 
 	function tampildata(){
+		// $this->db->join('m_faskesdet_layanan fl','f.faskes_id = fl.faskes_id','left');
+		// $result = $this->db->get('m_faskes f');
+		// return $result->result();
 		$sql = " SELECT
 				faskes_id,
 				faskes_nama,
@@ -32,14 +35,35 @@ class M_faskes extends CI_Model{
 				faskes_foto,
 				faskes_background,
 				faskes_status,
-				faskes_aktif
+				faskes_aktif,
+				faskesdetlayanan_nama,
+				faskesdetpoli_nama
 			FROM
 				m_faskes
 				LEFT JOIN m_propinsi ON ( faskes_provinsi_id = propinsi_id )
 				LEFT JOIN m_kota ON ( faskes_kota_id = kota_id )
 				LEFT JOIN m_kelurahan ON ( faskes_kelurahan_id = kelurahan_id )
 				LEFT JOIN m_kecamatan ON ( faskes_kecamatan_id = kecamatan_id )
+				LEFT JOIN m_faskesdet_layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetpoli_nama ) AS faskesdetpoli_nama, faskesdetpoli_faskes_id FROM m_faskesdet_poli GROUP BY faskesdetpoli_faskes_id ) AS poli ON ( faskesdetpoli_faskes_id = faskes_id )
 				where faskes_aktif = 'y' ";
+		$this->db->limit(3);
+		$result = $this->db->query($sql);
+		return $result->result();
+	}
+
+	function tampildata_poli(){
+		// $this->db->join('m_faskesdet_layanan fl','f.faskes_id = fl.faskes_id','left');
+		// $result = $this->db->get('m_faskes f');
+		// return $result->result();
+		$sql = " SELECT
+				faskes_id,
+				faskesdetpoli_nama
+			FROM
+				m_faskes
+				LEFT JOIN m_faskesdet_poli ON ( faskesdetpoli_faskes_id = faskes_id )
+				where faskes_aktif = 'y' ";
+		// $this->db->limit(3);
 		$result = $this->db->query($sql);
 		return $result->result();
 	}
@@ -61,13 +85,17 @@ class M_faskes extends CI_Model{
 				faskes_longitude,
 				faskes_latitude,
 				faskes_foto,
-				faskes_background
+				faskes_background,
+				faskesdetlayanan_nama,
+				faskesdetpoli_nama
 			FROM
 				m_faskes
 				LEFT JOIN m_propinsi ON ( faskes_provinsi_id = propinsi_id )
 				LEFT JOIN m_kota ON ( faskes_kota_id = kota_id )
 				LEFT JOIN m_kelurahan ON ( faskes_kelurahan_id = kelurahan_id )
 				LEFT JOIN m_kecamatan ON ( faskes_kecamatan_id = kecamatan_id )
+				LEFT JOIN m_faskesdet_layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
+				LEFT JOIN m_faskesdet_poli ON ( faskesdetpoli_faskes_id = faskes_id )
 				where faskes_id = ".$id;
 		$result = $this->db->query($sql);
 		return $result->row();
@@ -89,6 +117,12 @@ class M_faskes extends CI_Model{
 	public function faskes_det($data='',$tabel){
 		$this->db->insert($tabel,$data);
 		return $this->db->insert_id();//mengambil id yng terakhir 
+	}
+
+	function tampildataDetail_faskes($id=''){
+		$this->db->where('faskes_id',$id);
+		$result = $this->db->get('m_faskes');
+		return $result->row();
 	}
 
 	function tampilDokter($id){
