@@ -25,8 +25,8 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
                 <li class=""><a href="<?php echo base_url().'C_artikel/list_artikel'; ?>">Artikel</a></li>
-                <!-- <li class=""><a href="<?php echo base_url().'C_layanan/index'; ?>">Layanan</a></li> -->
-                <li class=""><a href="<?php echo base_url().'C_faskes/list_faskes'; ?>">Faskes</a></li>
+                <!-- <li class=""><a href="<?php echo base_url().'C_layanan'; ?>">Layanan</a></li> -->
+                <li class=""><a href="<?php echo base_url().'C_faskes'; ?>">Faskes</a></li>
                 <!-- <li class=""><a href="#contact">Contact</a></li> -->
               </ul>
             </div>

@@ -104,11 +104,11 @@
                     <tr>
                       <td> <strong>Poli</strong> </td>
                       <td> : </td>
-                      <td><?php foreach ($tabel_poli as $key => $values) {?> <?php echo $values->faskesdetpoli_nama;?>,  <?php }?></td>
+                      <td><?php echo $value->faskesdetpoli_nama;?></td>
                     </tr>
                   </table>
                   <div class="pull-right">
-                    <a href="<?php echo base_url().'C_faskes/detail_faskes';?>">Lihat Detail</a>
+                    <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>">Lihat Detail</a>
                   </div>
                 </div>
               </div>

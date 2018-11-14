@@ -31,7 +31,7 @@ class C_home extends CI_Controller {
 	{
 		$data['tabel'] = $this->a->tampildata_h_artikel();
 		$data['tabel1'] = $this->b->tampildata();
-		$data['tabel2'] = $this->c->tampildata();
+		$data['list_faskes'] = $this->c->tampildata();
 		$data['head_top_resource'] = 'v_head_top_resource';
 		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';

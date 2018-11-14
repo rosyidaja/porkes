@@ -20,7 +20,7 @@
                   <div class="caption">
                     <h4><?php echo $value->artikel_judul ?></h4>
                   </div>
-                  <p><?php echo $value->artikel_isi ?></p>
+                  <p><?php echo substr($value->artikel_isi,0,100)."..." ?></p>
                   <div class="pull-right">
                     <a href="<?php echo base_url('C_artikel/detail_artikel/'.$value->artikel_id)?>"><button type="button" class="btn btn-success btn-xs btn-flat"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
                   </div>
@@ -33,28 +33,6 @@
         <div class="box-footer pull-right" style="padding-right: 15px;">
           <a href="<?php echo base_url().'C_artikel/list_artikel';?>" class="uppercase"><button type="button" class="btn btn-primary btn-xs btn-block">Lihat Semua <i class="fa fa-arrow-circle-right"></i></button></a>
         </div>
-
-        <!-- <div class="list-artikel">
-          <table>
-            <div class="col-md-3 col-sm-3 col-xs-6">
-              <div class="thumbnail">
-                <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $value->artikel_foto;?>" class="team-img" style="height: 250px; width: 250px;">
-                <div class="caption">
-                  <h4><?php echo $value->artikel_judul ?></h4>
-                  <p><?php echo $value->artikel_isi ?></p>
-                  <a href="<?php echo base_url('C_artikel/detail_artikel/'.$value->artikel_id)?>" class="pull-right"><button type="button" class="btn btn-success btn-xs btn-flat">Lihat Artikel <i class="fa fa-arrow-circle-right"></i></button></a>
-                </div>                                    
-              </div>
-            </div>
-          </table>
-        </div>
-      </div>
-      <div class="box-footer pull-right">
-        <a href="<?php echo base_url().'C_artikel/list_artikel';?>" class="uppercase"><button type="button" class="btn btn-primary btn-xs btn-block">Lihat Semua <i class="fa fa-arrow-circle-right"></i></button></a>
-      </div> -->
-      <!-- <div class="pull-right">
-        <a href="<?php echo base_url().'C_artikel/list_artikel';?>">Lihat Semua</a>
-      </div> -->
     </div>
   </div>
 </section>

@@ -6,7 +6,7 @@
           <hr class="botm-line">
         </div>
 
-        <?php foreach ($tabel2 as $key => $value) {?>
+        <?php foreach ($list_faskes as $key => $value) {?>
         <div class="list-artikel col-md-4">
           <div class="panel-group">
             <div class="panel panel-success">

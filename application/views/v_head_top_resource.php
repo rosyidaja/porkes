@@ -10,4 +10,6 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/font-awesome.min.css');?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/bootstrap.min.css');?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/style.css');?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/leaflet.css');?>">
+  <script type="text/javascript" src="<?php echo base_url('/assets/js/leaflet-src.js');?>"></script>
 </head>

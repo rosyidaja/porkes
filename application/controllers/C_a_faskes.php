@@ -18,9 +18,13 @@ class C_a_faskes extends CI_Controller {
 	public function detail()
 	{
 		$data['tabel'] = $this->a->tampildata();
-		$data['tabel_poli'] = $this->a->tampildata_poli();
 		$data['content'] = 'v_a_faskes_detail';
         $this->load->view('v_a_template',$data);
+	}
+
+	function list_faskes(){
+		$result = $this->a->tampildata();
+		echo json_encode($result);
 	}
 
 	public function content($id=""){

@@ -38,16 +38,19 @@ class C_faskes extends CI_Controller {
         $this->load->view('v_page',$data);
 	}
 
-	public function detail_faskes()
+	public function detail_faskes($id='')
 	{
-		$data['head_top_resource'] = 'v_head_top_resource';
-		$data['maps'] = 'v_maps';
-		$data['navbar'] = 'v_navbar';
-		$data['detail'] = $this->a->tampildataDetail_faskes($id);
-		$data['content'] = 'v_detail_faskes';
-		$data['footer'] = 'v_footer';
-		$data['bottom_resource'] = 'v_bottom_resource';
-        $this->load->view('v_page',$data);
+		if($id != ''){
+			$data['head_top_resource'] = 'v_head_top_resource';
+			$data['maps'] = 'v_maps';
+			$data['navbar'] = 'v_navbar';
+			$data['detail'] = $this->a->tampildataDetail_faskes($id);
+			$data['content'] = 'v_detail_faskes';
+			$data['footer'] = 'v_footer';
+			$data['bottom_resource'] = 'v_bottom_resource';
+	        $this->load->view('v_page',$data);
+		}
+		
 	}
 
 	public function list_faskes()
