@@ -14,6 +14,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
               <h3 class="box-title">Daftar Artikel</h3>
             </div>
             <!-- /.box-header -->
@@ -35,7 +36,7 @@
                    <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $value->artikel_foto;?>" width="100px" height="100px" style="border:1px solid #c8c7c7;"></td>
                   <!-- <img src="<?php// echo $value->artikel_foto ?>" class="img-responsive"> -->
                   <td style="vertical-align: middle;"><?php echo $value->artikel_judul ?></td>
-                  <td><?php echo $value->artikel_isi ?></td>
+                  <td><?php echo substr($value->artikel_isi,0,150)." ..." ?></td>
                   <td align="center" style="vertical-align: middle;"><span class="label label-success">Publish</span></td>
                   <td align="center" style="vertical-align: middle;">
                     <a href="<?php echo base_url('C_a_artikel/update/'.$value->artikel_id)?>">

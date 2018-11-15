@@ -44,8 +44,9 @@ class M_faskes extends CI_Model{
 				LEFT JOIN m_kota ON ( faskes_kota_id = kota_id )
 				LEFT JOIN m_kelurahan ON ( faskes_kelurahan_id = kelurahan_id )
 				LEFT JOIN m_kecamatan ON ( faskes_kecamatan_id = kecamatan_id )
-				LEFT JOIN m_faskesdet_layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
-				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetpoli_nama ) AS faskesdetpoli_nama, faskesdetpoli_faskes_id FROM m_faskesdet_poli GROUP BY faskesdetpoli_faskes_id ) AS poli ON ( faskesdetpoli_faskes_id = faskes_id )
+				-- LEFT JOIN m_faskesdet_layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetlayanan_nama) AS faskesdetlayanan_nama,  faskesdetlayanan_faskes_id FROM m_faskesdet_layanan GROUP BY faskesdetlayanan_faskes_id ) AS layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetpoli_nama ) AS faskesdetpoli_nama,  faskesdetpoli_faskes_id FROM m_faskesdet_poli GROUP BY faskesdetpoli_faskes_id ) AS poli ON ( faskesdetpoli_faskes_id = faskes_id )
 				where faskes_aktif = 'y' ";
 		$this->db->limit(3);
 		$result = $this->db->query($sql);
@@ -87,15 +88,23 @@ class M_faskes extends CI_Model{
 				faskes_foto,
 				faskes_background,
 				faskesdetlayanan_nama,
-				faskesdetpoli_nama
+				faskesdetpoli_nama,
+				faskesdetdokter_nama,
+				faskesdetgaleri_foto
 			FROM
 				m_faskes
 				LEFT JOIN m_propinsi ON ( faskes_provinsi_id = propinsi_id )
 				LEFT JOIN m_kota ON ( faskes_kota_id = kota_id )
 				LEFT JOIN m_kelurahan ON ( faskes_kelurahan_id = kelurahan_id )
 				LEFT JOIN m_kecamatan ON ( faskes_kecamatan_id = kecamatan_id )
-				LEFT JOIN m_faskesdet_layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
-				LEFT JOIN m_faskesdet_poli ON ( faskesdetpoli_faskes_id = faskes_id )
+
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetgaleri_foto) AS faskesdetgaleri_foto,  faskesdetgaleri_faskes_id FROM m_faskesdet_galeri GROUP BY faskesdetgaleri_faskes_id ) AS galeri ON ( faskesdetgaleri_faskes_id = faskes_id )
+
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetdokter_nama) AS faskesdetdokter_nama,  faskesdetdokter_faskes_id FROM m_faskesdet_dokter GROUP BY faskesdetdokter_faskes_id ) AS dokter ON ( faskesdetdokter_faskes_id = faskes_id )
+
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetlayanan_nama) AS faskesdetlayanan_nama,  faskesdetlayanan_faskes_id FROM m_faskesdet_layanan GROUP BY faskesdetlayanan_faskes_id ) AS layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
+
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetpoli_nama ) AS faskesdetpoli_nama,  faskesdetpoli_faskes_id FROM m_faskesdet_poli GROUP BY faskesdetpoli_faskes_id ) AS poli ON ( faskesdetpoli_faskes_id = faskes_id )
 				where faskes_id = ".$id;
 		$result = $this->db->query($sql);
 		return $result->row();

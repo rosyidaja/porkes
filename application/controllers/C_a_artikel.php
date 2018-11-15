@@ -141,6 +141,6 @@ class C_a_artikel extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('pesan','Data Gagal Di Perbarui !');
 		}
-		redirect(base_url('C_a_layanan/add'));
+		redirect(base_url('C_a_artikel/detail'));
 	}
 }

@@ -47,18 +47,12 @@
             </div>
 
             <div class="small">
-              <p><i class="fa fa-check"></i> Ambulance</p>
-              <p><i class="fa fa-check"></i> Kamar Enak Enak</p>
-              <p><i class="fa fa-check"></i> Instalasi Gawat Darurat (IGD)</p>
-              <p><i class="fa fa-check"></i> Klinik Bedah Kepala & Leher</p>
-              <p><i class="fa fa-check"></i> Klinik Gigi & Kesehatan Cocot</p>
-              <p><i class="fa fa-check"></i> Klinik Gigi & Kesehatan Cocot</p>
-            </div>
-
+              <p><i class="fa fa-check"></i> <?php echo $detail->faskesdetlayanan_nama; ?></p>
           </div>
         </div>
 
       </div>
+    </div>
 
       <div class="col-md-9">
 
@@ -71,7 +65,7 @@
               </div>
               <div class="col-md-6">
                 <select class="form-control" name="">
-                  <option value="">Poli Umum</option>
+                  <option value=""><?php echo $detail->faskesdetpoli_nama; ?></option>
                 </select>
               </div>
               <div class="col-md-3">
@@ -117,34 +111,32 @@
 
         <div class="panel">
           <div class="panel-body">
-
             <ul class="nav nav-tabs">
               <li class="active"><a data-toggle="tab" href="#home">Poli</a></li>
               <li><a data-toggle="tab" href="#menu1">Dokter</a></li>
               <li><a data-toggle="tab" href="#menu2">Galeri</a></li>
-              <li><a data-toggle="tab" href="#menu2">Profil</a></li>
-              <li><a data-toggle="tab" href="#menu2">Rating</a></li>
+              <!-- <li><a data-toggle="tab" href="#menu3">Profil</a></li>
+              <li><a data-toggle="tab" href="#menu4">Rating</a></li> -->
             </ul>
 
             <div class="tab-content">
               <div id="home" class="tab-pane fade in active">
-                <h3>HOME</h3>
-                <p>Some content.</p>
+                <h4>Poli Yang Tersedia : </h4>
+                <p><i class="fa fa-dot-circle-o"> <?php echo $detail->faskesdetpoli_nama; ?> </i></p>
               </div>
               <div id="menu1" class="tab-pane fade">
-                <h3>Menu 1</h3>
-                <p>Some content in menu 1.</p>
+                <h4>Dokter</h4>
+                <p><?php echo $detail->faskesdetdokter_nama; ?></p>
               </div>
               <div id="menu2" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
+                <h4>Galeri <?php echo $detail->faskes_nama; ?></h4>
+                <img src="<?php echo base_url();?>assets/upload/galeri/<?php echo $detail->faskesdetgaleri_foto;?>" class="img-responsive">
               </div>
             </div>
 
           </div>
         </div>
       </div>
-    </div>
 
   </div>
 </section>

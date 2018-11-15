@@ -44,7 +44,7 @@ class C_faskes extends CI_Controller {
 			$data['head_top_resource'] = 'v_head_top_resource';
 			$data['maps'] = 'v_maps';
 			$data['navbar'] = 'v_navbar';
-			$data['detail'] = $this->a->tampildataDetail_faskes($id);
+			$data['detail'] = $this->a->tampildataDetail($id);
 			$data['content'] = 'v_detail_faskes';
 			$data['footer'] = 'v_footer';
 			$data['bottom_resource'] = 'v_bottom_resource';

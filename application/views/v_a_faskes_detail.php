@@ -13,6 +13,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
               <h3 class="box-title">Daftar Faskes</h3>
             </div>
             <!-- /.box-header -->

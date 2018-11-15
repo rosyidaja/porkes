@@ -109,17 +109,20 @@ class C_a_faskes extends CI_Controller {
 			redirect(base_url('C_a_faskes/add'));
 		}
 
-		public function update($id){
+		public function delete($id){
+			// $data = $this->a->delete_detail($id);
+			$data = $this->a->delete($id);
+			redirect(base_url('C_a_faskes/detail'));
+		}
 
+		public function update($id){
 			$data['aksi'] = 'aksi_update';
 			$data['ke'] = 'Ubah Data';
-			$data['tabel'] = $this->a->tampildata();
+			// $data['tabel'] = $this->a->tampildata();
 			$data['detail'] = $this->a->tampildataDetail($id);
-			// $this->load->view('v-tambah', $data);
 
 			$data['content'] = 'v_a_tambah_faskes';
 			$this->load->view('v_a_template', $data);
-
 		}
 
 		public function aksi_update(){
@@ -294,6 +297,7 @@ class C_a_faskes extends CI_Controller {
 				
 				echo json_encode($result);
 			}
+
 
 			function delete_det(){
 				$id = $this->input->post("id");
