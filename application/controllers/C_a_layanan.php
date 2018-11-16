@@ -110,23 +110,32 @@ class C_a_layanan extends CI_Controller {
 		$layanan_deskripsi = $post['layanan_deskripsi'];
 		// $artikel_foto = $post['artikel_foto'];
 
+
+		$data = array(
+		'layanan_id' => $layanan_id,
+		'layanan_judul' => $layanan_judul,
+		'layanan_deskripsi' => $layanan_deskripsi,
+		'layanan_created_by' => $this->session->userdata('user')->user_name
+		);
+
 		$config['upload_path']          = './assets/upload/layanan/';
 		$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
  
+		// $this->upload->initialize($config);
+		// if (!$this->upload->do_upload('layanan_foto')){
+		// 	$error = array('error' => $this->upload->display_errors());
+		// }else{
+		// 	$data_foto = $this->upload->data('file_name');
+		// }
+
 		$this->upload->initialize($config);
 		if (!$this->upload->do_upload('layanan_foto')){
 			$error = array('error' => $this->upload->display_errors());
 		}else{
-			$data_foto = $this->upload->data('file_name');
+			/*Ketika Sukses Upload mengambil nama file*/
+			$layanan_foto = $this->upload->data('file_name');
+			$data['layanan_foto'] = $layanan_foto;
 		}
-
-			$data = array(
-			'layanan_id' => $layanan_id,
-			'layanan_judul' => $layanan_judul,
-			'layanan_deskripsi' => $layanan_deskripsi,
-			'layanan_foto' => $data_foto,
-			'layanan_created_by' => $this->session->userdata('user')->user_name
-			);
 
 		$hasil = $this->a->update($layanan_id,$data);
 		if ($hasil) {
@@ -134,6 +143,6 @@ class C_a_layanan extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('pesan','Data Gagal Di Perbarui !');
 		}
-		redirect(base_url('C_a_artikel/add'));
+		redirect(base_url('C_a_layanan/detail'));
 	}
 }

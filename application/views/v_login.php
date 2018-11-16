@@ -35,12 +35,12 @@
 	</div>
 	<?php endif; ?>
 	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(<?php echo base_url('assets/img/om.jpeg');?>);">
+		<div class="container-login100" style="background-image: url(<?php echo base_url('assets/img/smart.jpg'); ?>);">
+			<div class="wrap-login100" style="background-image: url(<?php echo base_url('assets/img/1.jpg'); ?>);">
+				<div class="login100-form-title" style="background-image: url(<?php echo base_url('assets/img/bg-01.jpg');?>);">
 					<!-- <img src="<?php echo base_url('assets/img/om.jpeg');?>" height="150" > -->
 					<span class="login100-form-title-1">
-						Masuk
+						Selamat Datang
 					</span>
 				</div>
 
@@ -66,7 +66,7 @@
 						</div>
 
 						<div>
-							<a href="#" class="txt1">
+							<a href="#" class="txt1" disabled>
 								Forgot Password?
 							</a>
 						</div>

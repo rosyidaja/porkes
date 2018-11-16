@@ -34,8 +34,8 @@
                 </div>
                 <div class="form-group" style="padding-top: 20px">
                   <label for="layanan_foto">Unggah Gambar (Layanan)</label>
-                  <br><?php if(!empty($detail->layanan_foto)){ echo $detail->layanan_foto;} ?>
-                  <input type="file" name="layanan_foto" size="20" value="<?php if(!empty($detail->layanan_foto)){ echo $detail->layanan_foto;} ?>">
+                  <br><?php echo $detail->layanan_foto; ?>
+                  <input type="file" name="layanan_foto">
                 </div>                
               </div>
               <div class="box-footer">

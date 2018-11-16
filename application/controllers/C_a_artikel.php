@@ -116,25 +116,26 @@ class C_a_artikel extends CI_Controller {
 		// $artikel_foto = $post['artikel_foto'];
 		$artikel_status = $post['artikel_status'];
 
+		$data = array(
+		'artikel_id' => $artikel_id,
+		'artikel_judul' => $artikel_judul,
+		'artikel_isi' => $artikel_isi,
+		'artikel_status' => $artikel_status,
+		'artikel_created_by' => $this->session->userdata('user')->user_name
+		);
+
 		$config['upload_path']          = './assets/upload/artikel/';
 		$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
- 
+
 		$this->upload->initialize($config);
 		if (!$this->upload->do_upload('artikel_foto')){
 			$error = array('error' => $this->upload->display_errors());
 		}else{
-			$data_foto = $this->upload->data('file_name');
+			/*Ketika Sukses Upload mengambil nama file*/
+			$artikel_foto = $this->upload->data('file_name');
+			$data['artikel_foto'] = $artikel_foto;
 		}
-
-			$data = array(
-			'artikel_id' => $artikel_id,
-			'artikel_judul' => $artikel_judul,
-			'artikel_isi' => $artikel_isi,
-			'artikel_foto' => $data_foto,
-			'artikel_status' => $artikel_status,
-			'artikel_created_by' => $this->session->userdata('user')->user_name
-			);
-
+		
 		$hasil = $this->a->update($artikel_id,$data);
 		if ($hasil) {
 			$this->session->set_flashdata('pesan','Data Berhasil Di Perbarui !');

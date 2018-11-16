@@ -107,10 +107,10 @@
                       <td><?php echo $value->faskesdetpoli_nama;?></td>
                     </tr>
                   </table>
-                  <div class="pull-right">
-                    <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>">Lihat Detail</a>
-                  </div>
                 </div>
+                  <div class="pull-right" style="padding-top: 80px;">
+                    <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>"><button type="button" class="btn btn-success btn-xs btn-block"> Lihat Detail <i class="fa fa-arrow-circle-right"></i> </button></a>
+                  </div>
               </div>
             </div>
             

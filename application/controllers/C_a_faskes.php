@@ -128,6 +128,7 @@ class C_a_faskes extends CI_Controller {
 		public function aksi_update(){
 			$post = $this->input->post();
 			/*Deklarasi Pengambilan parameter */
+			$faskes_id = $post['faskes_id'];
 			$faskes_nama = $post['nama_faskes'];
 			$faskes_alamat = $post['alamat_faskes'];
 			$propinsi_id = $post['provinsi'];
@@ -140,6 +141,7 @@ class C_a_faskes extends CI_Controller {
 			$faskes_status = $post['faskes_status'];
 			
 			$data = array(
+				'faskes_id' => $faskes_id,
 				'faskes_nama' => $faskes_nama,
 				'faskes_alamat' => $faskes_alamat,
 				'faskes_provinsi_id' => $propinsi_id,
