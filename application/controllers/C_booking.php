@@ -65,10 +65,8 @@ class C_booking extends CI_Controller {
 			$booking = json_decode($this->curl->simple_post($this->API.'/get',$param_request, array(CURLOPT_BUFFERSIZE => 10)));
 			if($booking->code === '200'){
 				$data_book = $booking->data;
-				$isi_email = '';
-				$isi_email += 'Kode Booking nya adalah '.$data_book->noantrian_kode;
-				
-				sendMail($data_book->pasien_nama,$data_book->booking_email,'Informasi Pemesanan',$isi_email);
+
+				$this->sendMail($data_book->pasien_nama,$data_book->pasien_email,'Informasi Pemesanan',$data_book->noantrian_kode);
 
 				$data_booking = array(
 					'booking_faskes_id'						=> $faskes,
@@ -123,6 +121,40 @@ class C_booking extends CI_Controller {
 			$this->session->set_flashdata('notification', $message);
 				redirect(base_url('C_faskes/detail_faskes/'.$faskes));
 				//redirect(base_url('C_booking'));
+		}
+	}
+
+	function sendMail($nama,$to_email,$judul,$isi_email){
+		$Nama = 'Porkes';
+		$isi_email = "Kode Booking nya adalah ".$isi_email;
+		$from_email = "admin@porkes.rosyidaja.com"; 
+		$to_email = array($to_email);
+		$judul = $judul;
+		$isi_email = $isi_email;
+		//Inisialisasi Setting SMTP
+		$ci = get_instance();
+		$ci->load->library('email');
+		$config['protocol'] = "smtp";
+		$config['smtp_host'] = "ssl://smtp.gmail.com";
+		$config['smtp_port'] = "465";
+		$config['smtp_user'] = "tomimishbahul12@gmail.com";
+		$config['smtp_pass'] = "karunia^_^";
+		$config['charset'] = "utf-8";
+		$config['mailtype'] = "html";
+		$config['newline'] = "\r\n";
+		
+		
+		//Konfigurasi Pesan
+		$ci->email->initialize($config);
+		$ci->email->from($from_email, $judul);
+		
+		$ci->email->to($to_email);
+		$ci->email->subject($judul);
+		$ci->email->message($isi_email);
+		if ($this->email->send()) {
+		return 'sukses';
+		} else {
+		show_error($this->email->print_debugger());
 		}
 	}
 }

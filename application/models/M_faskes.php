@@ -181,4 +181,32 @@ class M_faskes extends CI_Model{
 			return 0;
 		}
 	}
+
+	function list_poli($faskes,$poli){
+		$tgl = date('Y-m-d');
+		$sql = "
+			Select
+				booking_id,
+				booking_faskes_id,
+				booking_faskespoli_id,
+				faskesdetpoli_nama,
+				booking_urut,
+				booking_pasien_norm,
+				booking_pasien_nama,
+				booking_email,
+				booking_notelpon,
+				booking_kode,
+				booking_status,
+				booking_tanggal,
+				booking_pendaftaran_id,
+				booking_tipe
+			FROM
+				t_booking
+			LEFT JOIN m_faskesdet_poli ON (booking_faskespoli_id = faskesdetpoli_id)
+			where booking_faskes_id = $faskes 
+			and booking_faskespoli_id = $poli
+			and DATE_FORMAT(now(),booking_tanggal)";
+		$result = $this->db->query($sql);
+		return $result->result();
+	}
  }

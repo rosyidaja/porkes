@@ -327,8 +327,8 @@ function sendMail($nama,$to_email,$judul,$isi_email){
 	$ci->email->subject($judul);
 	$ci->email->message($isi_email);
 	if ($this->email->send()) {
-		return 'sukses';
+	return 'sukses';
 	} else {
-		return 'false';
+	show_error($this->email->print_debugger());
 	}
 }

@@ -14,8 +14,9 @@
   <link rel="stylesheet" href="<?php echo base_url('bower_components/font-awesome/css/font-awesome.min.css');?>">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url('bower_components/Ionicons/css/ionicons.min.css');?>">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-
+  
+  <link href="<?php echo base_url('assets/css/select2.min.css');?>" rel="stylesheet" />
+  
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo base_url('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css');?>">
   <!-- jvectormap -->
@@ -232,7 +233,7 @@
 <script src="<?php echo base_url('bower_components/jquery/dist/jquery.min.js');?>"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url('bower_components/bootstrap/dist/js/bootstrap.min.js');?>"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="<?php echo base_url('assets/js/select2.min.js');?>"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url('bower_components/fastclick/lib/fastclick.js');?>"></script>
 <!-- AdminLTE App -->

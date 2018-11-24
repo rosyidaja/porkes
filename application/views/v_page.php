@@ -71,6 +71,12 @@
   <?php $this->load->view($footer); ?>
   <!--/ footer-->
 
+  <?php
+  if(isset($js)){
+      $this->load->view($js);
+  }
+  ?>
+
   <!-- bottom_resource -->
   <?php $this->load->view($bottom_resource); ?>
   <!-- /bottom_resource -->

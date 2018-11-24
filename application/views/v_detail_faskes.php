@@ -82,35 +82,19 @@
             </div>
 
             <div class="table-responsive col-md-12">
-              <table class="table table-striped table-hover table-condensed table-bordered" style="color:black;">
-                <tr>
-                  <th>No.</th>
-                  <th>Nama Pasien</th>
-                  <th>Nomor RM</th>
-                  <th>Jadwal</th>
-                  <th>Status</th>
-                </tr>
-                <tr class="small">
-                  <td>1.</td>
-                  <td>Tomi Mishbahul</td>
-                  <td>000231</td>
-                  <td>08:00 - 08:10</td>
-                  <td>Dilayani</td>
-                </tr>
-                <tr class="small">
-                  <td>2.</td>
-                  <td>Archie Cakra</td>
-                  <td>000091</td>
-                  <td>08:10 - 08:20</td>
-                  <td>Dilayani</td>
-                </tr>
-                <tr class="small">
-                  <td>3.</td>
-                  <td>Irma Y</td>
-                  <td>000199</td>
-                  <td>08:20 - 08:30</td>
-                  <td>Daftar</td>
-                </tr>
+              
+              <table id="tbl_booking" class="table table-striped table-hover table-condensed table-bordered" style="color:black;">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Nama Pasien</th>
+                    <th>Nomor RM</th>
+                    <th>Poli</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
               </table>
             </div>
 

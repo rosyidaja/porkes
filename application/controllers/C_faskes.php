@@ -49,6 +49,7 @@ class C_faskes extends CI_Controller {
 			$data['list_poli'] = $this->M_public_function->listPoli($id);
 			$data['content'] = 'v_detail_faskes';
 			$data['footer'] = 'v_footer';
+			$data['js'] = 'config/faskes_antrian';
 			$data['bottom_resource'] = 'v_bottom_resource';
 	        $this->load->view('v_page',$data);
 		}
@@ -63,5 +64,13 @@ class C_faskes extends CI_Controller {
 		$data['footer'] = 'v_footer';
 		$data['bottom_resource'] = 'v_bottom_resource';
         $this->load->view('v_page',$data);
+	}
+
+	function list_poli(){
+		$poli = $this->input->post('list_poli');
+		$faskes = $this->input->post('faskes');
+		$result = $this->a->list_poli($faskes,$poli);
+		
+		echo json_encode($result);
 	}
 }
