@@ -125,9 +125,10 @@ class C_a_faskes extends CI_Controller {
 			$this->load->view('v_a_template', $data);
 		}
 
-		public function aksi_update(){
+		public function aksi_update($id){
 			$post = $this->input->post();
 			/*Deklarasi Pengambilan parameter */
+			
 			$faskes_id = $post['faskes_id'];
 			$faskes_nama = $post['nama_faskes'];
 			$faskes_alamat = $post['alamat_faskes'];

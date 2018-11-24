@@ -60,17 +60,25 @@
           <div class="panel-body">
 
             <div class="page-header col-md-12">
+            <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
               <div class="col-md-3">
                 <label style="padding-top: 10px;">List Antrian</label>
               </div>
               <div class="col-md-6">
-                <select class="form-control" name="">
-                  <option value=""><?php echo $detail->faskesdetpoli_nama; ?></option>
+              <form role="form" action="<?php echo base_url().'C_booking';?>" method="POST">
+              <input type="hidden" name="faskes" value="<?php echo $this->uri->segment(3); ?>" />
+                <select class="form-control" name="list_poli" required>
+                    <?php 
+                      foreach($list_poli as $poli){ ?>
+                          <option value="<?php echo $poli->faskesdetpoli_id; ?>"><?php echo $poli->poli_nama; ?></option>
+                      <?php }
+                    ?>
                 </select>
               </div>
               <div class="col-md-3">
-                <button type="button" class="btn btn-primary" name="button"><a style="color:white;text-decoration:none;" href="<?php echo base_url().'c_booking';?>">Booking</a></button>
+                <button type="submit" class="btn btn-primary" name="submit">Booking</button>
               </div>
+              </form>
             </div>
 
             <div class="table-responsive col-md-12">

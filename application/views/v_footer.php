@@ -47,3 +47,44 @@
       </div>
     </div>
   </footer>
+
+  <script src="<?php echo base_url('/assets/js/jquery.min.js');?>"></script>
+  <script src="<?php echo base_url('/assets/js/jquery.easing.min.js');?>"></script>
+  <script src="<?php echo base_url('/assets/js/bootstrap.min.js');?>"></script>
+  <script src="<?php echo base_url('/assets/js/custom.js');?>"></script>
+  <script src="<?php echo base_url('/assets/js/sweetalert.min.js');?>"></script>
+  <script src="<?php echo base_url('/assets/contactform/contactform.js');?>"></script>
+  <script src="<?php echo base_url('bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
+  <script src="<?php echo base_url('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
+  
+  <script>
+  $(function () {
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    });
+  });
+  var header = '';
+  var msg = '';
+  var status = '';
+  <?php 
+    if($this->session->flashdata('notification') !== null){      
+      $notif = $this->session->flashdata('notification'); 
+      echo " header = '".$notif['header']."';";
+      echo " msg = '".$notif['message']."';";
+      echo " status = '".$notif['status']."';";
+   ?>
+      console.log('notif');
+      sweet(status,msg,header);
+    <?php }else{ ?>
+      console.log('none');
+    <?php } ?>
+  
+  function sweet(header,msg,status){
+    swal(header,msg,status);
+  }
+  </script>
