@@ -3,13 +3,17 @@
       <div class="row">
         <div class="col-md-12 col-sm-12" style="margin-bottom:90px;" center>
           <div class="col-md-10 col-sm-2">
-            <input type="text" name="name" class="form-control br-radius-zero" id="norm_text" placeholder="No. Rekam Medis" data-rule="minlen:4" data-msg="Masukan Nomor Rekam Medis Anda" />
+          <form id="form-search-pasien" action="<?php echo base_url().'C_booking/booking';?>" method="POST">
+            <input type="hidden" name="faskes" value="<?php echo $faskes; ?>" />
+            <input type="hidden" name="poli" value="<?php echo $list_poli; ?>" />
+            <input type="text" name="param" class="form-control br-radius-zero" id="norm_text" placeholder="No. Rekam Medis / NIK" minlength="6" onkeypress="return Angkasaja(event)" required="required" oninvalid="this.setCustomValidity('Minimal Karakter adalah 6 angka')" onvalid="this.setCustomValidity('')"/>
             <div class="validation">
 
             </div>
           </div>
           <div class="col-md-2 col-sm-2">
             <button type="submit" class="btn btn-form">Pencarian</button>
+          </form>
           </div>
         </div>
       </div>
@@ -416,6 +420,21 @@
 
       </section>
   <script>
+
+    function Angkasaja(evt) {
+      var charCode = (evt.which) ? evt.which : event.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)){
+        if(charCode == 46){
+          return true;
+        }else{
+          return false;
+        }
+      }else{
+        return true;
+      }
+      
+    }
+   
       function booking(){
         $("#btn-booking").attr("data-dismiss", "modal");
         showPleaseWait();
@@ -426,29 +445,18 @@
          }, 1000);
 
       }
+
       function finishBook(jadwal){
         $("#box-jadwal").attr("data-toggle", "modal");
         $("#box-jadwal").attr("data-target", "#myModal");
       }
+
       function nextJadwal(jadwal){
         document.getElementById("box-poli").style.display="none";
         document.getElementById("box-jadwal").style.display="block";
 
       }
-      function cekNorm(norm){
-          //alert("Hallo World "+norm );
-      }
-      var norm_text = document.getElementById("norm_text");
-      var norm;
-      norm_text.addEventListener("keyup", function(event) {
-        norm = event.target.value;
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                cekNorm(norm);
-                document.getElementById("box-poli").style.display="block";
-                //$("#norm_text").removeAttr("display");
-            }
-        });
+    
         function showPleaseWait() {
             var modalLoading = '<div class="modal" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false role="dialog">\
                 <div class="modal-dialog">\

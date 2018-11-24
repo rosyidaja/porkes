@@ -23,6 +23,7 @@ class C_faskes extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_faskes','a');
+		$this->load->model('M_public_function','');
 	}
 
 	public function index()
@@ -45,6 +46,7 @@ class C_faskes extends CI_Controller {
 			$data['maps'] = 'v_maps';
 			$data['navbar'] = 'v_navbar';
 			$data['detail'] = $this->a->tampildataDetail($id);
+			$data['list_poli'] = $this->M_public_function->listPoli($id);
 			$data['content'] = 'v_detail_faskes';
 			$data['footer'] = 'v_footer';
 			$data['bottom_resource'] = 'v_bottom_resource';

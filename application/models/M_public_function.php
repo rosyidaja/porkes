@@ -42,4 +42,64 @@ class M_public_function extends CI_Model{
         $result = $this->db->query($sql);
         return $result;
     }
+
+    function listPoli($id){
+        $today = date("N");
+        /* $sql = "select 
+                    jadwalpoli_id,
+                    jadwalpoli_faskes_id,
+                    jadwalpoli_dokter_id,
+                    faskesdetdokter_nama as dokter_nama,
+                    jadwalpoli_poli_id,
+                    faskesdetpoli_nama as poli_nama,
+                    jadwalpoli_estimasi
+                from
+                    m_jadwal_poli
+                LEFT JOIN m_faskesdet_dokter ON (jadwalpoli_dokter_id = faskesdetdokter_id)
+                LEFT JOIN m_faskesdet_poli ON (jadwalpoli_poli_id = faskesdetpoli_id)
+                where 
+                    jadwalpoli_aktif = 'y' and
+                    jadwalpoli_faskes_id = ".$id." and
+                    jadwalpoli_hari like '%".$today."%'
+                "; */
+        $sql = "select 
+                    faskesdetpoli_id,
+                    faskesdetpoli_faskes_id,
+                    faskesdetpoli_kode,
+                    faskesdetpoli_nama as poli_nama,
+                    faskesdetpoli_aktif
+                from m_faskesdet_poli
+                where
+                    faskesdetpoli_aktif = 'y' and
+                    faskesdetpoli_faskes_id = ".$id."";
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
+
+    function getPoli($id){
+        $sql = $this->db->where('faskesdetpoli_id',$id)
+                        ->get('m_faskesdet_poli');
+        
+        if($sql->num_rows()){
+            return $sql->row();
+        }
+    }
+
+    function getPoliByKode($kode){
+        $sql = $this->db->where('faskesdetpoli_kode',$kode)
+                        ->get('m_faskesdet_poli');
+        
+        if($sql->num_rows()){
+            return $sql->row();
+        }
+    }
+
+    function getfaskesByKode($kode){
+        $sql = $this->db->where('faskes_kode',$kode)
+                        ->get('m_faskes');
+        
+        if($sql->num_rows()){
+            return $sql->row();
+        }
+    }
  }
