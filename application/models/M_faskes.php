@@ -17,6 +17,7 @@ class M_faskes extends CI_Model{
 		// $this->db->join('m_faskesdet_layanan fl','f.faskes_id = fl.faskes_id','left');
 		// $result = $this->db->get('m_faskes f');
 		// return $result->result();
+		
 		$sql = " SELECT
 				faskes_id,
 				faskes_nama,
@@ -48,7 +49,6 @@ class M_faskes extends CI_Model{
 				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetlayanan_nama) AS faskesdetlayanan_nama,  faskesdetlayanan_faskes_id FROM m_faskesdet_layanan GROUP BY faskesdetlayanan_faskes_id ) AS layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
 				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetpoli_nama ) AS faskesdetpoli_nama,  faskesdetpoli_faskes_id FROM m_faskesdet_poli GROUP BY faskesdetpoli_faskes_id ) AS poli ON ( faskesdetpoli_faskes_id = faskes_id )
 				where faskes_aktif = 'y' ";
-		$this->db->limit(3);
 		$result = $this->db->query($sql);
 		return $result->result();
 	}
