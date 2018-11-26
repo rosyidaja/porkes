@@ -35,7 +35,7 @@
             <!-- /.box-header -->
                 <div class="form-group" style="padding-top: 20px">
                   <label for="exampleInputFile">Unggah Gambar (Artikel)</label>
-                  <br><?php echo $detail->artikel_foto; ?>
+                  <br><?php if(!empty($detail->artikel_foto)){ echo $detail->artikel_foto;} ?>
                   <input type="file" name="artikel_foto" id="artikel_foto">
                 </div>
                 <div class="form-group">

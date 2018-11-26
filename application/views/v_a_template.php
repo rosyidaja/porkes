@@ -65,22 +65,19 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url('assets/img/om.jpeg');?>" class="user-image" alt="User Image">
-              <span class="hidden-xs">Tomi Mishbahul</span>
+              <span class="hidden-xs"><?php echo $this->session->userdata('user')->user_nama; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="<?php echo base_url('assets/img/om.jpeg');?>" class="img-circle" alt="User Image">
                 <p>
-                  Tomi Mishbahul
+                  <?php echo $this->session->userdata('user')->user_nama; ?>
                   <small>Administrator</small>
                 </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat" disabled>Profile</a>
-                </div>
                 <div class="pull-right">
                   <a href="<?php echo base_url('C_login/logout');?>" class="btn btn-default btn-flat" onclick="return confirm('Anda yakin akan keluar dari sistem ? ')">Sign out</a>
                 </div>
@@ -106,8 +103,8 @@
           <img src="<?php echo base_url('assets/img/om.jpeg');?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Tomi Mishbahul</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <p><?php echo $this->session->userdata('user')->user_nama; ?></p>
+          <a><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- search form -->
@@ -123,12 +120,12 @@
       </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
+      <ul class="sidebar-menu" data-widget="tree" style="padding-top: 10px;">
         <li class="header">MAIN NAVIGATION</li>
         <li>
           <a href="<?php echo base_url('C_admin/index') ?>">
             <i class="fa fa-dashboard"></i>
-            Beranda
+            <span>Beranda</span>
           </a>
         </li>
        <li class="treeview">

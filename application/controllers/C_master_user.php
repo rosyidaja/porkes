@@ -50,6 +50,7 @@ class C_master_user extends CI_Controller {
 	public function create(){
 		$post = $this->input->post();
 		$user_id = $post['user_id'];
+		$user_nama = $post['user_nama'];
 		$user_name = $post['user_name'];
 		$user_password = $post['user_password'];
 		$user_level = $post['user_level'];
@@ -70,6 +71,7 @@ class C_master_user extends CI_Controller {
 			unset($data['user_repassword']);
 			$data = array(
 				'user_name' => $post['user_name'],
+				'user_nama' => $post['user_nama'],
 				'user_password' => $post['user_password'],
 				'user_level' => $post['user_level'],
 				'user_id' => $user_id

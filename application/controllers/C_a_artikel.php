@@ -47,6 +47,7 @@ class C_a_artikel extends CI_Controller {
 	public function add(){
 		// $data['tabel'] = $this->M_Artikel->tampildata();
 		$data['aksi'] = 'create';
+		$data['detail'] = $this->a->tampildata();
 		$data['ke'] = 'Tambah Data';
 		// $this->load->view('v-tambah', $data);
 
