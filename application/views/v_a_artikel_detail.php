@@ -14,7 +14,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
+              <?php if($this->session->flashdata('sukses'))
+              {?>
+                <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+              <?php } else { ?>
+                <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+              <?php } ?>
               <h3 class="box-title">Daftar Artikel</h3>
             </div>
             <!-- /.box-header -->
@@ -37,13 +42,24 @@
                   <!-- <img src="<?php// echo $value->artikel_foto ?>" class="img-responsive"> -->
                   <td style="vertical-align: middle;"><?php echo $value->artikel_judul ?></td>
                   <td><?php echo substr($value->artikel_isi,0,150)." ..." ?></td>
-                  <td align="center" style="vertical-align: middle;"><span class="label label-success">Publish</span></td>
+
+                  <td align="center" style="vertical-align: middle;">
+                    <?php if(@$value->artikel_status == 'P')
+                    {
+                      echo '<label class="label label-success">Publish</label>';
+                    }
+                     else{
+                      echo '<label class="label label-danger">Draft</label>';
+                    } ?>
+                  </td>
+
                   <td align="center" style="vertical-align: middle;">
                     <a href="<?php echo base_url('C_a_artikel/update/'.$value->artikel_id)?>">
-                      <button type="button" class="btn btn-primary btn-sm" name="edit">Ubah</button>
+                      <i class="fa fa-edit text-success btn-sm btn-edit" name="edit" data-toggle="tooltip" data-placement="top" title="Edit"></i>
                     </a>
                     <a href="<?php echo base_url('C_a_artikel/delete/'.$value->artikel_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->artikel_judul; ?> ? ')"> 
-                      <button type="button" class="btn btn-danger btn-sm" name="hapus">Hapus</button>
+                       <!-- <i class="fa fa-trash text-danger cursor btn-delete" style="padding-right: 15px;"></i> -->
+                      <i class="fa fa-trash text-danger cursor btn-delete" name="hapus" style="padding-right: 15px;" data-toggle="tooltip" data-placement="top" title="Hapus"></i>
                     </a>
                   </td>
 

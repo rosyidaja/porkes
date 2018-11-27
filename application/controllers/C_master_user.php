@@ -40,7 +40,7 @@ class C_master_user extends CI_Controller {
 	public function add(){
 		// $data['tabel'] = $this->m_login->tampildata_pwd();
 		// $data['karyawan'] = $this->m_login->get_karyawan_not_user();
-		// $data['ket'] = 'Tambah Data';
+		$data['ket'] = 'Tambah Data';
 		$data['content'] = 'v_a_tambah_user';
 		$data['aksi'] = 'create';
 		$this->load->view('v_a_template', $data);
@@ -94,7 +94,7 @@ class C_master_user extends CI_Controller {
 	public function update_pwd($id=''){
 		$data['aksi'] = 'aksi_update_pwd';
 		$data['ket'] = 'Ganti Password';
-		$data['detail'] = $this->M_login->tampildata($id);
+		$data['detail'] = $this->M_login->tampildataDetail($id);
 		// $this->load->view('v-ganti', $data);
 		$data['content'] = 'v_a_tambah_user';
 		$this->load->view('v_a_template', $data);
@@ -103,10 +103,11 @@ class C_master_user extends CI_Controller {
 
 	public function aksi_update_pwd(){
 		$post = $this->input->post();
-		$id_user = $post['id_user'];
-
-		$username = $post['username'];
-		$username_baru = $post['username_baru']; 
+		$user_id = $post['user_id'];
+		$user_nama = $post['user_nama'];
+		$user_name = $post['user_name'];
+		$user_password = $post['user_password'];
+		$user_level = $post['user_level'];
 
 		$password = $post['password'];
 		$pwd_konfirmasi = $post['repassword'];

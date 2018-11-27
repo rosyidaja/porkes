@@ -48,7 +48,7 @@ class C_a_artikel extends CI_Controller {
 		// $data['tabel'] = $this->M_Artikel->tampildata();
 		$data['aksi'] = 'create';
 		$data['detail'] = $this->a->tampildata();
-		$data['ke'] = 'Tambah Data';
+		$data['ke'] = 'Simpan';
 		// $this->load->view('v-tambah', $data);
 
 		$data['content'] = 'v_a_tambah_artikel';
@@ -88,9 +88,9 @@ class C_a_artikel extends CI_Controller {
 
 		$hasil = $this->a->insert($data);
 		if ($hasil) {
-				$this->session->set_flashdata('pesan','Data Berhasil Tersimpan !');
+				$this->session->set_flashdata('sukses','Data Berhasil Tersimpan !');
 			}else{
-				$this->session->set_flashdata('pesan','Data Gagal Tersimpan !');
+				$this->session->set_flashdata('gagal','Data Gagal Tersimpan !');
 			}
 			redirect(base_url('C_a_artikel/add'));
 		}
@@ -98,7 +98,7 @@ class C_a_artikel extends CI_Controller {
 	public function update($id){
 
 		$data['aksi'] = 'aksi_update';
-		$data['ke'] = 'Ubah Data';
+		$data['ke'] = 'Simpan';
 		// $data['tabel'] = $this->a->tampildata();
 		$data['detail'] = $this->a->tampildataDetail($id);
 		// $this->load->view('v-tambah', $data);
@@ -139,9 +139,9 @@ class C_a_artikel extends CI_Controller {
 		
 		$hasil = $this->a->update($artikel_id,$data);
 		if ($hasil) {
-			$this->session->set_flashdata('pesan','Data Berhasil Di Perbarui !');
+			$this->session->set_flashdata('sukses','Data Berhasil Di Perbarui !');
 		}else{
-			$this->session->set_flashdata('pesan','Data Gagal Di Perbarui !');
+			$this->session->set_flashdata('gagal','Data Gagal Di Perbarui !');
 		}
 		redirect(base_url('C_a_artikel/detail'));
 	}

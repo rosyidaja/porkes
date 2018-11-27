@@ -33,11 +33,24 @@
                   <textarea id="editor1" name="artikel_isi" rows="10" cols="80"><?php if(!empty($detail->artikel_isi)){ echo $detail->artikel_isi;} ?></textarea>
                 </div>
             <!-- /.box-header -->
-                <div class="form-group" style="padding-top: 20px">
+                <div class="form-group" style="padding-top: 20px;">
+                  <label for="exampleInputFile">Unggah Gambar (Artikel)</label>
+                  <br>
+                  <?php if(@$detail->artikel_foto == ""){ ?>
+                    <img src="<?php echo base_url('assets/img/upload.jpg');?>" width="90px" height="70px" style="padding-left: 5px;">
+                  <?php }
+                  else { ?>
+                    <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $detail->artikel_foto;?>" width="150px" height="100px" style="border:1px solid #c8c7c7;">
+                 <?php } ?>
+                 <br>  
+                  <input type="file" name="artikel_foto" id="artikel_foto" style="padding-top: 10px;">                                                        
+                </div>
+
+                <!-- div class="form-group" style="padding-top: 20px">
                   <label for="exampleInputFile">Unggah Gambar (Artikel)</label>
                   <br><?php if(!empty($detail->artikel_foto)){ echo $detail->artikel_foto;} ?>
                   <input type="file" name="artikel_foto" id="artikel_foto">
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label>Status</label>
                     <select class="form-control select2" style="width: 100px;" name="artikel_status">
@@ -47,9 +60,13 @@
                 </div>
               </div>
               <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary"><?php echo $ke; ?></button>
+              <div class="box-footer" style="text-align: center;">
+                <a href="<?php echo base_url('C_a_artikel/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+                <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ke; ?></button>
               </div>
+              <!-- <div class="box-footer">
+                <button type="submit" class="btn btn-primary"></button>
+              </div> -->
             </form>
           </div>
         </div>
