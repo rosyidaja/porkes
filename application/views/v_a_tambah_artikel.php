@@ -14,7 +14,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
+              <?php if($this->session->flashdata('sukses'))
+              {?>
+                <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+              <?php } else { ?>
+                <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+              <?php } ?>
               <h3 class="box-title">Tambah Artikel</h3>
             </div>
             

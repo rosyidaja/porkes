@@ -13,6 +13,13 @@ class M_faskes extends CI_Model{
 		return $this->db->insert_id();//mengambil id yng terakhir 
 	}
 
+	public function update($id='',$data=''){
+		$this->db->where('faskes_id',$id);
+		// $this->db->join('tbl_karyawan_detail kd','k.id_karyawan = kd.id_karyawan');
+		$result = $this->db->update('m_faskes',$data);
+		return $result;
+	}
+
 	function tampildata(){
 		// $this->db->join('m_faskesdet_layanan fl','f.faskes_id = fl.faskes_id','left');
 		// $result = $this->db->get('m_faskes f');
@@ -113,13 +120,6 @@ class M_faskes extends CI_Model{
 	public function delete($id='',$data=''){
 		$this->db->where('faskes_id',$id);
 		$result = $this->db->delete('m_faskes',$data);
-		return $result;
-	}
-
-	public function update($id='',$data=''){
-		$this->db->where('faskes_id',$id);
-		// $this->db->join('tbl_karyawan_detail kd','k.id_karyawan = kd.id_karyawan');
-		$result = $this->db->update('m_faskes',$data);
 		return $result;
 	}
 

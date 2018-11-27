@@ -59,6 +59,16 @@ class C_master_user extends CI_Controller {
 		$b = $this->form_validation->set_rules('user_password','Password','required|matches[user_repassword]');
 		$c = $this->form_validation->set_rules('user_repassword','Password Confirmation','required');
 
+		$config['upload_path']          = './assets/upload/user/';
+		$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
+ 
+		$this->upload->initialize($config);
+		if (!$this->upload->do_upload('user_foto')){
+			$error = array('error' => $this->upload->display_errors());
+		}else{
+			$data_foto = $this->upload->data('file_name');
+		}
+
 		if($this->form_validation->run() == FALSE)
 		{
 			// $data['karyawan'] = $this->m_login->get_karyawan_not_user();
@@ -78,16 +88,16 @@ class C_master_user extends CI_Controller {
 			);
 			if(!empty($data))$result = $this->M_login->insert($data);
 
+
 			if($result)
 			{
-				$this->session->set_flashdata('pesan','Berhasil menambah data user !');
+				$this->session->set_flashdata('sukses','Berhasil menambah data user !');
 			}
 			else
 			{
-				$this->session->set_flashdata('pesan','Gagal menambah user !');
+				$this->session->set_flashdata('gagal','Gagal menambah user !');
 			}
-	
-			redirect(base_url('C_master_user/add'));
+				redirect(base_url('C_master_user/add'));
 		}
 	}
 

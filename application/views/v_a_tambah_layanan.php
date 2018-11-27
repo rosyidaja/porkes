@@ -14,7 +14,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
+              <?php if($this->session->flashdata('sukses'))
+              {?>
+                <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+              <?php } else { ?>
+                <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+              <?php } ?>
               <h3 class="box-title">Tambah Layanan</h3>
             </div>
             
@@ -32,14 +37,29 @@
                   <label for="exampleInputEmail1">Isi Layanan</label>
                   <textarea id="editor1" name="layanan_deskripsi" rows="10" cols="80"><?php if(!empty($detail->layanan_deskripsi)){ echo $detail->layanan_deskripsi;} ?></textarea>
                 </div>
-                <div class="form-group" style="padding-top: 20px">
+
+                <div class="form-group" style="padding-top: 20px;">
+                  <label for="exampleInputFile">Unggah Gambar (Layanan)</label>
+                  <br>
+                  <?php if(@$detail->layanan_foto == ""){ ?>
+                    <img src="<?php echo base_url('assets/img/upload.jpg');?>" width="90px" height="70px" style="padding-left: 5px;">
+                  <?php }
+                  else { ?>
+                    <img src="<?php echo base_url();?>assets/upload/layanan/<?php echo $detail->layanan_foto;?>" width="150px" height="100px" style="border:1px solid #c8c7c7;">
+                 <?php } ?>
+                 <br>  
+                  <input type="file" name="layanan_foto" id="layanan_foto" style="padding-top: 10px;">                                                        
+                </div>
+
+               <!--  <div class="form-group" style="padding-top: 20px">
                   <label for="layanan_foto">Unggah Gambar (Layanan)</label>
                   <br><?php if(!empty($detail->layanan_foto)){ echo $detail->layanan_foto;} ?>
                   <input type="file" name="layanan_foto">
-                </div>                
+                </div>       -->          
               </div>
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary"><?php echo $ke; ?></button>
+              <div class="box-footer" style="text-align: center;">
+                <a href="<?php echo base_url('C_a_layanan/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+                <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ke; ?></button>
               </div>
             </form>
           </div>

@@ -24,7 +24,7 @@ class C_admin extends CI_Controller {
 		if(!$this->session->userdata('user')){
 			redirect(base_url('C_login/index'));
 		}
-		
+		$data['title'] = 'Beranda';
         $data['content'] = 'v_a_beranda';
         $this->load->view('v_a_template',$data);
 	}

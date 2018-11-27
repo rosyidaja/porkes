@@ -14,7 +14,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
+              <?php if($this->session->flashdata('sukses'))
+              {?>
+                <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+              <?php } else { ?>
+                <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+              <?php } ?>
               <h3 class="box-title">Tambah Faskes</h3>
             </div>
             
@@ -67,14 +72,38 @@
                   <label for="exampleInputEmail1">Longitude</label>
                   <input type="text" class="form-control" name="longitude_faskes" value="<?php if(!empty($detail->faskes_longitude)){ echo $detail->faskes_longitude;} ?>" placeholder=" Longitude ...">
                 </div>
-                <div class="form-group" style="padding-top: 20px">
+                <div class="form-group" style="padding-top: 20px;">
+                  <label for="exampleInputFile">Unggah Background (Faskes)</label>
+                  <br>
+                  <?php if(@$detail->faskes_background == ""){ ?>
+                    <img src="<?php echo base_url('assets/img/upload.jpg');?>" width="90px" height="70px" style="padding-left: 5px;">
+                  <?php }
+                  else { ?>
+                    <img src="<?php echo base_url();?>assets/upload/faskes/<?php echo $detail->faskes_background;?>" width="150px" height="100px" style="border:1px solid #c8c7c7;">
+                 <?php } ?>
+                 <br>  
+                  <input type="file" name="faskes_background" id="bg_faskes" style="padding-top: 10px;">                                                  
+                </div>
+                <!-- <div class="form-group" style="padding-top: 20px">
                   <label for="exampleInputFile">Unggah Background (Faskes)</label>
                   <input type="file" name="faskes_background" id="bg_faskes">
+                </div> -->
+                <div class="form-group" style="padding-top: 20px;">
+                  <label for="exampleInputFile">Unggah Logo (Faskes)</label>
+                  <br>
+                  <?php if(@$detail->faskes_foto == ""){ ?>
+                    <img src="<?php echo base_url('assets/img/upload.jpg');?>" width="90px" height="70px" style="padding-left: 5px;">
+                  <?php }
+                  else { ?>
+                    <img src="<?php echo base_url();?>assets/upload/faskes/<?php echo $detail->faskes_foto;?>" width="150px" height="100px" style="border:1px solid #c8c7c7;">
+                 <?php } ?>
+                 <br>  
+                  <input type="file" name="faskes_foto" id="foto_faskes" style="padding-top: 10px;">                                                  
                 </div>
-                <div class="form-group" style="padding-top: 20px">
+                <!-- <div class="form-group" style="padding-top: 20px">
                   <label for="exampleInputFile">Unggah Logo (Faskes)</label>
                   <input type="file" name="faskes_foto" id="foto_faskes">
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label>Status</label>
                     <select class="form-control" name="faskes_status" style="width: 160px;">
@@ -96,8 +125,9 @@
                     </select>
                 </div>
               </div>
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary"><?php echo $ke; ?></button>
+              <div class="box-footer" style="text-align: center;">
+                <a href="<?php echo base_url('C_a_faskes/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+                <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ke; ?></button>
               </div>
             </form>
           </div>

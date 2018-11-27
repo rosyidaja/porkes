@@ -49,7 +49,7 @@
                       echo '<label class="label label-success">Publish</label>';
                     }
                      else{
-                      echo '<label class="label label-danger">Draft</label>';
+                      echo '<label class="label label-warning">Draft</label>';
                     } ?>
                   </td>
 

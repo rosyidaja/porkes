@@ -13,7 +13,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
+              <?php if($this->session->flashdata('sukses'))
+              {?>
+                <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+              <?php } else { ?>
+                <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+              <?php } ?>
               <h3 class="box-title">Daftar Faskes</h3>
             </div>
             <!-- /.box-header -->
@@ -65,16 +70,24 @@
                       </tr>
                     </table>
                     </td>
-                    <td align="center" style="vertical-align: middle;"><span class="label label-success"><?php echo $value->faskes_status;?></span></td>
+                    <td align="center" style="vertical-align: middle;">
+                      <?php if(@$value->faskes_status == 'Sudah Terverifi')
+                      {
+                        echo '<label class="label label-success">Sudah Terverifikasi</label>';
+                      }
+                      else{
+                        echo '<label class="label label-warning">Belum Terverifikasi</label>';
+                      } ?>
+                    </td>
                     <td align="center" style="vertical-align: middle;">
                     <a href="<?php echo base_url('C_a_faskes/content/'.$value->faskes_id)?>">
-                      <i class="fa fa-search text-success cursor btn-edit" style="padding-right: 15px;"></i>
+                      <i class="fa fa-search text-success cursor btn-edit" data-toggle="tooltip" data-placement="top" title="Konten" style="padding-right: 15px;"></i>
                     </a>
                     <a href="<?php echo base_url('C_a_faskes/update/'.$value->faskes_id)?>">
-                      <i class="fa fa-edit text-success cursor btn-edit" style="padding-right: 15px;"></i>
+                      <i class="fa fa-edit text-success cursor btn-edit" data-toggle="tooltip" data-placement="top" title="Edit" style="padding-right: 15px;"></i>
                     </a>
                     <a href="<?php echo base_url('C_a_faskes/delete/'.$value->faskes_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->faskes_nama; ?> ? ')"> 
-                        <i class="fa fa-trash text-danger cursor btn-delete" style="padding-right: 15px;"></i>
+                        <i class="fa fa-trash text-danger cursor btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus" style="padding-right: 15px;"></i>
                     </a>
                     </td>
                   </tr>

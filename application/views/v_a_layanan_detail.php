@@ -14,6 +14,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+              <?php if($this->session->flashdata('sukses'))
+              {?>
+                <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+              <?php } else { ?>
+                <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+              <?php } ?>
               <h3 class="box-title">Daftar Layanan</h3>
             </div>
             <!-- /.box-header -->
@@ -36,10 +42,10 @@
                   <td><?php echo $value->layanan_deskripsi ?></td>
                   <td align="center" style="vertical-align: middle;">
                     <a href="<?php echo base_url('C_a_layanan/update/'.$value->layanan_id)?>">
-                      <button type="button" class="btn btn-primary btn-sm" name="edit">Ubah</button>
+                      <i class="fa fa-edit text-success btn-sm btn-edit" name="edit" data-toggle="tooltip" data-placement="top" title="Edit"></i>
                     </a>
-                    <a href="<?php echo base_url('C_a_layanan/delete/'.$value->layanan_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->layanan_judul; ?> ? ')"> 
-                      <button type="button" class="btn btn-danger btn-sm" name="hapus">Hapus</button>
+                    <a href="<?php echo base_url('C_a_layanan/delete/'.$value->layanan_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->layanan_judul; ?> ? ')">
+                      <i class="fa fa-trash text-danger cursor btn-delete" name="hapus" style="padding-right: 15px;" data-toggle="tooltip" data-placement="top" title="Hapus"></i>
                     </a>
                   </td>
                 </tr>

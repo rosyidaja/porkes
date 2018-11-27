@@ -14,7 +14,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
+              <?php if($this->session->flashdata('sukses'))
+              {?>
+                <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+              <?php } else { ?>
+                <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+              <?php } ?>
               <h3 class="box-title">Tambah User</h3>
             </div>
             
@@ -41,16 +46,16 @@
                   <input type="Password" class="form-control" name="user_repassword" placeholder=" Re-Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Foto :</label>
+                  <label class="form-label">Unggah Foto (User)</label>
                   <br>
-                  <?php if(@$karyawan->foto == ""){ ?>
+                  <?php if(@$detail->user_foto == ""){ ?>
                     <img src="<?php echo base_url('assets/img/avatar.png');?>">
                   <?php }
                   else { ?>
-                    <img src="<?php echo base_url();?>assets/img/<?php echo @$karyawan->foto;?>" width="100px" style="border:1px solid #c8c7c7;">
+                    <img src="<?php echo base_url();?>assets/upload/user/<?php echo $detail->user_foto;?>" width="100px" style="border:1px solid #c8c7c7;">
                  <?php } ?>
                  <br>  
-                  <input type="file" style="padding-top: 10px;" name="file_upload"/>                                                                
+                  <input type="file" style="padding-top: 10px;" name="user_foto" id="user_foto">                                                              
                 </div>   
                 <div class="form-group">
                   <label>Level</label>
@@ -62,8 +67,9 @@
                 </div>
               </div>
               <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary"><?php echo $ket; ?></button>
+              <div class="box-footer" style="text-align: center;">
+                <a href="<?php echo base_url('C_master_user/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+                <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ket; ?></button>
               </div>
             </form>
           </div>

@@ -17,6 +17,7 @@ class C_a_faskes extends CI_Controller {
 
 	public function detail()
 	{
+		$data['title'] = 'List Faskes';
 		$data['tabel'] = $this->a->tampildata();
 		$data['content'] = 'v_a_faskes_detail';
         $this->load->view('v_a_template',$data);
@@ -29,6 +30,7 @@ class C_a_faskes extends CI_Controller {
 
 	public function content($id=""){
 		if($id!= ""){
+			$data['title'] = 'Konten Faskes';
 			$data['faskes_id'] = $id;
 			$data['faskes_nama'] = $this->a->tampildataDetail($id)->faskes_nama;
 			$data['tabel_dokter'] = $this->a->tampilDokter($id);
@@ -43,8 +45,9 @@ class C_a_faskes extends CI_Controller {
 		}
 	}
 	public function add(){
+		$data['title'] = 'Tambah Faskes';
 		$data['aksi'] = 'create';
-		 $data['ke'] = 'Tambah Data';
+		$data['ke'] = 'Tambah Data';
 		// $this->load->view('v-tambah', $data);
 
 		$data['content'] = 'v_a_tambah_faskes';
@@ -102,9 +105,9 @@ class C_a_faskes extends CI_Controller {
 
 		$hasil = $this->a->insert($data);
 		if ($hasil) {
-				$this->session->set_flashdata('pesan','Data Berhasil Tersimpan !');
+				$this->session->set_flashdata('sukses','Data Berhasil Tersimpan !');
 			}else{
-				$this->session->set_flashdata('pesan','Data Gagal Tersimpan !');
+				$this->session->set_flashdata('gagal','Data Gagal Tersimpan !');
 			}
 			redirect(base_url('C_a_faskes/add'));
 		}
@@ -116,6 +119,7 @@ class C_a_faskes extends CI_Controller {
 		}
 
 		public function update($id){
+			$data['title'] = 'Edit Faskes';
 			$data['aksi'] = 'aksi_update';
 			$data['ke'] = 'Ubah Data';
 			// $data['tabel'] = $this->a->tampildata();
@@ -125,11 +129,12 @@ class C_a_faskes extends CI_Controller {
 			$this->load->view('v_a_template', $data);
 		}
 
-		public function aksi_update($id){
+		public function aksi_update(){
 			$post = $this->input->post();
 			/*Deklarasi Pengambilan parameter */
 			
 			$faskes_id = $post['faskes_id'];
+
 			$faskes_nama = $post['nama_faskes'];
 			$faskes_alamat = $post['alamat_faskes'];
 			$propinsi_id = $post['provinsi'];
@@ -160,26 +165,43 @@ class C_a_faskes extends CI_Controller {
 			
 			$config['upload_path']          = './assets/upload/faskes/';
 			$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
-	 
+
 			$this->upload->initialize($config);
-			if(!$_FILES["faskes_foto"]["name"]){
-				if (!$this->upload->do_upload('faskes_foto')){
-					$error = array('error' => $this->upload->display_errors());
-				}else{
-					/*Ketika Sukses Upload mengambil nama file*/
-					$faskes_foto = $this->upload->data('file_name');
-					$data['faskes_foto'] = $faskes_foto;
-				}
+			if (!$this->upload->do_upload('faskes_foto')){
+				$error = array('error' => $this->upload->display_errors());
+			}else{
+			/*Ketika Sukses Upload mengambil nama file*/
+				$faskes_foto = $this->upload->data('file_name');
+				$data['faskes_foto'] = $faskes_foto;
 			}
+
+			if (!$this->upload->do_upload('faskes_background')){
+				$error = array('error' => $this->upload->display_errors());
+			}else{
+				$faskes_background = $this->upload->data('file_name');
+				$data['faskes_background'] = $faskes_background;
+			}
+
 			
-			if(!$_FILES["faskes_background"]["name"]){
-				if (!$this->upload->do_upload('faskes_background')){
-					$error = array('error' => $this->upload->display_errors());
-				}else{
-					$faskes_background = $this->upload->data('file_name');
-					$data['faskes_background'] = $faskes_background;
-				}
-			}
+			// $this->upload->initialize($config);
+			// if(!$_FILES["faskes_foto"]["name"]){
+			// 	if (!$this->upload->do_upload('faskes_foto')){
+			// 		$error = array('error' => $this->upload->display_errors());
+			// 	}else{
+			// 		/*Ketika Sukses Upload mengambil nama file*/
+			// 		$faskes_foto = $this->upload->data('file_name');
+			// 		$data['faskes_foto'] = $faskes_foto;
+			// 	}
+			// }
+			
+			// if(!$_FILES["faskes_background"]["name"]){
+			// 	if (!$this->upload->do_upload('faskes_background')){
+			// 		$error = array('error' => $this->upload->display_errors());
+			// 	}else{
+			// 		$faskes_background = $this->upload->data('file_name');
+			// 		$data['faskes_background'] = $faskes_background;
+			// 	}
+			// }
 			
 			/*End Proses Upload */
 	
@@ -187,9 +209,9 @@ class C_a_faskes extends CI_Controller {
 	
 			$hasil = $this->a->update($faskes_id,$data);
 			if ($hasil) {
-					$this->session->set_flashdata('pesan','Data Berhasil Diperbarui !');
+					$this->session->set_flashdata('sukses','Data Berhasil Diperbarui !');
 				}else{
-					$this->session->set_flashdata('pesan','Data Gagal Diperbarui !');
+					$this->session->set_flashdata('gagal','Data Gagal Diperbarui !');
 				}
 				redirect(base_url('C_a_faskes/detail'));
 			}
@@ -280,9 +302,9 @@ class C_a_faskes extends CI_Controller {
 				}
 				
 					if ($result > 0) {
-						$this->session->set_flashdata('pesan','Data Berhasil Diperbarui !');
+						$this->session->set_flashdata('sukses','Data Berhasil Diperbarui !');
 					}else{
-						$this->session->set_flashdata('pesan','Data Gagal Diperbarui !');
+						$this->session->set_flashdata('gagal','Data Gagal Diperbarui !');
 					}
 					echo $result;
 				}
@@ -316,9 +338,9 @@ class C_a_faskes extends CI_Controller {
 				}
 
 				if ($result > 0) {
-					$this->session->set_flashdata('pesan','Data Berhasil Dihapus !');
+					$this->session->set_flashdata('sukses','Data Berhasil Dihapus !');
 				}else{
-					$this->session->set_flashdata('pesan','Data Gagal Dihapus !');
+					$this->session->set_flashdata('gagal','Data Gagal Dihapus !');
 				}
 				echo $result;
 			}

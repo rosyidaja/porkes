@@ -3,11 +3,16 @@
       <h1>
         Detail Faskes <?php echo $faskes_nama; ?>
       </h1>
-      <p style="color: red"><strong><?php echo $this->session->flashdata('pesan'); ?></strong></p>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url();?>C_a_faskes/detail"><i class="fa fa-pie-chart"></i>Faskes</a></li>
         <li class="active">Detail Faskes</li>
       </ol>
+      <?php if($this->session->flashdata('sukses'))
+      {?>
+        <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+      <?php } else { ?>
+        <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+      <?php } ?>
     </section>
     <!-- Main content -->
     <section class="content">
@@ -42,8 +47,8 @@
                     <td style="padding-left: 10px"> <?php echo $value->faskesdetdokter_nama;?></td>
                     <td style="padding-left: 10px"> <?php echo $value->faskesdetdokter_telfon;?></td>
                     <td align="center" style="vertical-align: middle;">
-                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer; padding-right: 20px;" data-param="dokter" data-id="<?php echo $value->faskesdetdokter_id; ?>"></i>
-                    <i class="fa fa-trash text-danger cursor btn-delete" style="cursor:pointer;" data-param="dokter" data-id="<?php echo $value->faskesdetdokter_id; ?>"></i>
+                    <i class="fa fa-pencil text-success cursor btn-edit" data-toggle="tooltip" data-placement="top" title="Edit" style="cursor:pointer; padding-right: 20px;" data-param="dokter" data-id="<?php echo $value->faskesdetdokter_id; ?>"></i>
+                    <i class="fa fa-trash text-danger cursor btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus" style="cursor:pointer;" data-param="dokter" data-id="<?php echo $value->faskesdetdokter_id; ?>"></i>
                     </td>
                   </tr>
                 <?php } ?>
@@ -84,8 +89,8 @@
                     <td style="padding-left: 10px"> <?php echo $val_poli->faskesdetpoli_kode;?></td>
                     <td style="padding-left: 10px"> <?php echo $val_poli->faskesdetpoli_nama;?></td>
                     <td align="center" style="vertical-align: middle;">
-                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer; padding-right: 20px;" data-param="poli" data-id="<?php echo $val_poli->faskesdetpoli_id; ?>"></i>
-                    <i class="fa fa-trash text-danger cursor btn-delete" style="cursor:pointer;" data-param="poli" data-id="<?php echo $val_poli->faskesdetpoli_id; ?>"></i>
+                    <i class="fa fa-pencil text-success cursor btn-edit" data-toggle="tooltip" data-placement="top" title="Edit" style="cursor:pointer; padding-right: 20px;" data-param="poli" data-id="<?php echo $val_poli->faskesdetpoli_id; ?>"></i>
+                    <i class="fa fa-trash text-danger cursor btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus" style="cursor:pointer;" data-param="poli" data-id="<?php echo $val_poli->faskesdetpoli_id; ?>"></i>
                     </td>
                   </tr>
                 <?php } ?>
@@ -125,8 +130,8 @@
                   <tr>
                     <td style="padding-left: 10px"> <?php echo $val_poli->faskesdetlayanan_nama;?></td>
                     <td align="center" style="vertical-align: middle;">
-                    <i class="fa fa-pencil text-success cursor btn-edit" style="cursor:pointer; padding-right: 20px;" data-param="layanan" data-id="<?php echo $val_poli->faskesdetlayanan_id; ?>"></i>
-                    <i class="fa fa-trash text-danger cursor btn-delete" style="cursor:pointer;" data-param="layanan" data-id="<?php echo $val_poli->faskesdetlayanan_id; ?>"></i>
+                    <i class="fa fa-pencil text-success cursor btn-edit" data-toggle="tooltip" data-placement="top" title="Edit" style="cursor:pointer; padding-right: 20px;" data-param="layanan" data-id="<?php echo $val_poli->faskesdetlayanan_id; ?>"></i>
+                    <i class="fa fa-trash text-danger cursor btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus" style="cursor:pointer;" data-param="layanan" data-id="<?php echo $val_poli->faskesdetlayanan_id; ?>"></i>
                     </td>
                   </tr>
                 <?php } ?>
@@ -202,8 +207,9 @@
                 </div>
             </div>
         </div>
-        <div>
-          <a href="<?php echo base_url('C_a_faskes/detail');?>"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+        <div class="box-footer"
+        >
+          <a href="<?php echo base_url('C_a_faskes/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
         </div>
     </section>
     <!-- /.content -->

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin Porkes | Dashboard</title>
+  <title>AdminPorkes | <?php echo $title;?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -79,7 +79,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="<?php echo base_url('C_login/logout');?>" class="btn btn-default btn-flat" onclick="return confirm('Anda yakin akan keluar dari sistem ? ')">Sign out</a>
+                  <a href="<?php echo base_url('C_login/logout');?>" class="fa btn btn-default btn-flat fa-sign-out" onclick="return confirm('Anda yakin akan keluar dari sistem ? ')"> Keluar</a>
                 </div>
               </li>
             </ul>
