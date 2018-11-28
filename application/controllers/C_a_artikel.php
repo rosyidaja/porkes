@@ -47,7 +47,7 @@ class C_a_artikel extends CI_Controller {
 
 	public function add(){
 		// $data['tabel'] = $this->M_Artikel->tampildata();
-		$data['title'] = 'Tambah artikel';
+		$data['title'] = 'Tambah Artikel';
 		$data['aksi'] = 'create';
 		$data['detail'] = $this->a->tampildata();
 		$data['ke'] = 'Simpan';
@@ -98,7 +98,7 @@ class C_a_artikel extends CI_Controller {
 		}
 
 	public function update($id){
-		$data['title'] = 'Edit Faskes';
+		$data['title'] = 'Edit Artikel';
 		$data['aksi'] = 'aksi_update';
 		$data['ke'] = 'Simpan';
 		// $data['tabel'] = $this->a->tampildata();

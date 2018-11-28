@@ -1,11 +1,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tambah Layanan
+        <?php echo $title; ?>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-laptop"></i> Layanan</a></li>
-        <li class="active">Tambah Layanan</li>
+        <li class="active"><?php echo $title; ?></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -20,7 +20,7 @@
               <?php } else { ?>
                 <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
               <?php } ?>
-              <h3 class="box-title">Tambah Layanan</h3>
+              <h3 class="box-title"><?php echo $title; ?></h3>
             </div>
             
             <!-- form start -->

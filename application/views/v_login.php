@@ -46,14 +46,14 @@
 
 				<form action="<?php echo base_url('C_login/aksi_login');?>" method="post" class="login100-form validate-form" >
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="user_name" placeholder="Enter username">
+						<span class="label-input100" style="color: white;">Username</span>
+						<input class="input100" type="text" name="user_name" placeholder="Enter username" style="color: white;">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="user_password" placeholder="Enter password">
+						<span class="label-input100" style="color: white;">Password</span>
+						<input class="input100" type="password" name="user_password" placeholder="Enter password" style="color: white;">
 						<span class="focus-input100"></span>
 					</div>
 

@@ -1,4 +1,4 @@
-<section id="artikel" class="section-padding">
+<section id="artikel" class="section-padding" style="background-color: darkcyan;">
     <div class="container">
       <div class="row">
         <div class="col-md-12">

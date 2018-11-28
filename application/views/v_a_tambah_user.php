@@ -1,11 +1,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tambah User
+        <?php echo $ket; ?>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-book"></i> Master User</a></li>
-        <li class="active">Tambah User</li>
+        <li class="active"><?php echo $ket; ?></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -20,7 +20,7 @@
               <?php } else { ?>
                 <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
               <?php } ?>
-              <h3 class="box-title">Tambah User</h3>
+              <h3 class="box-title"><?php echo $ket; ?></h3>
             </div>
             
             <!-- form start -->

@@ -103,7 +103,7 @@ class C_master_user extends CI_Controller {
 
 	public function update_pwd($id=''){
 		$data['aksi'] = 'aksi_update_pwd';
-		$data['ket'] = 'Ganti Password';
+		$data['ket'] = 'Edit Password';
 		$data['detail'] = $this->M_login->tampildataDetail($id);
 		// $this->load->view('v-ganti', $data);
 		$data['content'] = 'v_a_tambah_user';

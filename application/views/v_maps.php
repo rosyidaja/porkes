@@ -1,13 +1,13 @@
       <div class="container-fluid">
         <div class="row">
-          <div class="banner-info" style="margin-top: 90px;">
+          <div class="banner-info" style="margin-top: 90px; padding-left: 190px; padding-right: 190px; padding-bottom: 100px;">
             <!-- start maps -->
             <!-- <div class="iframe-container">
               <iframe src="https://www.google.com/maps/embed/v1/search?q=hospital%20near%20my%20location&key=AIzaSyApbqMy_ftrIpADq5OxKnqPXrFydE76-jA" width="600" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div> -->
             <div id="mapid" style="height:600px;">
 
-            </div>
+            
             <script type="text/javascript">
             <?php echo "var baseUrl = '". base_url() . "';"; ?>
             navigator.geolocation.getCurrentPosition(function(location) {
@@ -70,7 +70,7 @@
 
             </script>
             <!-- end maps -->
-
+            </div>
           </div>
         </div>
       </div>
