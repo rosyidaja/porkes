@@ -5,8 +5,6 @@ class M_login extends CI_Model{
 
 	public function __construct(){
 		parent::__construct();
-
-		// $this->labels = $this->_atributeLabels();
 		$this->load->database();
 	}
 
@@ -19,6 +17,24 @@ class M_login extends CI_Model{
 		$this->db->where('user_password',$user_password);
 		$result = $this->db->get('s_user');
 		return $result->row();
+	}
+
+	public function get_user($user_id){
+		$this->db->where('user_id',$user_id);
+		$result = $this->db->get('s_user');
+		return $result->row();
+	}
+
+	public function update_pwd($id='',$data=''){
+		$this->db->where('user_id',$id);
+		$result = $this->db->update('s_user',$data);
+		return $result;
+	}
+
+	public function update($id='',$data=''){
+		$this->db->where('user_id',$id);
+		$result = $this->db->update('s_user',$data);
+		return $result;
 	}
 
 	function tampildata(){

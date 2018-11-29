@@ -46,7 +46,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?php echo base_url('C_admin/index') ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>M</b>LB</span>
       <!-- logo for regular state and mobile devices -->
@@ -64,13 +64,25 @@
         <ul class="nav navbar-nav">
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url('assets/img/om.jpeg');?>" class="user-image" alt="User Image">
+              <?php $user=$this->session->userdata('user')->user_foto;
+                if(@$user== ""){ ?>
+                  <img src="<?php echo base_url('assets/img/avatar.png');?>" class="user-image" alt="User Image">
+                <?php }
+                else { ?>
+                  <img src="<?php echo base_url('assets/upload/user/'.$user);?>" class="user-image" alt="User Image">
+                <?php } ?>
               <span class="hidden-xs"><?php echo $this->session->userdata('user')->user_nama; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url('assets/img/om.jpeg');?>" class="img-circle" alt="User Image">
+                <?php $user=$this->session->userdata('user')->user_foto;
+                if(@$user== ""){ ?>
+                  <img src="<?php echo base_url('assets/img/avatar.png');?>" class="img-circle" alt="User Image">
+                <?php }
+                else { ?>
+                  <img src="<?php echo base_url('assets/upload/user/'.$user);?>" class="img-circle" alt="User Image">
+                <?php } ?>
                 <p>
                   <?php echo $this->session->userdata('user')->user_nama; ?>
                   <small>Administrator</small>
@@ -78,6 +90,9 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
+                <div class="pull-left">
+                  <a href="<?php echo base_url('C_master_user/update_pwd_profile/'.$this->session->userdata('user')->user_id)?>" class="fa btn btn-default btn-flat fa-user"> Profile User</a>
+                </div>
                 <div class="pull-right">
                   <a href="<?php echo base_url('C_login/logout');?>" class="fa btn btn-default btn-flat fa-sign-out" onclick="return confirm('Anda yakin akan keluar dari sistem ? ')"> Keluar</a>
                 </div>
@@ -99,8 +114,14 @@
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
-        <div class="pull-left image">
-          <img src="<?php echo base_url('assets/img/om.jpeg');?>" class="img-circle" alt="User Image">
+        <div class="pull-left">
+          <?php $user=$this->session->userdata('user')->user_foto;
+            if(@$user== ""){ ?>
+              <img src="<?php echo base_url('assets/img/avatar.png');?>" class="img-circle" alt="User Image">
+            <?php }
+            else { ?>
+              <img src="<?php echo base_url('assets/upload/user/'.$user);?>" class="img-circle" alt="User Image" width="55px;" height="50px;">
+            <?php } ?>
         </div>
         <div class="pull-left info">
           <p><?php echo $this->session->userdata('user')->user_nama; ?></p>
@@ -108,7 +129,7 @@
         </div>
       </div>
       <!-- search form -->
-      <!-- <form action="#" method="get" class="sidebar-form">
+      <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -117,10 +138,10 @@
             </button>
           </span>
         </div>
-      </form> -->
+      </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree" style="padding-top: 10px;">
+      <ul class="sidebar-menu" data-widget="tree" style="padding-top: 20px;">
         <li class="header">MAIN NAVIGATION</li>
         <li>
           <a href="<?php echo base_url('C_admin/index') ?>">

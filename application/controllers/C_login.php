@@ -34,9 +34,10 @@ class C_login extends CI_Controller {
 		$user_name = $this->input->post('user_name');
 		$user_nama = $this->input->post('user_nama');
 		$user_password = $this->input->post('user_password');
+		$user_foto = $this->input->post('user_foto');
 
 
-		$cek_login = $this->M_login->get_login($user_name,$user_password,$user_nama);
+		$cek_login = $this->M_login->get_login($user_name,$user_password,$user_nama,$user_foto);
 
 		if ($cek_login) {
 			$this->session->set_userdata('user',$cek_login);

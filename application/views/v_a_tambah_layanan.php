@@ -49,13 +49,7 @@
                  <?php } ?>
                  <br>  
                   <input type="file" name="layanan_foto" id="layanan_foto" style="padding-top: 10px;">                                                        
-                </div>
-
-               <!--  <div class="form-group" style="padding-top: 20px">
-                  <label for="layanan_foto">Unggah Gambar (Layanan)</label>
-                  <br><?php if(!empty($detail->layanan_foto)){ echo $detail->layanan_foto;} ?>
-                  <input type="file" name="layanan_foto">
-                </div>       -->          
+                </div>      
               </div>
               <div class="box-footer" style="text-align: center;">
                 <a href="<?php echo base_url('C_a_layanan/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>

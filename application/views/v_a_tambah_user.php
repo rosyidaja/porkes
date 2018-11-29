@@ -23,8 +23,11 @@
               <h3 class="box-title"><?php echo $ket; ?></h3>
             </div>
             
+            <form role="form" enctype="multipart/form-data" action="<?php echo base_url('C_master_user/'.$aksi);?>" method="post">
+            <?php 
+              if($aksi=='create'){
+            ?>      
             <!-- form start -->
-            <form role="form" action="<?php echo base_url('C_master_user/'.$aksi);?>" method="post">
               <div class="box-body">
                 <div class="form-group" style="width: 400px">
                 <input type="hidden" name="user_id" value="<?php if(!empty($detail->user_id)){ echo $detail->user_id;} ?>">
@@ -37,6 +40,7 @@
                   <label for="exampleInputEmail1">Username</label>
                   <input type="text" class="form-control" name="user_name" placeholder=" Username ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity" value="<?php if(!empty($detail->user_name)){ echo $detail->user_name;} ?>">
                 </div>
+                <input type="hidden" name="pwd_lama" value="<?php if(!empty($detail->user_password)){ echo $detail->user_password;} ?>">
                 <div class="form-group" style="width: 400px">
                   <label for="exampleInputEmail1">Password</label>
                   <input type="Password" class="form-control" name="user_password" placeholder=" Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
@@ -46,7 +50,7 @@
                   <input type="Password" class="form-control" name="user_repassword" placeholder=" Re-Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Unggah Foto (User)</label>
+                  <label for="exampleInputFile">Unggah Foto (User)</label>
                   <br>
                   <?php if(@$detail->user_foto == ""){ ?>
                     <img src="<?php echo base_url('assets/img/avatar.png');?>">
@@ -54,8 +58,8 @@
                   else { ?>
                     <img src="<?php echo base_url();?>assets/upload/user/<?php echo $detail->user_foto;?>" width="100px" style="border:1px solid #c8c7c7;">
                  <?php } ?>
-                 <br>  
-                  <input type="file" style="padding-top: 10px;" name="user_foto" id="user_foto">                                                              
+                 <br>
+                  <input type="file" name="user_foto" id="user_foto" style="padding-top: 10px;">
                 </div>   
                 <div class="form-group">
                   <label>Level</label>
@@ -66,7 +70,99 @@
                     </select>
                 </div>
               </div>
-              <!-- /.box-body -->
+
+              <?php 
+              }
+                else if($aksi=='update_pwd'){
+              ?>    
+
+              <div class="box-body">
+                <div class="form-group" style="width: 400px">
+                  <input type="hidden" name="user_id" value="<?php if(!empty($detail->user_id)){ echo $detail->user_id;} ?>">
+                </div>
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Nama Lengkap Karyawan</label>
+                    <input disabled type="text" class="form-control" name="user_nama" placeholder=" Nama Lengkap Karyawan ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity" value="<?php if(!empty($detail->user_nama)){ echo $detail->user_nama;} ?>">
+                </div>
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Username</label>
+                    <input disabled type="text" class="form-control" name="user_name" placeholder=" Username ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity" value="<?php if(!empty($detail->user_name)){ echo $detail->user_name;} ?>">
+                </div>
+                <input type="hidden" name="pwd_lama" value="<?php if(!empty($detail->user_password)){ echo $detail->user_password;} ?>">
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Password</label>
+                    <input type="Password" class="form-control" name="user_password" placeholder=" Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                </div>
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Re-Password</label>
+                    <input type="Password" class="form-control" name="user_repassword" placeholder=" Re-Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">Unggah Foto (User)</label>
+                  <br>
+                  <?php if(@$detail->user_foto == ""){ ?>
+                    <img src="<?php echo base_url('assets/img/avatar.png');?>">
+                  <?php }
+                  else { ?>
+                    <img src="<?php echo base_url();?>assets/upload/user/<?php echo $detail->user_foto;?>" width="100px" style="border:1px solid #c8c7c7;">
+                 <?php } ?>
+                 <br>  
+                  <input type="file" name="user_foto" id="foto_user" style="padding-top: 10px;">                                                             
+                </div>  
+
+                <div class="form-group">
+                  <label>Level</label>
+                    <select class="form-control select2" style="width: 145px;" name="user_level" required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                      <option selected="selected">Admin</option>
+                      <option>Super Admin</option>
+                    </select>
+                </div>
+              </div>
+
+              <?php 
+              }
+                else if($aksi=='aksi_update_pwd_profile'){
+              ?>    
+
+              <div class="box-body">
+                <div class="form-group" style="width: 400px">
+                  <input type="hidden" name="user_id" value="<?php if(!empty($detail->user_id)){ echo $detail->user_id;} ?>">
+                </div>
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Nama Lengkap Karyawan</label>
+                    <input disabled type="text" class="form-control" name="user_nama" placeholder=" Nama Lengkap Karyawan ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity" value="<?php if(!empty($detail->user_nama)){ echo $detail->user_nama;} ?>">
+                </div>
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Username</label>
+                    <input disabled type="text" class="form-control" name="user_name" placeholder=" Username ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity" value="<?php if(!empty($detail->user_name)){ echo $detail->user_name;} ?>">
+                </div>
+                <input type="hidden" name="pwd_lama" value="<?php if(!empty($detail->user_password)){ echo $detail->user_password;} ?>">
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Password</label>
+                    <input type="Password" class="form-control" name="user_password" placeholder=" Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                </div>
+                <div class="form-group" style="width: 400px">
+                  <label for="exampleInputEmail1">Re-Password</label>
+                    <input type="Password" class="form-control" name="user_repassword" placeholder=" Re-Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">Unggah Foto (User)</label>
+                  <br>
+                  <?php if(@$detail->user_foto == ""){ ?>
+                    <img src="<?php echo base_url('assets/img/avatar.png');?>">
+                  <?php }
+                  else { ?>
+                    <img src="<?php echo base_url();?>assets/upload/user/<?php echo $detail->user_foto;?>" width="100px" style="border:1px solid #c8c7c7;">
+                 <?php } ?>
+                 <br>  
+                  <input type="file" style="padding-top: 10px;" name="user_foto" id="user_foto">                                                              
+                </div>
+              </div>
+
+              <?php 
+                }
+              ?>
+
               <div class="box-footer" style="text-align: center;">
                 <a href="<?php echo base_url('C_master_user/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
                 <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ket; ?></button>
@@ -74,10 +170,5 @@
             </form>
           </div>
         </div>
-            <!-- /.box-body -->
       </div>
-          <!-- /.box -->
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->

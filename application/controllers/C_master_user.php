@@ -22,7 +22,7 @@ class C_master_user extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('M_login');
+		$this->load->model('M_login','a');
 	}
 
 	public function index()
@@ -32,7 +32,8 @@ class C_master_user extends CI_Controller {
 	}
 	public function detail()
 	{
-		$data['tabel'] = $this->M_login->tampildata();
+		$data['title'] = 'List User';
+		$data['tabel'] = $this->a->tampildata();
         $data['content'] = 'v_a_user_detail';
         $this->load->view('v_a_template',$data);
 	}
@@ -40,6 +41,7 @@ class C_master_user extends CI_Controller {
 	public function add(){
 		// $data['tabel'] = $this->m_login->tampildata_pwd();
 		// $data['karyawan'] = $this->m_login->get_karyawan_not_user();
+		$data['title'] = 'Tambah User';
 		$data['ket'] = 'Tambah Data';
 		$data['content'] = 'v_a_tambah_user';
 		$data['aksi'] = 'create';
@@ -86,7 +88,7 @@ class C_master_user extends CI_Controller {
 				'user_level' => $post['user_level'],
 				'user_id' => $user_id
 			);
-			if(!empty($data))$result = $this->M_login->insert($data);
+			if(!empty($data))$result = $this->a->insert($data);
 
 
 			if($result)
@@ -101,76 +103,175 @@ class C_master_user extends CI_Controller {
 		}
 	}
 
-	public function update_pwd($id=''){
-		$data['aksi'] = 'aksi_update_pwd';
+	public function update($id){
+		$data['title'] = 'Edit User';
+		$data['aksi'] = 'update_pwd';
 		$data['ket'] = 'Edit Password';
-		$data['detail'] = $this->M_login->tampildataDetail($id);
+		$data['detail'] = $this->a->tampildataDetail($id);
 		// $this->load->view('v-ganti', $data);
 		$data['content'] = 'v_a_tambah_user';
 		$this->load->view('v_a_template', $data);
 
 	}
 
-	public function aksi_update_pwd(){
+	public function update_pwd(){
 		$post = $this->input->post();
 		$user_id = $post['user_id'];
-		$user_nama = $post['user_nama'];
-		$user_name = $post['user_name'];
+		// $user_nama = $post['user_nama'];
+		// $user_name = $post['user_name'];
 		$user_password = $post['user_password'];
 		$user_level = $post['user_level'];
 
-		$password = $post['password'];
-		$pwd_konfirmasi = $post['repassword'];
+		$user_password = $post['user_password'];
+		$pwd_konfirmasi = $post['user_repassword'];
 
-		if ($username == $username_baru) {
-			$this->session->set_flashdata('pesan','Username sama dengan yang lama !');
-			redirect(base_url('c_m_user/update_pwd'));
-		}
-		else{
-			$data = array(
-				'username' => $post['username_baru']
-			);
-			$hasil = $this->m_login->update_pwd($post['id_user'],$data);
-			// print_r($post['id_user']);exit();
-		}
-
-
-		if($password != $pwd_konfirmasi) {
-			$this->session->set_flashdata('pesan','Password konfirmasi tidak sama !');
-			redirect(base_url('c_m_user/update_pwd'));
+		if($user_password != $pwd_konfirmasi) {
+			$this->session->set_flashdata('gagal','Password konfirmasi tidak sama !');
+			redirect(base_url('C_master_user/update'));
 		}
 		else{
 			$pwd_lama=$post['pwd_lama'];
-			$pwd_baru=$post['password'];
+			$pwd_baru=$post['user_password'];
 
 			if($pwd_lama == $pwd_baru)
 			{
-				$this->session->set_flashdata('pesan','Password sama dengan password lama !');
-				redirect(base_url('c_m_user/update_pwd'));				
+				$this->session->set_flashdata('gagal','Password sama dengan password lama !');
+				redirect(base_url('C_master_user/update'));				
 			}
 			// if(empty($post['password']))unset($post['password']);
 			else{
 				$data = array(
-					'password' => $post['password']
+					'user_password' => $post['user_password']
 				);
-				$result = $this->m_login->update_pwd($post['id_user'],$data);
+				$result = $this->M_login->update_pwd($post['user_id'],$data);
 			}
 		}
 
-		if($result){
-			$bebas = $this->m_login->get_user($post['id_user']);
-			$this->session->set_userdata('user',$bebas);
-			redirect(base_url('c_m_user/index'));
+		$data = array(
+			'user_id' => $post['user_id'],
+			'user_level' => $post['user_level']
+		);
+
+		$config['upload_path']          = './assets/upload/user/';
+		$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
+
+		$this->upload->initialize($config);
+		if (!$this->upload->do_upload('user_foto')){
+			$error = array('error' => $this->upload->display_errors());
+			var_dump($error);
+			return;
+			// redirect(base_url('C_master_user/detail'));
+		}else{
+			/*Ketika Sukses Upload mengambil nama file*/
+			$user_foto = $this->upload->data('file_name');
+			$data['user_foto'] = $user_foto;
+		}
+
+		$hasil = $this->a->update($user_id,$data);
+
+		if ($hasil){
+			$this->session->set_flashdata('sukses','Berhasil Ubah Data !');
+			//$this->session->set_userdata('user');
 		}
 		else{
-			$this->session->set_flashdata('pesan','Gagal ubah password !');
+			$this->session->set_flashdata('gagal','Gagal ubah password !');
+			//redirect(base_url('C_master_user/detail'));
+		}
+			redirect(base_url('C_master_user/detail'));
+	}
+
+	public function update_pwd_profile($id=''){
+		$data['title'] = 'Edit User';
+		$data['ket'] = 'Edit Password';
+		$data['detail'] = $this->a->tampildataDetail($user_id);
+		// $this->load->view('v-ganti', $data);
+		$data['content'] = 'v_a_tambah_user';
+		$data['aksi'] = 'aksi_update_pwd_profile';
+		$this->load->view('v_a_template', $data);
+
+	}
+
+	public function aksi_update_pwd_profile(){
+		$post = $this->input->post();
+		$user_id = $post['user_id'];
+		// $user_nama = $post['user_nama'];
+		// $user_name = $post['user_name'];
+		$user_password = $post['user_password'];
+		$user_level = $post['user_level'];
+
+		$user_password = $post['user_password'];
+		$pwd_konfirmasi = $post['user_repassword'];
+
+		// if ($user_name == $user_name_baru) {
+		// 	$this->session->set_flashdata('gagal','Username sama dengan yang lama !');
+		// 	redirect(base_url('C_master_user/update_pwd'));
+		// }
+		// else{
+		// 	$data = array(
+		// 		'user_name' => $post['user_name_baru']
+		// 	);
+		// 	$hasil = $this->m_login->update_pwd($post['user_id'],$data);
+		// 	$this->session->set_flashdata('sukses','Username Berhasil diperbarui');
+		// 	// print_r($post['id_user']);exit();
+		// }
+
+
+		if($user_password != $pwd_konfirmasi) {
+			$this->session->set_flashdata('gagal','Password konfirmasi tidak sama !');
+			redirect(base_url('C_master_user/update_pwd_profile'));
+		}
+		else{
+			$pwd_lama=$post['pwd_lama'];
+			$pwd_baru=$post['user_password'];
+
+			if($pwd_lama == $pwd_baru)
+			{
+				$this->session->set_flashdata('gagal','Password sama dengan password lama !');
+				redirect(base_url('C_master_user/update_pwd_profile'));				
+			}
+			// if(empty($post['password']))unset($post['password']);
+			else{
+				$data = array(
+					'user_password' => $post['user_password']
+				);
+				$result = $this->a->update_pwd($post['user_id'],$data);
+			}
+		}
+
+		$data = array(
+			'user_level' => $post['user_level']
+		);
+
+		$config['upload_path']          = './assets/upload/user/';
+		$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
+
+		$this->upload->initialize($config);
+		if (!$this->upload->do_upload('user_foto')){
+			$error = array('error' => $this->upload->display_errors());
+
+		}else{
+			/*Ketika Sukses Upload mengambil nama file*/
+			$user_foto = $this->upload->data('file_name');
+			$data['user_foto'] = $user_foto;
+		}
+
+		$result = $this->a->update_pwd($id,$data);
+
+		if($result){
+			$bebas = $this->a->get_user($post['user_id']);
+			$this->session->set_flashdata('sukses','Berhasil Ubah Data !');
+			$this->session->set_userdata('user',$bebas);
+			redirect(base_url('C_master_user/detail'));
+		}
+		else{
+			$this->session->set_flashdata('gagal','Gagal ubah password !');
 			redirect(base_url('C_master_user/detail'));
 		}
 	}
 
 	public function delete($id){
 		// $data = $this->a->delete_detail($id);
-		$data = $this->M_login->delete($id);
+		$data = $this->a->delete($id);
 		redirect(base_url('C_master_user/detail'));
 	}
 }
