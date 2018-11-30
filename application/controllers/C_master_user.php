@@ -143,7 +143,7 @@ class C_master_user extends CI_Controller {
 				$data = array(
 					'user_password' => $post['user_password']
 				);
-				$result = $this->M_login->update_pwd($post['user_id'],$data);
+				$result = $this->a->update_pwd($post['user_id'],$data);
 			}
 		}
 
@@ -158,8 +158,8 @@ class C_master_user extends CI_Controller {
 		$this->upload->initialize($config);
 		if (!$this->upload->do_upload('user_foto')){
 			$error = array('error' => $this->upload->display_errors());
-			var_dump($error);
-			return;
+			// var_dump($error);
+			// return;
 			// redirect(base_url('C_master_user/detail'));
 		}else{
 			/*Ketika Sukses Upload mengambil nama file*/
@@ -180,10 +180,10 @@ class C_master_user extends CI_Controller {
 			redirect(base_url('C_master_user/detail'));
 	}
 
-	public function update_pwd_profile($id=''){
+	public function update_pwd_profile($id){
 		$data['title'] = 'Edit User';
 		$data['ket'] = 'Edit Password';
-		$data['detail'] = $this->a->tampildataDetail($user_id);
+		$data['detail'] = $this->a->tampildataDetail($id);
 		// $this->load->view('v-ganti', $data);
 		$data['content'] = 'v_a_tambah_user';
 		$data['aksi'] = 'aksi_update_pwd_profile';
@@ -218,7 +218,7 @@ class C_master_user extends CI_Controller {
 
 		if($user_password != $pwd_konfirmasi) {
 			$this->session->set_flashdata('gagal','Password konfirmasi tidak sama !');
-			redirect(base_url('C_master_user/update_pwd_profile'));
+			redirect(base_url('C_admin/update_pwd_profile'));
 		}
 		else{
 			$pwd_lama=$post['pwd_lama'];
@@ -234,11 +234,12 @@ class C_master_user extends CI_Controller {
 				$data = array(
 					'user_password' => $post['user_password']
 				);
-				$result = $this->a->update_pwd($post['user_id'],$data);
+				$result = $this->a->update($post['user_id'],$data);
 			}
 		}
 
 		$data = array(
+			'user_id' => $post['user_id'],
 			'user_level' => $post['user_level']
 		);
 
@@ -255,18 +256,18 @@ class C_master_user extends CI_Controller {
 			$data['user_foto'] = $user_foto;
 		}
 
-		$result = $this->a->update_pwd($id,$data);
+		$result = $this->a->update($user_id,$data);
 
 		if($result){
 			$bebas = $this->a->get_user($post['user_id']);
 			$this->session->set_flashdata('sukses','Berhasil Ubah Data !');
 			$this->session->set_userdata('user',$bebas);
-			redirect(base_url('C_master_user/detail'));
+			//redirect(base_url('C_admin/index'));
 		}
 		else{
 			$this->session->set_flashdata('gagal','Gagal ubah password !');
-			redirect(base_url('C_master_user/detail'));
 		}
+			redirect(base_url('C_admin/index'));
 	}
 
 	public function delete($id){

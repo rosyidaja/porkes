@@ -58,9 +58,9 @@
                   else { ?>
                     <img src="<?php echo base_url();?>assets/upload/user/<?php echo $detail->user_foto;?>" width="100px" style="border:1px solid #c8c7c7;">
                  <?php } ?>
-                 <br>
-                  <input type="file" name="user_foto" id="user_foto" style="padding-top: 10px;">
-                </div>   
+                 <br>  
+                  <input type="file" name="user_foto" id="foto_user" style="padding-top: 10px;">                                                             
+                </div>  
                 <div class="form-group">
                   <label>Level</label>
                     <select class="form-control select2" style="width: 145px;" name="user_level" required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
@@ -155,8 +155,8 @@
                     <img src="<?php echo base_url();?>assets/upload/user/<?php echo $detail->user_foto;?>" width="100px" style="border:1px solid #c8c7c7;">
                  <?php } ?>
                  <br>  
-                  <input type="file" style="padding-top: 10px;" name="user_foto" id="user_foto">                                                              
-                </div>
+                  <input type="file" name="user_foto" id="foto_user" style="padding-top: 10px;">                                                             
+                </div>  
               </div>
 
               <?php 
