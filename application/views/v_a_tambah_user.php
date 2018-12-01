@@ -65,8 +65,8 @@
                   <label>Level</label>
                     <select class="form-control select2" style="width: 145px;" name="user_level" required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
                       <option>--- Pilih Level ---</option>
-                      <option>Admin</option>
-                      <option>Super Admin</option>
+                      <option value="0">Admin</option>
+                      <option value="1">Super Admin</option>
                     </select>
                 </div>
               </div>
@@ -91,11 +91,11 @@
                 <input type="hidden" name="pwd_lama" value="<?php if(!empty($detail->user_password)){ echo $detail->user_password;} ?>">
                 <div class="form-group" style="width: 400px">
                   <label for="exampleInputEmail1">Password</label>
-                    <input type="Password" class="form-control" name="user_password" placeholder=" Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                    <input type="Password" class="form-control" name="user_password" placeholder=" Password ..." oninput="setCustomValidity">
                 </div>
                 <div class="form-group" style="width: 400px">
                   <label for="exampleInputEmail1">Re-Password</label>
-                    <input type="Password" class="form-control" name="user_repassword" placeholder=" Re-Password ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                    <input type="Password" class="form-control" name="user_repassword" placeholder=" Re-Password ..." oninput="setCustomValidity">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">Unggah Foto (User)</label>
@@ -113,8 +113,9 @@
                 <div class="form-group">
                   <label>Level</label>
                     <select class="form-control select2" style="width: 145px;" name="user_level" required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
-                      <option selected="selected">Admin</option>
-                      <option>Super Admin</option>
+                       <option>--- Pilih Level ---</option>
+                      <option value="0">Admin</option>
+                      <option value="1">Super Admin</option>
                     </select>
                 </div>
               </div>

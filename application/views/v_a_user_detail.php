@@ -18,9 +18,11 @@
               {?>
                 <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
               <?php } else { ?>
-                <p style="color: black"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+                <p style="color: #a94442;"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
               <?php } ?>
+              <div style="color: #fff; background-color: #00c0ef; background: #00a65a; padding-bottom: 5px; padding-top: 5px; padding-left: 5px;">
               <h3 class="box-title"><?php echo $title; ?></h3>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -39,11 +41,25 @@
                   <tr>
                     <td align="center">
                    <img src="<?php echo base_url();?>assets/upload/user/<?php echo $value->user_foto;?>" width="100px" height="100px" style="border:1px solid #c8c7c7;"></td>
-                    <td><?php echo $value->user_name ?></td>
-                    <td><?php echo $value->user_level ?></td>
-                    <td align="center"><span class="label label-success">Aktif</span></td>
-                    <td align="center"><a href="<?php echo base_url('C_master_user/update/'.$value->user_id)?>"><button type="button" class="btn btn-primary btn-sm">Ubah</button></a> 
-                    <a href="<?php echo base_url('C_master_user/delete/'.$value->user_id)?>"><button type="button" class="btn btn-danger btn-sm">Hapus</button></a></td>
+                    <td style="vertical-align: middle; text-align: center;"><?php echo $value->user_name ?></td>
+                    <td style="vertical-align: middle; text-align: center;">
+                      <?php if(@$value->user_level == "0"){ ?>
+                        <?php echo ('Admin'); ?>
+                      <?php }
+                      else { ?>
+                        <?php echo ('Super Admin'); ?>
+                      <?php } ?>
+                    </td>
+                    <td style="vertical-align: middle; text-align: center;"><span class="label label-success">Aktif</span></td>
+                    <td style="vertical-align: middle; text-align: center;">
+                      <a href="<?php echo base_url('C_master_user/update/'.$value->user_id)?>">
+                        <i class="fa fa-edit text-success btn-sm btn-edit" name="edit" data-toggle="tooltip" data-placement="top" title="Edit"></i>
+                      </a>
+                      <a href="<?php echo base_url('C_master_user/delete/'.$value->user_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->user_nama; ?> ? ')"> 
+                       <!-- <i class="fa fa-trash text-danger cursor btn-delete" style="padding-right: 15px;"></i> -->
+                        <i class="fa fa-trash text-danger cursor btn-delete" name="hapus" style="padding-right: 15px;" data-toggle="tooltip" data-placement="top" title="Hapus"></i>
+                    </a>
+                  </td>
                   </tr>
                 <?php }?>
                 </tbody>

@@ -86,24 +86,26 @@ class C_master_user extends CI_Controller {
 				'user_nama' => $post['user_nama'],
 				'user_password' => $post['user_password'],
 				'user_level' => $post['user_level'],
+				'user_foto' => $data_foto,
 				'user_id' => $user_id
 			);
-			if(!empty($data))$result = $this->a->insert($data);
 
 
-			if($result)
-			{
-				$this->session->set_flashdata('sukses','Berhasil menambah data user !');
-			}
-			else
-			{
-				$this->session->set_flashdata('gagal','Gagal menambah user !');
-			}
-				redirect(base_url('C_master_user/add'));
+		if(!empty($data))$result = $this->a->insert($data);
+
+		if($result)
+		{
+			$this->session->set_flashdata('sukses','Berhasil menambah data user !');
+		}
+		else
+		{
+			$this->session->set_flashdata('gagal','Gagal menambah user !');
+		}
+			redirect(base_url('C_master_user/add'));
 		}
 	}
 
-	public function update($id){
+	public function update($id=''){
 		$data['title'] = 'Edit User';
 		$data['aksi'] = 'update_pwd';
 		$data['ket'] = 'Edit Password';
@@ -127,7 +129,7 @@ class C_master_user extends CI_Controller {
 
 		if($user_password != $pwd_konfirmasi) {
 			$this->session->set_flashdata('gagal','Password konfirmasi tidak sama !');
-			redirect(base_url('C_master_user/update'));
+			redirect(base_url('C_master_user/detail'));
 		}
 		else{
 			$pwd_lama=$post['pwd_lama'];
@@ -135,22 +137,19 @@ class C_master_user extends CI_Controller {
 
 			if($pwd_lama == $pwd_baru)
 			{
-				$this->session->set_flashdata('gagal','Password sama dengan password lama !');
-				redirect(base_url('C_master_user/update'));				
+				$this->session->set_flashdata('gagal','Password sama dengan Password lama !');
+				redirect(base_url('C_master_user/detail'));				
 			}
 			// if(empty($post['password']))unset($post['password']);
 			else{
 				$data = array(
-					'user_password' => $post['user_password']
+					'user_password' => $post['user_password'],
+					'user_id' => $post['user_id'],
+					'user_level' => $post['user_level']
 				);
 				$result = $this->a->update_pwd($post['user_id'],$data);
 			}
 		}
-
-		$data = array(
-			'user_id' => $post['user_id'],
-			'user_level' => $post['user_level']
-		);
 
 		$config['upload_path']          = './assets/upload/user/';
 		$config['allowed_types']        = 'JPEG|JPG|PNG|jpeg|jpg|png';
@@ -170,11 +169,11 @@ class C_master_user extends CI_Controller {
 		$hasil = $this->a->update($user_id,$data);
 
 		if ($hasil){
-			$this->session->set_flashdata('sukses','Berhasil Ubah Data !');
+			$this->session->set_flashdata('sukses','Data Berhasil Diubah ^_^');
 			//$this->session->set_userdata('user');
 		}
 		else{
-			$this->session->set_flashdata('gagal','Gagal ubah password !');
+			$this->session->set_flashdata('gagal','Data Gagal Dirubah -_-');
 			//redirect(base_url('C_master_user/detail'));
 		}
 			redirect(base_url('C_master_user/detail'));
