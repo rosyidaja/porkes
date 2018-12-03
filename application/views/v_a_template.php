@@ -149,6 +149,9 @@
             <span>Beranda</span>
           </a>
         </li>
+        <?php $user_level=$this->session->userdata('user')->user_level;?>
+        <?php if(@$user_level== "1"){
+            ?>    
        <li class="treeview">
           <a href="#">
             <i class="fa fa-book"></i>
@@ -175,6 +178,10 @@
             <li><a href="<?php echo base_url('C_a_layanan/detail'); ?>"><i class="fa fa-list"></i>Daftar Layanan</a></li>
           </ul>
         </li>
+        <?php } else { ?>
+        <li class="treeview">
+        </li>
+      <?php }?>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
@@ -184,15 +191,18 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <?php if(@$user_level== "1"){
+            ?>  
             <li><a href="<?php echo base_url('C_a_faskes/add'); ?>"><i class="fa fa-edit"></i>Tambah Faskes</a></li>
+            <?php } else { ?>
+              <li class="treeview">
+              </li>
+            <?php }?>
             <li><a href="<?php echo base_url('C_a_faskes/detail'); ?>"><i class="fa fa-list"></i>Daftar Faskes</a></li>
           </ul>
         </li>
 
-   
-
-        <?php $user_level=$this->session->userdata('user')->user_level;
-        if(@$user_level== "1"){
+        <?php if(@$user_level== "1"){
             ?>    
         <li class="treeview">
           <a href="#">
@@ -209,8 +219,6 @@
         </li>
       <?php } else { ?>
         <li class="treeview">
-          <a href="#">
-          </a>
         </li>
       <?php }?>
       </ul>

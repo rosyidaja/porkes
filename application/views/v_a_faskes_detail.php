@@ -83,12 +83,16 @@
                     <a href="<?php echo base_url('C_a_faskes/content/'.$value->faskes_id)?>">
                       <i class="fa fa-search text-success cursor btn-edit" data-toggle="tooltip" data-placement="top" title="Konten" style="padding-right: 15px;"></i>
                     </a>
+                    <?php $user_level=$this->session->userdata('user')->user_level;?>
+                      <?php if(@$user_level== "1"){ ?>   
                     <a href="<?php echo base_url('C_a_faskes/update/'.$value->faskes_id)?>">
                       <i class="fa fa-edit text-success cursor btn-edit" data-toggle="tooltip" data-placement="top" title="Edit" style="padding-right: 15px;"></i>
                     </a>
                     <a href="<?php echo base_url('C_a_faskes/delete/'.$value->faskes_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->faskes_nama; ?> ? ')"> 
                         <i class="fa fa-trash text-danger cursor btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus" style="padding-right: 15px;"></i>
                     </a>
+                    <?php } else { ?>
+                    <?php }?>
                     </td>
                   </tr>
                 <?php }?>
