@@ -3,6 +3,13 @@
       <h1>
         Beranda
       </h1>
+      <?php if($this->session->flashdata('sukses'))
+      {?>
+        <br>
+        <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
+      <?php } else { ?>
+        <p style="color: #a94442"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+      <?php } ?>
     </section>
     <!-- Main content -->
     <section class="content">

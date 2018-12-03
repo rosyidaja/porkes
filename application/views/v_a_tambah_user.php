@@ -18,7 +18,7 @@
               {?>
                 <p style="color: green"><strong><?php echo $this->session->flashdata('sukses'); ?></strong></p>
               <?php } else { ?>
-                <p style="color: red"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
+                <p style="color: #a94442"><strong><?php echo $this->session->flashdata('gagal'); ?></strong></p>
               <?php } ?>
               <h3 class="box-title"><?php echo $ket; ?></h3>
             </div>

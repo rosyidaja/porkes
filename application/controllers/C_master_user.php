@@ -183,7 +183,7 @@ class C_master_user extends CI_Controller {
 			redirect(base_url('C_master_user/detail'));
 	}
 
-	public function update_pwd_profile($id){
+	public function update_pwd_profile($id=''){
 		$data['title'] = 'Edit User';
 		$data['ket'] = 'Edit Password';
 		$data['detail'] = $this->a->tampildataDetail($id);
@@ -230,7 +230,7 @@ class C_master_user extends CI_Controller {
 			if($pwd_lama == $pwd_baru)
 			{
 				$this->session->set_flashdata('gagal','Password sama dengan password lama !');
-				redirect(base_url('C_master_user/update_pwd_profile'));				
+				redirect(base_url('C_admin/index'));				
 			}
 			// if(empty($post['password']))unset($post['password']);
 			else{
