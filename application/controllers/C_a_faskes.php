@@ -7,6 +7,10 @@ class C_a_faskes extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_faskes','a');
+		if(!cek_auth())//cek jika tidak ada login
+        {
+            redirect(base_url('C_login/index'));  //redirect ke halaman login
+        }
 	}
 
 	public function index()

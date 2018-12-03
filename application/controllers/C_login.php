@@ -25,7 +25,16 @@ class C_login extends CI_Controller {
 
 	public function index()
 	{
-        $this->load->view('v_login');
+         $this->login();
+	}
+
+	public function login(){
+
+		if(cek_auth())//cek masih ada data login atau tidak
+        {
+            redirect(base_url('C_admin/index')); 
+        }
+        $this->load->view('v_login');        
 	}
 
 	public function aksi_login(){
@@ -35,9 +44,10 @@ class C_login extends CI_Controller {
 		$user_nama = $this->input->post('user_nama');
 		$user_password = $this->input->post('user_password');
 		$user_foto = $this->input->post('user_foto');
+		$user_level = $this->input->post('user_level');
 
 
-		$cek_login = $this->M_login->get_login($user_name,$user_password,$user_nama,$user_foto);
+		$cek_login = $this->M_login->get_login($user_name,$user_password,$user_nama,$user_foto,$user_level);
 
 		if ($cek_login) {
 			$this->session->set_userdata('user',$cek_login);

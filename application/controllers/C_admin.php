@@ -18,9 +18,18 @@ class C_admin extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+	{
+		parent::__construct();
+		if(!cek_auth())//cek jika tidak ada login
+        {
+            redirect(base_url('C_login/index'));  //redirect ke halaman login
+        }
+	}
+
 	public function index()
 	{
-		
 		if(!$this->session->userdata('user')){
 			redirect(base_url('C_login/index'));
 		}

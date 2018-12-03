@@ -188,6 +188,12 @@
             <li><a href="<?php echo base_url('C_a_faskes/detail'); ?>"><i class="fa fa-list"></i>Daftar Faskes</a></li>
           </ul>
         </li>
+
+   
+
+        <?php $user_level=$this->session->userdata('user')->user_level;
+        if(@$user_level== "1"){
+            ?>    
         <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i>
@@ -201,6 +207,12 @@
             <li><a href="<?php echo base_url('C_master_user/detail'); ?>"><i class="fa fa-list"></i>Daftar User</a></li>
           </ul>
         </li>
+      <?php } else { ?>
+        <li class="treeview">
+          <a href="#">
+          </a>
+        </li>
+      <?php }?>
       </ul>
     </section>
     <!-- /.sidebar -->

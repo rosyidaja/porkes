@@ -136,6 +136,43 @@ function helpSecSql($var)
 	return addslashes(strtolower($var));
 }
 
+function cek_auth(){
+    $CI =& get_instance();
+    $data = $CI->session->userdata('user');
+    if(empty($data))
+    {
+        return FALSE;
+    }
+    else
+    {
+        return TRUE;
+    }
+}
+
+function cek_fitur($nama_fitur){
+    if(cek_auth())
+    {
+        $CI =& get_instance();
+        $CI->load->model('M_public_function');
+
+        $data = $CI->session->userdata('user');
+        $allowed = explode('|', $CI->M_public_function->get_level($data->user_level));
+
+        if(in_array($nama_fitur, $allowed))
+        {
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
 /**
  * Function helpTerbilang
  * Fungsi ini digunakan untuk merubah angka yang dimasukkan menjadi ejaan

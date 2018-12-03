@@ -102,4 +102,13 @@ class M_public_function extends CI_Model{
             return $sql->row();
         }
     }
+
+    function get_level($id_level)
+    {
+        //$this->db->where('l.id_level',$id_level);
+       // $this->db->join('tbl_m_level l','l.id_level = u.id_level');
+        $result = $this->db->get('s_user');
+        $result = $result->row();
+        return $result->user_level;
+    }
  }

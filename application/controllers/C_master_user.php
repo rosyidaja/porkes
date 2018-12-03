@@ -23,6 +23,10 @@ class C_master_user extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('M_login','a');
+		if(!cek_auth())//cek jika tidak ada login
+        {
+            redirect(base_url('C_login/index'));  //redirect ke halaman login
+        }
 	}
 
 	public function index()
