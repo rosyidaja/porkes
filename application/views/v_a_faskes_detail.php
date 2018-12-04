@@ -34,6 +34,7 @@
                 </thead>
                 <tbody>
                 <?php foreach ($tabel as $key => $value) {?>
+                  <?php $user_level=$this->session->userdata('user')->user_level;  ?>
                   <tr>
                     <td style="vertical-align: middle;"><img src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" class="img-responsive"></td>
                     <td>

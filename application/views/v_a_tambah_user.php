@@ -69,6 +69,20 @@
                       <option value="1">Super Admin</option>
                     </select>
                 </div>
+                <div class="form-group">
+                  <label>Faskes Terkait</label>
+                    <select class="form-control select2" style="width: 145px;" name="user_faskes_id" required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
+                      <option>--- Pilih Faskes ---</option>
+                      <?php foreach ($faskes as $key => $value) {
+                        echo '<option value="'.$value->faskes_id.'">'.$value->faskes_nama.'</option>';
+                      } ?>
+                    </select>
+                </div>
+              </div>
+
+              <div class="box-footer" style="text-align: center;">
+                <a href="<?php echo base_url('C_master_user/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+                <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ket; ?></button>
               </div>
 
               <?php 
@@ -120,6 +134,11 @@
                 </div>
               </div>
 
+              <div class="box-footer" style="text-align: center;">
+                <a href="<?php echo base_url('C_master_user/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+                <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ket; ?></button>
+              </div>
+
               <?php 
               }
                 else if($aksi=='aksi_update_pwd_profile'){
@@ -160,14 +179,15 @@
                 </div>  
               </div>
 
+              <div class="box-footer" style="text-align: center;">
+                <a href="<?php echo base_url('C_admin/index');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
+                <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ket; ?></button>
+              </div>
+
               <?php 
                 }
               ?>
 
-              <div class="box-footer" style="text-align: center;">
-                <a href="<?php echo base_url('C_master_user/detail');?>" style="padding-right: 10px;"><button type="button" class="btn btn-success btn-xs btn-flat"><i class="fa fa-arrow-left"></i> Kembali</button></a>
-                <button type="submit" class="btn btn-primary btn-xs btn-flat"><i class="fa fa-save"></i> <?php echo $ket; ?></button>
-              </div>
             </form>
           </div>
         </div>

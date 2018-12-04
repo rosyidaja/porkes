@@ -45,6 +45,7 @@ class C_master_user extends CI_Controller {
 	public function add(){
 		// $data['tabel'] = $this->m_login->tampildata_pwd();
 		// $data['karyawan'] = $this->m_login->get_karyawan_not_user();
+		$data['faskes'] = $this->a->get_faskes();
 		$data['title'] = 'Tambah User';
 		$data['ket'] = 'Tambah Data';
 		$data['content'] = 'v_a_tambah_user';
@@ -60,6 +61,7 @@ class C_master_user extends CI_Controller {
 		$user_name = $post['user_name'];
 		$user_password = $post['user_password'];
 		$user_level = $post['user_level'];
+		$user_faskes_id = $post['user_faskes_id'];
 
 		$a = $this->form_validation->set_rules('user_name','user_name','trim|is_unique[s_user.user_name]|xss_clean|required');
 		$b = $this->form_validation->set_rules('user_password','Password','required|matches[user_repassword]');
@@ -90,6 +92,7 @@ class C_master_user extends CI_Controller {
 				'user_nama' => $post['user_nama'],
 				'user_password' => $post['user_password'],
 				'user_level' => $post['user_level'],
+				'user_faskes_id' => $post['user_faskes_id'],
 				'user_foto' => $data_foto,
 				'user_id' => $user_id
 			);

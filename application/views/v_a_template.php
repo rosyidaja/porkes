@@ -85,7 +85,14 @@
                 <?php } ?>
                 <p>
                   <?php echo $this->session->userdata('user')->user_nama; ?>
-                  <small>Administrator</small>
+                  <small>
+                    <?php $user_level=$this->session->userdata('user')->user_level;?>
+                      <?php if(@$user_level== "1"){ ?>
+                        Administrator
+                      <?php } else { ?>
+                        Admin
+                      <?php }?>
+                  </small>
                 </p>
               </li>
               <!-- Menu Footer-->
@@ -149,7 +156,6 @@
             <span>Beranda</span>
           </a>
         </li>
-        <?php $user_level=$this->session->userdata('user')->user_level;?>
         <?php if(@$user_level== "1"){
             ?>    
        <li class="treeview">

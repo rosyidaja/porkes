@@ -8,6 +8,12 @@ class M_login extends CI_Model{
 		$this->load->database();
 	}
 
+	public function get_faskes()
+	{
+		$result = $this->db->get('m_faskes');
+		return $result->result();		
+	}
+
 	public function cek_login($table,$where){
 		return $this->db->get_where($table,$where);
 	}

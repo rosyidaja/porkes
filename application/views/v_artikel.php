@@ -10,7 +10,7 @@
           <div class="list-artikel col-md-3 col-sm-3 col-xs-6">
           <div class="panel-group">
             <div class="panel panel-success">
-              <div class="panel-body" style="padding-bottom: 0px;">
+              <div class="panel-body">
                 <div class="thumbnail">
                   <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $value->artikel_foto;?>" class="team-img" style="height: 150px; width: 200px;">
                 </div>
