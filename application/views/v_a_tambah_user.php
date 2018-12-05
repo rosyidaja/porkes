@@ -95,6 +95,10 @@
                   <input type="hidden" name="user_id" value="<?php if(!empty($detail->user_id)){ echo $detail->user_id;} ?>">
                 </div>
                 <div class="form-group" style="width: 400px">
+                  <label>Faskes Nama</label>
+                    <input disabled type="text" class="form-control" required placeholder=" Faskes Belum Terisi..." oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity" value="<?php if(!empty($detail->faskes_nama)){ echo $detail->faskes_nama;} ?>">
+                </div>
+                <div class="form-group" style="width: 400px">
                   <label for="exampleInputEmail1">Nama Lengkap Karyawan</label>
                     <input disabled type="text" class="form-control" name="user_nama" placeholder=" Nama Lengkap Karyawan ..." required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity" value="<?php if(!empty($detail->user_nama)){ echo $detail->user_nama;} ?>">
                 </div>
@@ -127,9 +131,13 @@
                 <div class="form-group">
                   <label>Level</label>
                     <select class="form-control select2" style="width: 145px;" name="user_level" required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
-                       <option>--- Pilih Level ---</option>
-                      <option value="0">Admin</option>
-                      <option value="1">Super Admin</option>
+                        <?php 
+                           if($detail->user_level == 1){ ?>
+                              <option value="1">Super Admin</option>
+                          <?php }else{ ?>
+                              <option value="0">Admin</option>
+                          <?php }
+                        ?>                 
                     </select>
                 </div>
               </div>
@@ -147,6 +155,10 @@
               <div class="box-body">
                 <div class="form-group" style="width: 400px">
                   <input type="hidden" name="user_id" value="<?php if(!empty($detail->user_id)){ echo $detail->user_id;} ?>">
+                </div>
+                <div class="form-group" style="width: 400px">
+                  <label>Faskes Nama</label>
+                    <input disabled type="text" class="form-control" required placeholder=" Faskes Belum Terisi..." oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity" value="<?php if(!empty($detail->faskes_nama)){ echo $detail->faskes_nama;} ?>">
                 </div>
                 <div class="form-group" style="width: 400px">
                   <label for="exampleInputEmail1">Nama Lengkap Karyawan</label>

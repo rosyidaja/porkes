@@ -34,7 +34,6 @@
                 </thead>
                 <tbody>
                 <?php foreach ($tabel as $key => $value) {?>
-                  <?php $user_level=$this->session->userdata('user')->user_level;  ?>
                   <tr>
                     <td style="vertical-align: middle;"><img src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" class="img-responsive"></td>
                     <td>
@@ -92,8 +91,7 @@
                     <a href="<?php echo base_url('C_a_faskes/delete/'.$value->faskes_id)?>" onclick="return confirm('Anda Yakin Ingin Menghapus <?php echo $value->faskes_nama; ?> ? ')"> 
                         <i class="fa fa-trash text-danger cursor btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus" style="padding-right: 15px;"></i>
                     </a>
-                    <?php } else { ?>
-                    <?php }?>
+                    <?php } ?>
                     </td>
                   </tr>
                 <?php }?>

@@ -51,8 +51,10 @@ class M_login extends CI_Model{
 
 	function tampildataDetail($id=''){
 		// $this->db->join('tbl_karyawan_detail kd','k.id_karyawan = kd.id_karyawan','left');
-		$this->db->where('user_id',$id);
-		$result = $this->db->get('s_user');
+		$result =$this->db->select('*')
+				->from('s_user')
+				->join('m_faskes','s_user.user_faskes_id = m_faskes.faskes_id','left')
+				->where('user_id',$id)->get();
 		return $result->row();
 	}
 	

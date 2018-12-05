@@ -56,6 +56,9 @@ class M_faskes extends CI_Model{
 				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetlayanan_nama) AS faskesdetlayanan_nama,  faskesdetlayanan_faskes_id FROM m_faskesdet_layanan GROUP BY faskesdetlayanan_faskes_id ) AS layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
 				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetpoli_nama ) AS faskesdetpoli_nama,  faskesdetpoli_faskes_id FROM m_faskesdet_poli GROUP BY faskesdetpoli_faskes_id ) AS poli ON ( faskesdetpoli_faskes_id = faskes_id )
 				where faskes_aktif = 'y' ";
+		if($this->session->userdata('user')->user_level != 1 && $this->session->userdata('user')->user_level != null){
+			$sql .= " AND faskes_id = ".$this->session->userdata('user')->user_faskes_id;
+		}
 		$result = $this->db->query($sql);
 		return $result->result();
 	}
