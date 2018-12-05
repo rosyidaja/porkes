@@ -23,6 +23,13 @@
 		}
 	</style>
 </head>
+<?php foreach($data_faskes as $print){} 
+$tgl2 = str_replace(':','.',substr($data_print->pendaftaran_mrs,11,-3));;
+$tgl3 = substr($data_print->pendaftaran_mrs,0,-8);
+$tahun = substr($tgl3,0,-7);
+$bulan = substr($tgl3,5,-4);
+$tanggal = substr($tgl3,8,-1);	
+?>
 <body onload="window.print();">
 	<table width="324"  border="0">
 		<tr>
@@ -31,14 +38,13 @@
                 <tbody>
                     <tr>
                         <td width="10%" align="right">
-                            <img src="../../assets/img/logoRS.png" alt="" height="70" width="70" > 
+                            <img src="<?php echo base_url().'assets/upload/faskes/'.$print->faskes_foto; ?>" alt="" height="70" width="70" > 
                         </td>
                         <td colspan="3">
                                 <table>
                                     <tbody><tr>
                                             <td align="center">
-                                            <b>RSUD BENGKALIS</b><br>Jl. Kelapapati Tengah No.90 ,&nbsp;<font size="2">&nbsp;Riau</font><br>
-                                            <font size="2">Telp.&nbsp;</font><a >(0766) 7008100</a><font size="2">, Fax. 031-123456</font><br>
+                                            <b><?php echo $print->faskes_nama; ?></b><br><?php echo $print->faskes_alamat; ?>&nbsp;<font size="2">&nbsp;<?php echo $print->kota_nama; ?></font><br>
                                             </td>
                                     </tr>
                                 </tbody></table>
@@ -64,40 +70,40 @@
 		<tr>
 			<td valign="top" nowrap="nowrap">No. Booking</td>
 			<td valign="top"> : </td>
-			<td valign="top" colspan="2">PKU-001</td>
+			<td valign="top" colspan="2"><?php echo $data_print->noantrian_kode; ?></td>
 		</tr>
 		<tr>
 			<td valign="top">No. RM</td>
 			<td valign="top"> : </td>
-			<td valign="top" nowrap="true" width="20%" colspan="2">000010</td>
+			<td valign="top" nowrap="true" width="20%" colspan="2"><?php echo $data_print->pasien_norm; ?></td>
 		</tr>
 		<tr>
 			<td valign="top">Nama</td>
 			<td valign="top"> : </td>
-			<td valign="top" colspan="2">m. Iqbal al</td>
+			<td valign="top" colspan="2"><?php echo $data_print->pasien_nama; ?></td>
 		</tr>
 		<tr>
-			<td valign="top">Usia</td>
+			<td valign="top">Email</td>
 			<td valign="top"> : </td>
-			<td valign="top" colspan="2">22 Tahun</td>
+			<td valign="top" colspan="2"><?php echo $data_print->pasien_email; ?></td>
 		</tr>
 		<tr>
 			<td colspan="4" align="center">&nbsp;</td>
 		</tr>
 		<tr>
-			<td align="center" colspan="3">22.27</td>
-			<td align="center">13 September 2018</td>
+			<td align="center" colspan="3"><?php echo $tgl2; ?></td>
+			<td align="center"><?php echo $tanggal. helpIndoMonth($bulan-1). $tahun ?> </td>
 		</tr>
 		<tr>
 			<td align="center" colspan="3" style="border : 1px solid black ;font-size:11px;">No. Antrian</td>
+			<td align="center" rowspan="3"><img src="<?php echo base_url().'assets/qrcode/'.$data_print->noantrian_kode.'.png'; ?>" alt="" height="130" width="130" ></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="3" style="border : 1px solid black ;font-size:15px;"><?php echo $data_poli->faskesdetpoli_nama; ?></td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td align="center" colspan="3" style="border : 1px solid black ;font-size:15px;">Poli Umum</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td height="60" colspan="3" align="center" style="border : 1px solid black; font-size : 32px;">1</td>
+			<td height="60" colspan="3" align="center" style="border : 1px solid black; font-size : 32px;"><?php echo $data_print->pendaftaran_nourut; ?></td>
 			<td align="center">&nbsp;</td>
 		</tr>
 	</table>

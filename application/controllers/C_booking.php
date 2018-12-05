@@ -16,6 +16,7 @@ class C_booking extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_public_function');
 		$this->load->model('M_booking');
+		$this->load->model('M_faskes');
 		$this->API="http://localhost/altair/altair/ehealth/ehealth/antrian";
 	}
 
@@ -65,8 +66,30 @@ class C_booking extends CI_Controller {
 			$booking = json_decode($this->curl->simple_post($this->API.'/get',$param_request, array(CURLOPT_BUFFERSIZE => 10)));
 			if($booking->code === '200'){
 				$data_book = $booking->data;
+				$this->load->library('ciqrcode'); //pemanggilan library QR CODE
+ 
+				$config['cacheable']    = true; //boolean, the default is true
+				$config['cachedir']     = './assets/qrchache/'; //string, the default is application/cache/
+				$config['errorlog']     = './assets/qrlog/'; //string, the default is application/logs/
+				$config['imagedir']     = './assets/qrcode/'; //direktori penyimpanan qr code
+				$config['quality']      = true; //boolean, the default is true
+				$config['size']         = '1024'; //interger, the default is 1024
+				$config['black']        = array(224,255,255); // array, default is array(255,255,255)
+				$config['white']        = array(70,130,180); // array, default is array(0,0,0)
+				$this->ciqrcode->initialize($config);
+		
+				$image_name= $data_book->noantrian_kode.'.png'; //buat name dari qr code sesuai dengan nim
+		
+				$params['data'] = $data_book->noantrian_kode; //data yang akan di jadikan QR CODE
+				$params['level'] = 'H'; //H=High
+				$params['size'] = 10;
+				$params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
+				$generate = $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 
-				$this->sendMail($data_book->pasien_nama,$data_book->pasien_email,'Informasi Pemesanan',$data_book->noantrian_kode);
+				if($generate){
+					$this->generate_print($data_book,$faskes,$poli);
+					$this->sendMail($data_book->pasien_nama,$data_book->pasien_email,'Informasi Pemesanan',$data_book->noantrian_kode);
+				}
 
 				$data_booking = array(
 					'booking_faskes_id'						=> $faskes,
@@ -124,12 +147,20 @@ class C_booking extends CI_Controller {
 		}
 	}
 
-	function sendMail($nama,$to_email,$judul,$isi_email){
+	function sendMail($nama,$to_email,$judul,$kode){
 		$Nama = 'Porkes';
-		$isi_email = "Kode Booking nya adalah ".$isi_email;
+		$isi_email = "Kode Booking nya adalah ".$kode."<br>";
+		$isi_email .= "Untuk cetak bukti booking silahkan klik link : <br>";
+		$isi_email .= "<img src='".base_url()."assets/qrcode/'".$kode."'.png' height='130' width='130' ><br>";
+		$isi_email .= "<a href='".base_url()."print/booking".$kode.".html'>".base_url()."print/booking".$kode.".html </a><br>";
+		
+		
 		$from_email = "admin@porkes.rosyidaja.com"; 
 		$to_email = array($to_email);
 		$judul = $judul;
+
+		
+		
 		$isi_email = $isi_email;
 		//Inisialisasi Setting SMTP
 		$ci = get_instance();
@@ -137,8 +168,8 @@ class C_booking extends CI_Controller {
 		$config['protocol'] = "smtp";
 		$config['smtp_host'] = "ssl://smtp.gmail.com";
 		$config['smtp_port'] = "465";
-		$config['smtp_user'] = "tomimishbahul12@gmail.com";
-		$config['smtp_pass'] = "karunia^_^";
+		$config['smtp_user'] = "";
+		$config['smtp_pass'] = "";
 		$config['charset'] = "utf-8";
 		$config['mailtype'] = "html";
 		$config['newline'] = "\r\n";
@@ -157,4 +188,15 @@ class C_booking extends CI_Controller {
 		show_error($this->email->print_debugger());
 		}
 	}
+
+	function generate_print($data_book,$faskes_id,$poli){
+		$data['data_print'] = $data_book;
+		$data["data_faskes"] = $this->M_faskes->tampildataDetail($faskes_id);
+		$data['data_poli'] = $this->M_public_function->getPoli($poli);
+		$print_view=$this->load->view("templates/p_struk_booking.php",$data,TRUE);
+		$print_file=fopen("print/booking".$data_book->noantrian_kode.".html","w+");
+		fwrite($print_file, $print_view);
+		return 1;    
+	}
+
 }
