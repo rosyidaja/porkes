@@ -17,7 +17,7 @@ class C_booking extends CI_Controller {
 		$this->load->model('M_public_function');
 		$this->load->model('M_booking');
 		$this->load->model('M_faskes');
-		$this->API="http://localhost/altair/altair/ehealth/ehealth/antrian";
+		$this->API="http://api.sobatkarya.com/ehealth/antrian";
 	}
 
 	public function index()

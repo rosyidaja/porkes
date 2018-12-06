@@ -16,7 +16,7 @@ class C_checkin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_public_function');
 		$this->load->model('M_booking');
-		$this->API="http://localhost/altair/altair/ehealth/ehealth/antrian";
+		$this->API="http://api.sobatkarya.com/ehealth/antrian";
 	}
 
 	public function index()
