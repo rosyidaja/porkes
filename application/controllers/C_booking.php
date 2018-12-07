@@ -168,8 +168,8 @@ class C_booking extends CI_Controller {
 		$config['protocol'] = "smtp";
 		$config['smtp_host'] = "ssl://smtp.gmail.com";
 		$config['smtp_port'] = "465";
-		$config['smtp_user'] = "";
-		$config['smtp_pass'] = "";
+		$config['smtp_user'] = "tomimishbahul12@gmail.com";
+		$config['smtp_pass'] = "Karunia^_^";
 		$config['charset'] = "utf-8";
 		$config['mailtype'] = "html";
 		$config['newline'] = "\r\n";
