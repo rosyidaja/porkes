@@ -47,6 +47,9 @@ class C_faskes extends CI_Controller {
 			$data['navbar'] = 'v_navbar';
 			$data['detail'] = $this->a->tampildataDetail($id);
 			$data['list_poli'] = $this->M_public_function->listPoli($id);
+			$data['list_dokter'] = $this->M_public_function->listDokter($id);
+			$data['list_galeri'] = $this->M_public_function->listGaleri($id);
+			$data['list_layanan'] = $this->M_public_function->listLayanan($id);
 			$data['content'] = 'v_detail_faskes';
 			$data['footer'] = 'v_footer';
 			$data['js'] = 'config/faskes_antrian';

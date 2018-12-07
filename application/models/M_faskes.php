@@ -79,6 +79,11 @@ class M_faskes extends CI_Model{
 		return $result->result();
 	}
 
+	function tampildata_faskesdet($id=''){
+		$result = $this->db->get('m_faskes',$id);
+		return $result->result();
+	}
+
 	function tampildataDetail($id=''){
 		$sql = " SELECT
 				faskes_id,

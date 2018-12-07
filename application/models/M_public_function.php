@@ -76,6 +76,104 @@ class M_public_function extends CI_Model{
         return $result;
     }
 
+    function listDokter($id){
+        $today = date("N");
+        /* $sql = "select 
+                    jadwalpoli_id,
+                    jadwalpoli_faskes_id,
+                    jadwalpoli_dokter_id,
+                    faskesdetdokter_nama as dokter_nama,
+                    jadwalpoli_poli_id,
+                    faskesdetpoli_nama as poli_nama,
+                    jadwalpoli_estimasi
+                from
+                    m_jadwal_poli
+                LEFT JOIN m_faskesdet_dokter ON (jadwalpoli_dokter_id = faskesdetdokter_id)
+                LEFT JOIN m_faskesdet_poli ON (jadwalpoli_poli_id = faskesdetpoli_id)
+                where 
+                    jadwalpoli_aktif = 'y' and
+                    jadwalpoli_faskes_id = ".$id." and
+                    jadwalpoli_hari like '%".$today."%'
+                "; */
+        $sql = "select 
+                    faskesdetdokter_id,
+                    faskesdetdokter_faskes_id,
+                    faskesdetdokter_nama as dokter_nama,
+                    faskesdetdokter_aktif,
+                    faskesdetdokter_telfon,
+                    faskesdetdokter_foto as dokter_foto
+                from m_faskesdet_dokter
+                where
+                    faskesdetdokter_aktif = 'y' and
+                    faskesdetdokter_faskes_id = ".$id."";
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
+
+    function listGaleri($id){
+        $today = date("N");
+        /* $sql = "select 
+                    jadwalpoli_id,
+                    jadwalpoli_faskes_id,
+                    jadwalpoli_dokter_id,
+                    faskesdetdokter_nama as dokter_nama,
+                    jadwalpoli_poli_id,
+                    faskesdetpoli_nama as poli_nama,
+                    jadwalpoli_estimasi
+                from
+                    m_jadwal_poli
+                LEFT JOIN m_faskesdet_dokter ON (jadwalpoli_dokter_id = faskesdetdokter_id)
+                LEFT JOIN m_faskesdet_poli ON (jadwalpoli_poli_id = faskesdetpoli_id)
+                where 
+                    jadwalpoli_aktif = 'y' and
+                    jadwalpoli_faskes_id = ".$id." and
+                    jadwalpoli_hari like '%".$today."%'
+                "; */
+        $sql = "select 
+                    faskesdetgaleri_id,
+                    faskesdetgaleri_faskes_id,
+                    faskesdetgaleri_aktif,
+                    faskesdetgaleri_foto as galeri_foto
+                from m_faskesdet_galeri
+                where
+                    faskesdetgaleri_aktif = 'y' and
+                    faskesdetgaleri_faskes_id = ".$id."";
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
+
+    function listLayanan($id){
+        $today = date("N");
+        /* $sql = "select 
+                    jadwalpoli_id,
+                    jadwalpoli_faskes_id,
+                    jadwalpoli_dokter_id,
+                    faskesdetdokter_nama as dokter_nama,
+                    jadwalpoli_poli_id,
+                    faskesdetpoli_nama as poli_nama,
+                    jadwalpoli_estimasi
+                from
+                    m_jadwal_poli
+                LEFT JOIN m_faskesdet_dokter ON (jadwalpoli_dokter_id = faskesdetdokter_id)
+                LEFT JOIN m_faskesdet_poli ON (jadwalpoli_poli_id = faskesdetpoli_id)
+                where 
+                    jadwalpoli_aktif = 'y' and
+                    jadwalpoli_faskes_id = ".$id." and
+                    jadwalpoli_hari like '%".$today."%'
+                "; */
+        $sql = "select 
+                    faskesdetlayanan_id,
+                    faskesdetlayanan_faskes_id,
+                    faskesdetlayanan_nama as layanan_nama,
+                    faskesdetlayanan_aktif
+                from m_faskesdet_layanan
+                where
+                    faskesdetlayanan_aktif = 'y' and
+                    faskesdetlayanan_faskes_id = ".$id."";
+        $result = $this->db->query($sql)->result();
+        return $result;
+    }
+
     function getPoli($id){
         $sql = $this->db->where('faskesdetpoli_id',$id)
                         ->get('m_faskesdet_poli');

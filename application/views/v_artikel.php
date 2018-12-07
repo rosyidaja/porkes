@@ -7,20 +7,22 @@
         </div>
 
         <?php foreach ($tabel as $key => $value) {?>
-          <div class="list-artikel col-md-3 col-sm-3 col-xs-6">
+        <div class="list-artikel col-md-3 col-sm-3 col-xs-6">
           <div class="panel-group">
             <div class="panel panel-success">
               <div class="panel-body">
-                <div class="thumbnail">
+                <div class="thumbnail" style="margin-bottom: 0px;">
                   <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $value->artikel_foto;?>" class="team-img" style="height: 150px; width: 200px;">
                 </div>
               </div>
-              <div class="panel-body" style="padding-top: 0px; height: 250px;">
-                <div class="col-md-12" style="height: 220px;">
-                  <div class="caption" style="height: 50px;">
+              <div class="panel-body" style="padding-top: 0px; height: 210px;">
+                <div class="col-md-12" style="height: 180px;">
+                  <div class="caption" style="height: 30px;">
                     <h5 style="text-align: center;"><?php echo $value->artikel_judul ?></h5>
                   </div>
-                  <p><?php echo substr($value->artikel_isi,0,100)." .." ?></p>
+                  <div style="padding-top: 10px;">
+                    <p><?php echo substr($value->artikel_isi,0,100)." .." ?></p>
+                  </div>
                 </div>
                 <div class="pull-right box-button-footer">
                   <a href="<?php echo base_url('C_artikel/detail_artikel/'.$value->artikel_id)?>" class="botm-line"><button type="button" class="btn btn-success btn-xs btn-flat"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>

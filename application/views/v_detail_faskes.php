@@ -47,7 +47,9 @@
             </div>
 
             <div class="small">
-              <p><i class="fa fa-check"></i> <?php echo $detail->faskesdetlayanan_nama; ?></p>
+              <?php foreach ($list_layanan as $layanan) { ?>
+                <p style="color: black;"><i class="fa fa-check"></i> <?php echo $layanan->layanan_nama; ?></p>
+              <?php } ?>
           </div>
         </div>
 
@@ -107,22 +109,48 @@
               <li class="active"><a data-toggle="tab" href="#home">Poli</a></li>
               <li><a data-toggle="tab" href="#menu1">Dokter</a></li>
               <li><a data-toggle="tab" href="#menu2">Galeri</a></li>
-              <!-- <li><a data-toggle="tab" href="#menu3">Profil</a></li>
-              <li><a data-toggle="tab" href="#menu4">Rating</a></li> -->
             </ul>
 
             <div class="tab-content">
               <div id="home" class="tab-pane fade in active">
-                <h4>Poli Yang Tersedia : </h4>
-                <p><i class="fa fa-dot-circle-o"> <?php echo $detail->faskesdetpoli_nama; ?> </i></p>
+                <?php foreach($list_poli as $poli){ ?>
+                  <div class="col-md-3" style="padding-top: 20px;">
+                    <div class="alert alert-success" style="background-color: #008d4c; padding: 0px;">
+                      <h5 style="padding: 5px; text-align: center; color: white; font-family: sans-serif;"><?php echo $poli->poli_nama; ?></h5>
+                    </div>
+                  </div>
+                <?php } ?>
               </div>
+
               <div id="menu1" class="tab-pane fade">
-                <h4>Dokter</h4>
-                <p><?php echo $detail->faskesdetdokter_nama; ?></p>
+                <?php foreach($list_dokter as $dokter){ ?>
+                <div class="list-artikel col-md-3 col-sm-3 col-xs-6" style="padding-top: 20px;">
+                  <div class="panel-group">
+                    <div class="panel panel-success" style="background-color: lavender;">
+                      <div class="panel-body">
+                        <div class="thumbnail" style="margin-bottom: 0px;">
+                          <img src="<?php echo base_url();?>assets/upload/dokter/<?php echo $dokter->dokter_foto;?>" class="team-img" style="height: 150px; width: 150px;">
+                        </div>
+                      </div>
+                      <div class="panel-body" style="background-color: lavender;">
+                        <div class="col-md-12">
+                          <div class="caption">
+                            <h5 style="text-align: center;"><?php echo $dokter->dokter_nama; ?></h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <?php } ?>
               </div>
               <div id="menu2" class="tab-pane fade">
-                <h4>Galeri <?php echo $detail->faskes_nama; ?></h4>
-                <img src="<?php echo base_url();?>assets/upload/galeri/<?php echo $detail->faskesdetgaleri_foto;?>" class="img-responsive">
+                <h3 style="text-align: center;">Galeri <?php echo $detail->faskes_nama; ?></h3>
+                <?php foreach($list_galeri as $galeri){ ?>
+                  <div class="thumbnail" style="width: 200px;">
+                    <img src="<?php echo base_url();?>assets/upload/galeri/<?php echo $galeri->galeri_foto;?>" class="team-img" style="height: 150px; width: 150px; align-content: center;">
+                  </div>
+                <?php } ?>
               </div>
             </div>
 
