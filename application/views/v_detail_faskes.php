@@ -115,7 +115,7 @@
               <div id="home" class="tab-pane fade in active">
                 <?php foreach($list_poli as $poli){ ?>
                   <div class="col-md-3" style="padding-top: 20px;">
-                    <div class="alert alert-success" style="background-color: #008d4c; padding: 0px;">
+                    <div class="alert alert-info" style="background-color: #008d4c; padding: 0px;">
                       <h5 style="padding: 5px; text-align: center; color: white; font-family: sans-serif;"><?php echo $poli->poli_nama; ?></h5>
                     </div>
                   </div>
