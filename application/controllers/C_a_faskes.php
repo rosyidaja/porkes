@@ -27,8 +27,11 @@ class C_a_faskes extends CI_Controller {
         $this->load->view('v_a_template',$data);
 	}
 
-	function list_faskes(){
-		$result = $this->a->tampildata();
+	function list_faskes()
+	{
+		var_dump('testing');
+		$result = $this->a->list_faskes();
+		var_dump($result);
 		echo json_encode($result);
 	}
 

@@ -155,7 +155,7 @@ class C_booking extends CI_Controller {
 		$isi_email .= "<a href='".base_url()."print/booking".$kode.".html'>".base_url()."print/booking".$kode.".html </a><br>";
 		
 		
-		$from_email = "admin@porkes.rosyidaja.com"; 
+		$from_email = "admin@medilab.ocidaja.online"; 
 		$to_email = array($to_email);
 		$judul = $judul;
 
@@ -168,8 +168,8 @@ class C_booking extends CI_Controller {
 		$config['protocol'] = "smtp";
 		$config['smtp_host'] = "ssl://smtp.gmail.com";
 		$config['smtp_port'] = "465";
-		$config['smtp_user'] = "tomimishbahul12@gmail.com";
-		$config['smtp_pass'] = "Karunia^_^";
+		$config['smtp_user'] = "rplmedilab@gmail.com";
+		$config['smtp_pass'] = "p4ssword4lay";
 		$config['charset'] = "utf-8";
 		$config['mailtype'] = "html";
 		$config['newline'] = "\r\n";

@@ -63,6 +63,12 @@ class C_public_function extends CI_Controller {
         }
     }
 
+    function list_faskes()
+	{
+		$result = $this->M_public_function->list_faskes();
+		echo json_encode($result);
+	}
+
     function getKelurahan(){
         $search = $this->input->get('search');
         $data = $this->M_public_function->getKelurahan($search);

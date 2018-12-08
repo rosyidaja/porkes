@@ -76,6 +76,38 @@ class M_public_function extends CI_Model{
         return $result;
     }
 
+    function list_faskes(){		
+		$sql = " SELECT
+				faskes_id,
+				faskes_nama,
+				faskes_alamat,
+				faskes_provinsi_id,
+				propinsi_nama,
+				faskes_kota_id,
+				kota_nama,
+				faskes_kelurahan_id,
+				kelurahan_nama,
+				faskes_kecamatan_id,
+				kecamatan_nama,
+				faskes_lokasi,
+				faskes_longitude,
+				faskes_latitude,
+				faskes_foto,
+				faskes_background,
+				faskes_status,
+				faskes_aktif
+			FROM
+				m_faskes
+				LEFT JOIN m_propinsi ON ( faskes_provinsi_id = propinsi_id )
+				LEFT JOIN m_kota ON ( faskes_kota_id = kota_id )
+				LEFT JOIN m_kelurahan ON ( faskes_kelurahan_id = kelurahan_id )
+				LEFT JOIN m_kecamatan ON ( faskes_kecamatan_id = kecamatan_id )
+				
+				where faskes_aktif = 'y' ";
+		$result = $this->db->query($sql);
+		return $result->result();
+	}
+
     function listDokter($id){
         $today = date("N");
         /* $sql = "select 

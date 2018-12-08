@@ -50,7 +50,7 @@
               //-7.351679, 112.770776
               
               $.ajax({
-                    url : baseUrl + "C_a_faskes/list_faskes",
+                    url : baseUrl + "C_public_function/list_faskes",
                     method:'POST',  // what to expect back from the PHP script, if anything
                     success : function(response){
                         var res = JSON.parse(response);
