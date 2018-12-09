@@ -151,7 +151,7 @@ class C_booking extends CI_Controller {
 		$Nama = 'Porkes';
 		$isi_email = "Kode Booking nya adalah ".$kode."<br>";
 		$isi_email .= "Untuk cetak bukti booking silahkan klik link : <br>";
-		$isi_email .= "<img src='".base_url()."assets/qrcode/'".$kode."'.png' height='130' width='130' ><br>";
+		$isi_email .= "<img src='".base_url()."assets/qrcode/".$kode.".png' height='130' width='130' ><br>";
 		$isi_email .= "<a href='".base_url()."print/booking".$kode.".html'>".base_url()."print/booking".$kode.".html </a><br>";
 		
 		
@@ -191,8 +191,9 @@ class C_booking extends CI_Controller {
 
 	function generate_print($data_book,$faskes_id,$poli){
 		$data['data_print'] = $data_book;
-		$data["data_faskes"] = $this->M_faskes->tampildataDetail($faskes_id);
+		$data["print"] = $this->M_faskes->tampildataDetail($faskes_id);
 		$data['data_poli'] = $this->M_public_function->getPoli($poli);
+
 		$print_view=$this->load->view("templates/p_struk_booking.php",$data,TRUE);
 		$print_file=fopen("print/booking".$data_book->noantrian_kode.".html","w+");
 		fwrite($print_file, $print_view);
