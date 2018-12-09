@@ -43,7 +43,7 @@ class C_faskes extends CI_Controller {
 	{
 		if($id != ''){
 			$data['head_top_resource'] = 'v_head_top_resource';
-			$data['maps'] = 'v_maps';
+			$data['maps'] = '';
 			$data['navbar'] = 'v_navbar';
 			$data['detail'] = $this->a->tampildataDetail($id);
 			$data['list_poli'] = $this->M_public_function->listPoli($id);

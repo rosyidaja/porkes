@@ -125,6 +125,7 @@ class M_faskes extends CI_Model{
 				propinsi_nama,
 				faskes_kota_id,
 				kota_nama,
+				faskes_kode,
 				faskes_kelurahan_id,
 				kelurahan_nama,
 				faskes_kecamatan_id,
