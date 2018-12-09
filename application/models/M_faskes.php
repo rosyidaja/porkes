@@ -286,7 +286,8 @@ class M_faskes extends CI_Model{
 			LEFT JOIN m_faskesdet_poli ON (booking_faskespoli_id = faskesdetpoli_id)
 			where booking_faskes_id = $faskes 
 			and booking_faskespoli_id = $poli
-			and DATE_FORMAT(now(),booking_tanggal)";
+			AND DATE_FORMAT(booking_tanggal,'%Y-%m-%d') = '".$tgl."'";
+		$this->firephp->log($sql);
 		$result = $this->db->query($sql);
 		return $result->result();
 	}
