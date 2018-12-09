@@ -19,8 +19,45 @@ class M_faskes extends CI_Model{
 		$result = $this->db->update('m_faskes',$data);
 		return $result;
 	}
-
-	function tampildata(){
+	function tampildataSearch($book){
+		$sql = " SELECT
+				faskes_id,
+				faskes_nama,
+				faskes_alamat,
+				faskes_provinsi_id,
+				propinsi_nama,
+				faskes_kota_id,
+				kota_nama,
+				faskes_kelurahan_id,
+				kelurahan_nama,
+				faskes_kecamatan_id,
+				kecamatan_nama,
+				faskes_lokasi,
+				faskes_longitude,
+				faskes_latitude,
+				faskes_foto,
+				faskes_background,
+				faskes_status,
+				faskes_aktif,
+				faskesdetlayanan_nama,
+				faskesdetpoli_nama
+			FROM
+				m_faskes
+				LEFT JOIN m_propinsi ON ( faskes_provinsi_id = propinsi_id )
+				LEFT JOIN m_kota ON ( faskes_kota_id = kota_id )
+				LEFT JOIN m_kelurahan ON ( faskes_kelurahan_id = kelurahan_id )
+				LEFT JOIN m_kecamatan ON ( faskes_kecamatan_id = kecamatan_id )
+				-- LEFT JOIN m_faskesdet_layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetlayanan_nama) AS faskesdetlayanan_nama,  faskesdetlayanan_faskes_id FROM m_faskesdet_layanan GROUP BY faskesdetlayanan_faskes_id ) AS layanan ON ( faskesdetlayanan_faskes_id = faskes_id )
+				LEFT JOIN ( SELECT GROUP_CONCAT( faskesdetpoli_nama ) AS faskesdetpoli_nama,  faskesdetpoli_faskes_id FROM m_faskesdet_poli GROUP BY faskesdetpoli_faskes_id ) AS poli ON ( faskesdetpoli_faskes_id = faskes_id )
+				where faskes_aktif = 'y' ";
+		if($book == 'on'){
+			$sql .= " AND faskes_kode is not null ";
+		}
+		$result = $this->db->query($sql);
+		return $result->result();
+	}
+	function tampildata($limit=''){
 		// $this->db->join('m_faskesdet_layanan fl','f.faskes_id = fl.faskes_id','left');
 		// $result = $this->db->get('m_faskes f');
 		// return $result->result();
@@ -58,6 +95,9 @@ class M_faskes extends CI_Model{
 				where faskes_aktif = 'y' ";
 		if(@$this->session->userdata('user')->user_level != 1 && @$this->session->userdata('user')->user_level != null){
 			$sql .= " AND faskes_id = ".$this->session->userdata('user')->user_faskes_id;
+		}
+		if($limit <> ''){
+			$sql .= " limit ".$limit ;
 		}
 		$result = $this->db->query($sql);
 		return $result->result();
