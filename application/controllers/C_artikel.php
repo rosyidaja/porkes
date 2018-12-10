@@ -31,10 +31,10 @@ class C_artikel extends CI_Controller {
 
 	public function list_artikel()
 	{
-		$data['tabel'] = $this->a->tampildata();
 		$data['head_top_resource'] = 'v_head_top_resource';
 		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';
+		$data['tabel'] = $this->a->tampildataPublish();
 		$data['content'] = 'v_list_artikel';
 		$data['footer'] = 'v_footer';
 		$data['bottom_resource'] = 'v_bottom_resource';

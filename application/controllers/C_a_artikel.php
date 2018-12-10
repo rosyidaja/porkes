@@ -89,7 +89,7 @@ class C_a_artikel extends CI_Controller {
 			'artikel_foto' => $data_foto,
 			'artikel_status' => $artikel_status,
 			'artikel_created_date' => date('Y-m-d H:i:s'),
-			'artikel_created_by' => $this->session->userdata('user')->nama_lengkap
+			'artikel_created_by' => $this->session->userdata('user')->user_name
 			);
 
 		$hasil = $this->a->insert($data);
@@ -128,7 +128,8 @@ class C_a_artikel extends CI_Controller {
 		'artikel_judul' => $artikel_judul,
 		'artikel_isi' => $artikel_isi,
 		'artikel_status' => $artikel_status,
-		'artikel_created_by' => $this->session->userdata('user')->user_name
+		'artikel_updated_date' => date('Y-m-d H:i:s'),
+		'artikel_updated_by' => $this->session->userdata('user')->user_name
 		);
 
 		$config['upload_path']          = './assets/upload/artikel/';

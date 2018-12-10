@@ -90,7 +90,7 @@ class C_master_user extends CI_Controller {
 			$data = array(
 				'user_name' => $post['user_name'],
 				'user_nama' => $post['user_nama'],
-				'user_password' => $post['user_password'],
+				'user_password' => md5($post['user_password']),
 				'user_level' => $post['user_level'],
 				'user_faskes_id' => $post['user_faskes_id'],
 				'user_foto' => $data_foto,
@@ -150,7 +150,7 @@ class C_master_user extends CI_Controller {
 			// if(empty($post['password']))unset($post['password']);
 			else{
 				$data = array(
-					'user_password' => $post['user_password'],
+					'user_password' => md5($post['user_password']),
 					'user_id' => $post['user_id'],
 					'user_level' => $post['user_level']
 				);
@@ -238,7 +238,7 @@ class C_master_user extends CI_Controller {
 			// if(empty($post['password']))unset($post['password']);
 			else{
 				$data = array(
-					'user_password' => $post['user_password']
+					'user_password' => md5($post['user_password'])
 				);
 				$result = $this->a->update($post['user_id'],$data);
 			}

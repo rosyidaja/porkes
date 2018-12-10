@@ -7,6 +7,7 @@
         </div>
 
         <?php foreach ($tabel as $key => $value) {?>
+          <?php if($value->artikel_status = "P") {?>
         <div class="list-artikel col-md-3 col-sm-3 col-xs-6">
           <div class="panel-group">
             <div class="panel panel-success">
@@ -31,6 +32,8 @@
             </div>
           </div>
         </div>
+      <?php } else {?>
+        <?php }?>
       <?php }?>
         <div class="box-footer pull-right" style="padding-right: 15px;">
           <a href="<?php echo base_url().'C_artikel/list_artikel';?>" class="uppercase"><button type="button" class="btn btn-primary btn-xs btn-block">Lihat Semua <i class="fa fa-arrow-circle-right"></i></button></a>

@@ -7,7 +7,7 @@
         </div>
 
         <div class="list-artikel">
-        <?php foreach ($tabel as $key => $value) {?>
+          <?php foreach ($tabel as $key => $value) {?>
           <table>
             <div class="col-md-3 col-sm-3 col-xs-6">
               <div class="thumbnail">
@@ -20,7 +20,7 @@
               </div>
             </div>
           </table>
-          <?php }?>        
+        <?php }?>
         </div>
       </div>
     </div>
