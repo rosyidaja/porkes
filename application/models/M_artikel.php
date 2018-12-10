@@ -14,13 +14,15 @@ class M_artikel extends CI_Model{
 	}
 
 	function tampildata(){
-		$result = $this->db->get('m_artikel');
+		$result = $this->db->where('artikel_status','P')
+						 ->get('m_artikel');
 		return $result->result();
 	}
 
 	function tampildata_h_artikel(){
 		$this->db->limit(4);
-		$result = $this->db->get('m_artikel');
+		$result = $this->db->where('artikel_status','P')
+						->get('m_artikel');
 		return $result->result();
 	}
 

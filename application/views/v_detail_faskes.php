@@ -58,7 +58,7 @@
 
       <div class="col-md-9">
 
-        <div class="panel">
+        <div class="panel" style="display:<?php if($detail->faskes_kode != null){ echo "block";}else{echo "none";} ?>;">
           <div class="panel-body">
 
             <div class="page-header col-md-12">

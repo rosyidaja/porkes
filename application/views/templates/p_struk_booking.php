@@ -23,7 +23,7 @@
 		}
 	</style>
 </head>
-<?php foreach($data_faskes as $print){} 
+<?php //foreach($data_faskes as $print){} 
 $tgl2 = str_replace(':','.',substr($data_print->pendaftaran_mrs,11,-3));;
 $tgl3 = substr($data_print->pendaftaran_mrs,0,-8);
 $tahun = substr($tgl3,0,-7);

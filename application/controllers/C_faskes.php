@@ -28,13 +28,20 @@ class C_faskes extends CI_Controller {
 
 	public function index()
 	{
-		$data['tabel'] = $this->a->tampildata();
+		if(@$this->input->get('booking')){
+			$book = $this->input->get('booking');
+			$data['tabel'] = $this->a->tampildataSearch($book);
+		}else{
+			$data['tabel'] = $this->a->tampildata();
+		}
+		
 		$data['tabel_poli'] = $this->a->tampildata_poli();
 		$data['head_top_resource'] = 'v_head_top_resource';
 		$data['maps'] = 'v_maps';
 		$data['navbar'] = 'v_navbar';
 		$data['content'] = 'v_list_faskes';
 		$data['footer'] = 'v_footer';
+		$data['js'] = 'config/list_faskes';
 		$data['bottom_resource'] = 'v_bottom_resource';
         $this->load->view('v_page',$data);
 	}
@@ -43,7 +50,7 @@ class C_faskes extends CI_Controller {
 	{
 		if($id != ''){
 			$data['head_top_resource'] = 'v_head_top_resource';
-			$data['maps'] = 'v_maps';
+			$data['maps'] = '';
 			$data['navbar'] = 'v_navbar';
 			$data['detail'] = $this->a->tampildataDetail($id);
 			$data['list_poli'] = $this->M_public_function->listPoli($id);
