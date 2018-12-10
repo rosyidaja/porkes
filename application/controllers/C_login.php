@@ -32,7 +32,7 @@ class C_login extends CI_Controller {
 
 		if(cek_auth())//cek masih ada data login atau tidak
         {
-            redirect(base_url('C_admin/index')); 
+            redirect(base_url('C_beranda/index')); 
         }
         $this->load->view('v_login');        
 	}
@@ -51,7 +51,7 @@ class C_login extends CI_Controller {
 
 		if ($cek_login) {
 			$this->session->set_userdata('user',$cek_login);
-			redirect(base_url('C_admin/index'));
+			redirect(base_url('C_beranda/index'));
 		}else{
 			$this->session->set_flashdata('pesan','Username dan Password salah');
 			redirect(base_url('C_login/index'));

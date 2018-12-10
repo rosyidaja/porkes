@@ -132,10 +132,12 @@
                   <label>Level</label>
                     <select class="form-control select2" style="width: 145px;" name="user_level" required oninvalid="this.setCustomValidity('Data Tidak Boleh Kosong')" oninput="setCustomValidity">
                         <?php 
-                           if($detail->user_level == 1){ ?>
+                           if($detail->user_level == "1"){ ?>
                               <option value="1">Super Admin</option>
+                              <option value="0">Admin</option>
                           <?php }else{ ?>
                               <option value="0">Admin</option>
+                              <option value="1">Super Admin</option>
                           <?php }
                         ?>                 
                     </select>

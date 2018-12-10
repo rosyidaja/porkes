@@ -151,7 +151,7 @@
       <ul class="sidebar-menu" data-widget="tree" style="padding-top: 20px;">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="<?php echo base_url('C_admin/index') ?>">
+          <a href="<?php echo base_url('C_beranda/index') ?>">
             <i class="fa fa-dashboard"></i>
             <span>Beranda</span>
           </a>
