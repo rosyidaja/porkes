@@ -94,8 +94,8 @@ class C_master_user extends CI_Controller {
 				'user_level' => $post['user_level'],
 				'user_faskes_id' => $post['user_faskes_id'],
 				'user_foto' => $data_foto,
-				'artikel_created_date' => date('Y-m-d H:i:s'),
-				'artikel_created_by' => $this->session->userdata('user')->user_name,
+				'user_created_date' => date('Y-m-d H:i:s'),
+				'user_created_by' => $this->session->userdata('user')->user_name,
 				'user_id' => $user_id
 			);
 
@@ -154,7 +154,9 @@ class C_master_user extends CI_Controller {
 				$data = array(
 					'user_password' => md5($post['user_password']),
 					'user_id' => $post['user_id'],
-					'user_level' => $post['user_level']
+					'user_level' => $post['user_level'],
+					'user_updated_date' => date('Y-m-d H:i:s'),
+					'user_updated_by' => $this->session->userdata('user')->user_name
 				);
 				$result = $this->a->update_pwd($post['user_id'],$data);
 			}
@@ -240,7 +242,9 @@ class C_master_user extends CI_Controller {
 			// if(empty($post['password']))unset($post['password']);
 			else{
 				$data = array(
-					'user_password' => md5($post['user_password'])
+					'user_password' => md5($post['user_password']),
+					'user_updated_date' => date('Y-m-d H:i:s'),
+					'user_updated_by' => $this->session->userdata('user')->user_name
 				);
 				$result = $this->a->update($post['user_id'],$data);
 			}
