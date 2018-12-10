@@ -40,11 +40,11 @@ class C_login extends CI_Controller {
 	public function aksi_login(){
 		$post = $this->input->post();
 
-		$user_name = $this->input->post('user_name');
-		$user_nama = $this->input->post('user_nama');
-		$user_password = $this->input->post('user_password');
-		$user_foto = $this->input->post('user_foto');
-		$user_level = $this->input->post('user_level');
+		$user_name = $post['user_name'];
+		$user_nama = $post['user_nama'];
+		$user_password = md5($post['user_password']);
+		$user_foto = $post['user_foto'];
+		$user_level = $post['user_level'];
 
 
 		$cek_login = $this->M_login->get_login($user_name,$user_password,$user_nama,$user_foto,$user_level);

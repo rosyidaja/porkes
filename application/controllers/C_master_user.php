@@ -94,6 +94,8 @@ class C_master_user extends CI_Controller {
 				'user_level' => $post['user_level'],
 				'user_faskes_id' => $post['user_faskes_id'],
 				'user_foto' => $data_foto,
+				'artikel_created_date' => date('Y-m-d H:i:s'),
+				'artikel_created_by' => $this->session->userdata('user')->user_name,
 				'user_id' => $user_id
 			);
 
