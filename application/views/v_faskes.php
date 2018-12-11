@@ -24,17 +24,17 @@
               </div>
               <div class="panel-body">
                 <div class="col-md-12" style="color: black;">
-                  <p><i class="fa fa-map-marker"></i> <?php echo $value->faskes_alamat;?></p>
+                  <p style="font-size: 12px;"><i class="fa fa-map-marker"></i> <?php echo $value->faskes_alamat;?></p>
                   <table>
                     <tr>
                       <td> <strong>Layanan</strong> </td>
                       <td> : </td>
-                      <td> <?php echo $value->faskesdetlayanan_nama;?></td>
+                      <td style="font-size: 14px;"> <?php echo $value->faskesdetlayanan_nama;?></td>
                     </tr>
                     <tr>
                       <td> <strong>Poli</strong> </td>
                       <td> : </td>
-                      <td> <?php echo $value->faskesdetpoli_nama;?></td>
+                      <td style="font-size: 14px;"> <?php echo $value->faskesdetpoli_nama;?></td>
                     </tr>
                     <tr>
                       <td></td>
@@ -42,9 +42,9 @@
                       <td></td>
                     </tr>
                   </table>
-                </div>
-                <div class="pull-right">
-                  <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>"><button type="button" class="btn btn-success btn-xs btn-flat"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
+                  <div class="pull-right">
+                    <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>"><button type="button" class="btn btn-success btn-xs btn-flat"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
+                  </div>
                 </div>
               </div>
             </div>
