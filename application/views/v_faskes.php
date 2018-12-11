@@ -7,9 +7,9 @@
         </div>
 
         <?php foreach ($list_faskes as $key => $value) {?>
-        <div class="list-artikel col-md-4" style="height: 405px;">
+        <div class="list-artikel col-md-4" style="height: 415px;">
           <div class="panel-group" style="height: 405px;">
-            <div class="panel panel-success" style="height: 405px;">
+            <div class="panel panel-success" style="height: 415px;">
               <div class="panel-heading">
                 <strong><?php echo $value->faskes_nama;?></strong>
               </div>
@@ -42,7 +42,7 @@
                       <td></td>
                     </tr>
                   </table>
-                  <div class="pull-right">
+                  <div class="box-footer pull-right">
                     <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>"><button type="button" class="btn btn-success btn-xs btn-flat"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
                   </div>
                 </div>
