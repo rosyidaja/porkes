@@ -87,4 +87,9 @@ class C_public_function extends CI_Controller {
         }
     }
 
+    function pull_repo(){
+        $output =  git_pull();
+        echo json_encode($output);
+    }
+
 }

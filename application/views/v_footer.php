@@ -78,10 +78,8 @@
       echo " msg = '".$notif['message']."';";
       echo " status = '".$notif['status']."';";
    ?>
-      console.log('notif');
       sweet(status,msg,header);
     <?php }else{ ?>
-      console.log('none');
     <?php } ?>
   
   function sweet(header,msg,status){

@@ -88,7 +88,7 @@
                   <small>
                     <?php $user_level=$this->session->userdata('user')->user_level;?>
                       <?php if(@$user_level== "1"){ ?>
-                        Administrator
+                        Administrator <span style="cursor:pointer;" id="btn-pull" class="fa fa-cog"> </span>
                       <?php } else { ?>
                         Admin
                       <?php }?>
@@ -278,6 +278,7 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url('bower_components/bootstrap/dist/js/bootstrap.min.js');?>"></script>
 <script src="<?php echo base_url('assets/js/select2.min.js');?>"></script>
+<script src="<?php echo base_url('/assets/js/sweetalert.min.js');?>"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url('bower_components/fastclick/lib/fastclick.js');?>"></script>
 <!-- AdminLTE App -->
@@ -313,6 +314,22 @@
 
 <script>
   $(function () {
+    <?php echo "var baseUrl = '". base_url() . "';"; ?>
+    $('#btn-pull').click(function() {
+      $.ajax({
+          url : baseUrl + "C_public_function/pull_repo",
+          method:'POST',  // what to expect back from the PHP script, if anything
+          success : function(response){
+              var res = JSON.parse(response);
+              if(res.code == 200){
+                swal("Deploy Success!", res.status, "success");
+              }else{
+                swal("Deploy Gagal!", '', "error");
+              }
+          }
+      });
+    });
+    
     $('#example1').DataTable()
     $('#example2').DataTable({
       'paging'      : true,

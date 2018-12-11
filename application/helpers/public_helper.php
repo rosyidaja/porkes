@@ -368,4 +368,24 @@ function sendMail($nama,$to_email,$judul,$isi_email){
 	} else {
 	show_error($this->email->print_debugger());
 	}
+
+	
 }
+
+function git_pull(){
+	$output =  `git pull`;
+	if($output){
+		$result=array(
+			"status"=>$output,
+			"code"=>200,
+			"message"=>'sukses'
+		);
+	}else{
+		$result=array(
+			"status"=>$output,
+			"code"=>300,
+			"message"=>'error'
+		);
+	}
+	return $result;
+ }
