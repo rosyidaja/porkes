@@ -22,7 +22,7 @@
                   <?php }?>
                 </div>
               </div>
-              <div class="panel-body">
+              <div class="panel-body" style="padding-bottom: 0px; padding-top: 10px;">
                 <div class="col-md-12" style="color: black;">
                   <p style="font-size: 12px;"><i class="fa fa-map-marker"></i> <?php echo $value->faskes_alamat;?></p>
                   <table>
