@@ -9,16 +9,16 @@
           <br>
           <br>
           <br>
-          <div class="col-md-2" style="right: 50px;">
+        </div>
+        <div class="panel">
+          <div class="col-md-2">
             <img src="<?php echo base_url();?>assets/upload/faskes/<?php echo $detail->faskes_foto;?>" width="150" height="150">
           </div>
-          <div class="col-md-10" style="right: 20px;bottom: 10px;">
+          <div class="col-md-10">
             <h3><?php echo $detail->faskes_nama; ?></h3>
           </div>
-        </div>
-        <div class="panel" style="border-radius:0; border:0;">
-          <div class="panel-body">
-            <p><i class="fa fa-map-marker small"></i> <?php echo $detail->faskes_alamat; ?></p>
+          <div class="panel-body" >
+            <p><i class="fa fa-map-marker small" style="padding-left: 15px;"></i> <?php echo $detail->faskes_alamat; ?></p>
           </div>
         </div>
       </div>

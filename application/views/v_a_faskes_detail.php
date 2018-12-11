@@ -35,7 +35,14 @@
                 <tbody>
                 <?php foreach ($tabel as $key => $value) {?>
                   <tr>
-                    <td style="vertical-align: middle;"><img src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" class="img-responsive"></td>
+                    <td style="vertical-align: middle;">
+                      <?php if(@$value->faskes_foto == ""){ ?>
+                        <img src="<?php echo base_url('assets/img/logoRS.png');?>" class="img-responsive">
+                      <?php }
+                      else { ?>
+                        <img alt="logo RS" class="img-responsive" src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" class="img-responsive">
+                      <?php } ?>
+                    </td>
                     <td>
                       <table>
                       <tr>

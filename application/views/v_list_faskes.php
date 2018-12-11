@@ -72,7 +72,12 @@
                   </div>
                   <div class="panel-body">
                     <div class="col-md-3">
-                      <img alt="logo RS" class="img-responsive" src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" style="height: 200px; width: 200px;">
+                      <?php if($value->faskes_foto == ""){ ?>
+                        <img src="<?php echo base_url('assets/img/logoRS.png');?>" class="img-responsive" style="height: 200px; width: 200px;">
+                      <?php }
+                      else { ?>
+                        <img alt="logo RS" class="img-responsive" src="<?php echo base_url();?>assets/upload/faskes/<?php echo $value->faskes_foto;?>" style="height: 200px; width: 200px;">
+                      <?php } ?>
                     </div>
                     <div class="col-md-9">
                       <p><i class="fa fa-map-marker"></i> <?php echo $value->faskes_alamat;?></p>
