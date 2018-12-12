@@ -1,4 +1,4 @@
-<section id="layanan" class="section-padding" style="padding-bottom: 150px;">
+<section id="layanan" class="section-padding" style="padding-bottom: 220px;">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

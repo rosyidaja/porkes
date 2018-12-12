@@ -1,4 +1,4 @@
-<section id="faskes" class="section-padding" style="padding-bottom: 140px; background-color: darkcyan;">
+<section id="faskes" class="section-padding" style="background-color: darkcyan;">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
