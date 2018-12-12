@@ -7,9 +7,9 @@
         </div>
 
         <?php foreach ($list_faskes as $key => $value) {?>
-        <div class="list-artikel col-md-4" style="height: 415px;">
-          <div class="panel-group" style="height: 415px;">
-            <div class="panel panel-success" style="height: 415px;">
+        <div class="list-artikel col-md-4" style="height: 360px;">
+          <div class="panel-group" style="height: 360px;">
+            <div class="panel panel-success" style="height: 360px;">
               <div class="panel-heading">
                 <strong><?php echo $value->faskes_nama;?></strong>
               </div>
@@ -22,7 +22,7 @@
                   <?php }?>
                 </div>
               </div>
-              <div class="panel-body" style="padding-bottom: 0px; padding-top: 10px;">
+              <div class="panel-body" style="padding-bottom: 0px; padding-top: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.12)">
                 <div class="col-md-12" style="color: black;">
                   <p style="font-size: 12px;"><i class="fa fa-map-marker"></i> <?php echo $value->faskes_alamat;?></p>
                   <table>
@@ -44,14 +44,17 @@
                   </table>
                 </div>
               </div>
-              <div class="box-footer pull-right" style="padding-right: 25px;">
-                <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>"><button type="button" class="btn btn-success btn-xs btn-flat"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
-              </div>
+              <!-- <div class="small-box bg-aqua pull-right">
+                <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div> -->
             </div>
+              <div id="footer" class="footer" style="padding-right: 25px; text-align: center; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+                <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer">Lihat Detail <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
           </div>
         </div>
     <?php }?>
-  <div class="pull-right" style="padding-right: 15px; padding-top: 10px;">
+  <div class="pull-right" style="padding-right: 15px; padding-top: 30px;">
     <a href="<?php echo base_url().'C_faskes/index';?>" class="small-box-footer"><button type="button" class="btn btn-primary btn-xs btn-block"> Lihat Semua <i class="fa fa-arrow-circle-right"></i> </button></a>
   </div>
       </div>
