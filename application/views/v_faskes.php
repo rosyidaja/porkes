@@ -7,9 +7,9 @@
         </div>
 
         <?php foreach ($list_faskes as $key => $value) {?>
-        <div class="list-artikel col-md-4" style="height: 360px;">
-          <div class="panel-group" style="height: 360px;">
-            <div class="panel panel-success" style="height: 360px;">
+        <div class="list-artikel col-md-4" style="height: 390px;">
+          <div class="panel-group" style="height: 390px;">
+            <div class="panel panel-success" style="height: 390px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;">
               <div class="panel-heading">
                 <strong><?php echo $value->faskes_nama;?></strong>
               </div>
@@ -48,8 +48,8 @@
                 <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div> -->
             </div>
-              <div id="footer" class="footer" style="padding-right: 25px; text-align: center; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
-                <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer">Lihat Detail <i class="fa fa-arrow-circle-right"></i></a>
+              <div id="footer" class="footer" style="border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+                <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer"><button type="button" class="btn btn-success btn-xs btn-block"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
               </div>
           </div>
         </div>
