@@ -1,4 +1,4 @@
-<section id="faskes" class="section-padding" style="padding-bottom: 140px;">
+<section id="faskes" class="section-padding" style="padding-bottom: 140px; background-color: darkcyan;">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -10,7 +10,7 @@
         <div class="list-artikel col-md-4" style="height: 390px;">
           <div class="panel-group" style="height: 390px;">
             <div class="panel panel-success" style="height: 390px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;">
-              <div class="panel-heading">
+              <div class="panel-heading" style="color: black;">
                 <strong><?php echo $value->faskes_nama;?></strong>
               </div>
               <div class="panel-body">
@@ -49,13 +49,13 @@
               </div> -->
             </div>
               <div id="footer" class="footer" style="border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
-                <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer"><button type="button" class="btn btn-success btn-xs btn-block"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
+                <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer"><button type="button" class="btn btn-success btn-xs btn-block" style="border-top-right-radius: 0px; border-top-left-radius: 0px;"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
               </div>
           </div>
         </div>
     <?php }?>
   <div class="pull-right" style="padding-right: 15px; padding-top: 30px;">
-    <a href="<?php echo base_url().'C_faskes/index';?>" class="small-box-footer"><button type="button" class="btn btn-primary btn-xs btn-block"> Lihat Semua <i class="fa fa-arrow-circle-right"></i> </button></a>
+    <a href="<?php echo base_url().'C_faskes/index';?>" class="small-box-footer"><button type="button" class="btn btn-warning btn-xs btn-block"> Lihat Semua <i class="fa fa-arrow-circle-right"></i> </button></a>
   </div>
       </div>
     </div>
