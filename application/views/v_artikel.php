@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="ser-title">Artikel</h2>
+          <h2 class="ser-title" style="color: white;">Artikel</h2>
           <hr class="botm-line">
         </div>
 
@@ -16,7 +16,7 @@
                   <img src="<?php echo base_url();?>assets/upload/artikel/<?php echo $value->artikel_foto;?>" class="team-img" style="height: 150px; width: 200px;">
                 </div>
               </div>
-              <div class="panel-body" style="padding-top: 0px; height: 210px;">
+              <div class="panel-body" style="padding-top: 0px; height: 210px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
                 <div class="col-md-12" style="height: 180px;">
                   <div class="caption" style="height: 30px;">
                     <h5 style="text-align: center;"><?php echo $value->artikel_judul ?></h5>
