@@ -22,7 +22,7 @@
                     <h5 style="text-align: center;"><?php echo $value->artikel_judul ?></h5>
                   </div>
                   <div style="padding-top: 10px;">
-                    <p><?php echo substr($value->artikel_isi,0,100)." .." ?></p>
+                    <p><?php echo substr($value->artikel_isi,0,126)." .." ?></p>
                   </div>
                 </div>
                 <!-- <div class="pull-right box-button-footer">

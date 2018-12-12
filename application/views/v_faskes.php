@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="ser-title">Fasilitas Kesehatan</h2>
+          <h2 class="ser-title" style="color: white;">Fasilitas Kesehatan</h2>
           <hr class="botm-line">
         </div>
 
