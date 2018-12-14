@@ -25,6 +25,12 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css');?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/main.css');?>">
+
+    <script type="text/javascript" src="<?php echo base_url('assets/js/jquery1.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap1.min.js');?>"></script>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap1.min.css');?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/fonts/font-awesome.min.css');?>">
+
 <!--===============================================================================================-->
 </head>
 <body>
@@ -37,23 +43,20 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url(<?php echo base_url('assets/img/smart.jpg'); ?>);">
 			<div class="wrap-login100" style="background-image: url(<?php echo base_url('assets/img/1.jpg'); ?>);">
-				<div class="login100-form-title" style="background-image: url(<?php echo base_url('assets/img/bg-01.jpg');?>);">
-					<!-- <img src="<?php echo base_url('assets/img/om.jpeg');?>" height="150" > -->
-					<span class="login100-form-title-1">
-						Selamat Datang
-					</span>
+				<div class="login100-form-title" style="background-image: url(<?php echo base_url('assets/img/background-perawat-1.png');?>); padding-bottom: 45px; padding-top: 45px;">
+					<p style="font-size: 26px; color: white; margin-right: auto; text-align: center; padding-left: 50px;">Sistem Informasi Portal<br> Kesehatan</p>
 				</div>
 
-				<form action="<?php echo base_url('C_login/aksi_login');?>" method="post" class="login100-form validate-form" >
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100" style="color: white;">Username</span>
-						<input class="input100" type="text" name="user_name" placeholder="Enter username" style="color: white;">
+				<form action="<?php echo base_url('C_login/aksi_login');?>" method="post" class="login100-form validate-form" style="padding-left: 230px;">
+					<div class="input-group" data-validate="Username is required" style="padding-bottom: 25px; width: 200px;">
+						<span class="input-group-addon" style="width: 40px;"><i class="fa fa-user"></i></span>
+						<input class="form-control" type="text" name="user_name" placeholder="Enter username" autocomplete="off" style="color: black;">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-						<span class="label-input100" style="color: white;">Password</span>
-						<input class="input100" type="password" name="user_password" placeholder="Enter password" style="color: white;">
+					<div class="input-group" data-validate = "Password is required" style="padding-bottom: 25px; width: 200px;">
+						<span class="input-group-addon" style="width: 40px;"><i class="fa fa-key"></i></span>
+						<input class="form-control" type="password" name="user_password" placeholder="Enter password" style="color: black;">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -65,16 +68,16 @@
 							</label>
 						</div>
 
-						<div>
+						<!-- <div>
 							<a href="#" class="txt1" disabled>
 								Forgot Password?
 							</a>
-						</div>
+						</div> -->
 					</div>
 
-					<div class="container-login100-form-btn">
-						<button type="submit" name="btnSubmit" class="login100-form-btn">
-							Login
+					<div class="container-login100-form-btn" style="width: 100px; margin-left: 50px;">
+						<!-- <button type="submit" name="btnSubmit" class="login100-form-btn"> -->
+							<input name="btnSubmit" type="submit" value="Login" class="btn btn-primary btn-block">
 						</button>
 					</div>
 				</form>
@@ -98,6 +101,7 @@
 	<script src="<?php echo base_url('assets/vendor/countdowntime/countdowntime.js');?>"></script>
 <!--===============================================================================================-->
 	<script src="<?php echo base_url('assets/js/main.js');?>"></script>
+	<script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
 
 </body>
 </html>

@@ -44,9 +44,6 @@
                   </table>
                 </div>
               </div>
-              <!-- <div class="small-box bg-aqua pull-right">
-                <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div> -->
             </div>
               <div id="footer" class="footer" style="border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
                 <a href="<?php echo base_url().'C_faskes/detail_faskes/'.$value->faskes_id;?>" class="small-box-footer"><button type="button" class="btn btn-success btn-xs btn-block" style="border-top-right-radius: 0px; border-top-left-radius: 0px;"> Lihat Detail <i class="fa fa-arrow-circle-right"></i></button></a>
