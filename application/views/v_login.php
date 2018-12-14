@@ -42,7 +42,7 @@
 	<?php endif; ?>
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url(<?php echo base_url('assets/img/smart.jpg'); ?>);">
-			<div class="wrap-login100" style="background-image: url(<?php echo base_url('assets/img/1.jpg'); ?>);">
+			<div class="wrap-login100" style="background-color: inherit;">
 				<div class="login100-form-title" style="background-image: url(<?php echo base_url('assets/img/background-perawat-1.png');?>); padding-bottom: 45px; padding-top: 45px;">
 					<p style="font-size: 26px; color: white; margin-right: auto; text-align: center; padding-left: 50px;">Sistem Informasi Portal<br> Kesehatan</p>
 				</div>
@@ -63,7 +63,7 @@
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
+							<label class="label-checkbox100" for="ckb1" style="color: white;">
 								Remember me
 							</label>
 						</div>
